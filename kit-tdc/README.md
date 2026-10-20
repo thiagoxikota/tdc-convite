@@ -40,4 +40,4 @@ Recarregue antes de cada teste. No teste de falha, não recarregue entre as duas
 
 ## Para gerar a sua versão (opcional)
 
-Cole o seu cartão D1 no fim de `../demonstracao/pedido-b.txt`, use uma conversa nova e espere no máximo 4 minutos. Rode o teste da janela na primeira saída. Se a IA mudou a API simulada ou o painel, o resultado não é comparável.
+Cole o seu cartão da janela no fim de `../demonstracao/pedido-b.txt`, use uma conversa nova e espere no máximo 4 minutos. Rode o teste da janela na primeira saída. Se a IA mudou a API simulada ou o painel, o resultado não é comparável.

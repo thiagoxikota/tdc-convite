@@ -8,7 +8,7 @@ Hoje você vai apostar, testar e sair com uma decisão pronta para um PR. Precis
 
 ## Antes de começar
 
-1. Abra **thiagoxikota.github.io/tdc-convite** no navegador. Sem internet, extraia o `kit-participante.zip` e abra `index.html`.
+1. Abra **thiagoxikota.github.io/tdc-convite** no navegador do computador. A prática precisa de teclado; no celular fica difícil. Sem internet, extraia o `kit-participante.zip` e abra `index.html`.
 2. **Não abra a saída A ainda.** A primeira atividade é uma aposta.
 3. Se algum arquivo não abrir, acompanhe pela tela do facilitador. Todas as atividades funcionam assim.
 
@@ -46,7 +46,7 @@ Teste D1: envie `ana@example.com`, espere a confirmação e comece a apagar o e-
 
 ## Aposta 3: a janela
 
-Envie `ana@example.com` com Leitor e, **durante a espera**, troque o perfil para Editor. O que aparece?
+Envie `ana@example.com` com Leitor e, **durante a espera**, troque o perfil para Editor. Para dar tempo: **Enter, Tab e a tecla E**. O que aparece?
 
 A. A confirmação nem aparece · B. Aparece "perfil Editor" · C. Aparece "perfil Leitor" com o select em Editor · D. Dá erro
 
@@ -63,15 +63,19 @@ Duas regras legítimas. Você pode propor uma terceira, desde que diga o custo.
 | **Travar** | Campos travados enquanto o convite está a caminho. | Quem errou uma letra espera a resposta. Em 1,2 s, nada; numa espera de 40 s, irrita. |
 | **Recibo** | Deixa editar. A resposta diz de quem ela é e avisa que os campos mudaram. | Mais estado no componente e uma frase mais longa para ler. |
 
-### Seu cartão D1 (5 min)
+### Seu cartão da janela, já como PR (5 min)
 
 ```text
-Quando:      a pessoa muda e-mail ou perfil com o convite a caminho
-A interface: [o que a tela faz]
-Custo que aceito: [o que perdemos com essa regra]
-Teste:       [passos e resultado esperado]
-             em B: falha · no patch da minha regra: passa
+Título:  Convite: a resposta fala do envio dela
+Janela:  a pessoa muda e-mail ou perfil com o convite a caminho
+Regra:   [o que a tela faz]
+Custo:   [o que perdemos com essa regra]
+Teste:   envia ana@example.com como Leitor, Enter, Tab, E
+         → [resultado esperado]
+Hoje:    falha em convite-b.html · passa no patch da minha regra
 ```
+
+A linha "Hoje" é a mais forte do PR: um teste que falha agora, com passo a passo. No seu repo, troque arquivos e funções pelos reais.
 
 ### Rode o seu teste (8 min)
 
@@ -82,41 +86,6 @@ Teste:       [passos e resultado esperado]
 | `kit-tdc/b-patch-recibo.html` | Passa se você escolheu recibo | |
 
 Escolheu outra regra? Confirme que B falha e escreva o resultado esperado. Esse teste vira o seu PR.
-
-**Com IA (opcional):** cole seu cartão no fim de `demonstracao/pedido-b.txt`, use conversa nova e espere no máximo 4 minutos. Salve a primeira saída como `meu-convite.html`, registre a ferramenta e rode o mesmo teste. Se a IA alterar a API simulada ou o painel, o resultado não é comparável: volte para os patches.
-
-## O código: onde a regra mora
-
-Trecho real de `demonstracao/convite-b.html`, linhas 216 a 231, com o meio resumido:
-
-```js
-const convite = { email: email.value.trim(), perfil: perfil.value };
-aguardando = true;   // botão bloqueado, campos livres
-const resultado = await window.apiConvite(convite);
-// ... 1,2 s em que a pessoa pode mexer em tudo ...
-status.textContent = 'Convite enviado para ' + resultado.email
-  + ' com o perfil ' + nomes[resultado.perfil] + '.';
-```
-
-O payload é uma cópia do momento do envio, e isso está certo. A tela continua viva. O furo mora no intervalo.
-
-Patch **trava** (`kit-tdc/b-patch-trava.html`):
-
-```js
-aguardando = true;
-email.readOnly = true;
-perfil.disabled = true;
-// no finally: readOnly e disabled voltam para false
-```
-
-Patch **recibo** (`kit-tdc/b-patch-recibo.html`):
-
-```js
-const mudou = email.value.trim() !== convite.email || perfil.value !== convite.perfil;
-status.textContent = 'Convite enviado para ' + resultado.email + ' com o perfil ' + nomes[resultado.perfil] + '.'
-  + (mudou ? ' Os campos acima mudaram depois do envio e ainda não foram enviados.' : '');
-confirmado = !mudou; // recibo fica até o próximo envio
-```
 
 ## Aposta 4: a busca
 
@@ -136,50 +105,19 @@ Qual regra você usaria aqui? ☐ trava ☐ recibo ☐ descarta a resposta velha
 
 Por quê? ______________________________
 
-## Seu PR
-
-```text
-Título:  Convite: resposta fala do envio dela
-Janela:  durante a espera de apiConvite
-Regra:   [do cartão D1]
-Custo:   [do cartão D1]
-Teste:   envia ana@example.com como Leitor, troca para Editor na espera
-         → [resultado esperado]
-Hoje:    falha em convite-b.html
-```
-
-No seu repo, troque os arquivos e funções pelos reais. A linha "Hoje" é a mais forte: um teste que falha agora, com passo a passo.
-
 ## Três perguntas para o próximo PR
 
 1. Quais janelas esse componente tem (antes, durante, depois), e quem decidiu cada uma?
 2. Essa resposta é de leitura ou de escrita?
 3. Que teste falha se alguém mudar a regra?
 
-## Depois da aula: respostas e limites
+## Para casa
 
-Não leia esta parte antes da sessão.
+**Com IA:** cole seu cartão no fim de `demonstracao/pedido-b.txt`, use conversa nova e espere no máximo 4 minutos. Salve a primeira saída como `meu-convite.html`, registre a ferramenta e rode o mesmo teste. Se a IA alterar a API simulada ou o painel, o resultado não é comparável.
 
-**Bingo.** As armadilhas são mensagem pessoal, avatar e link de convite: A não tem nenhuma. A tem as outras nove: "SUA EQUIPE" em caixa alta, "Trabalhar junto começa aqui.", "Um novo convite, novas possibilidades.", card centralizado com sombra, ícone, botão de largura total com seta, tela de sucesso com check e Membro/Administrador.
+**Respostas das apostas, o código e os patches explicados:** thiagoxikota.github.io/tdc-convite/respostas.html, depois da aula.
 
-**Aposta 2.** A passa C3 e C6. Não atende C10, mas esse critério depende de um contexto (gestão de pessoas) que só o pedido B trouxe. Não é descumprimento de A.
-
-**Aposta 3.** Letra C em B. A trava os campos durante a espera e não tem a ambiguidade; em compensação, puxa o foco para o título de sucesso mesmo quando você já saiu do formulário. B cumpre D1 como foi escrita: o texto falava de "depois do sucesso" e não do intervalo. A janela recria a confusão que motivou D1, num momento que D1 não cobria.
-
-**Aposta 4.** A caixa diz "ana" e a lista mostra Ana, Anderson e Luana, porque a resposta de "an" chegou por último. Travar a busca ou mostrar recibo não faz sentido. Busca é leitura: resposta velha normalmente se descarta, com contador, `AbortController` (passando o `signal` para o `fetch`) ou o equivalente do seu framework. Em React, o mesmo vale para um `fetch` dentro de `useEffect`: use cleanup ou a identidade da requisição.
-
-```js
-let ultimo = 0;
-busca.addEventListener('input', async () => {
-  const meu = ++ultimo;
-  const termo = busca.value;
-  const pessoas = await buscarPessoas(termo);
-  if (meu !== ultimo) return; // leitura velha: descarta
-  lista.render(pessoas, termo);
-});
-```
-
-Convite é escrita: o convite da Ana existe, e ignorar a resposta não desfaz o envio. A interface precisa mostrar o que foi feito (trava, recibo) ou reconciliar com o servidor, nunca jogar fora. A regra curta: **leitura velha se descarta; escrita feita se mostra ou se reconcilia.**
+## Procedência e limites
 
 **De onde vêm A e B.** Duas sessões separadas do Codex em 19/10/2026, uma geração por condição, mesma base, primeira saída guardada sem edição. O modelo não foi informado pela ferramenta. Pedidos integrais e registro em `demonstracao/`. Um par de saídas não mede com que frequência isso acontece; a evidência de repetição usada na aula é a previsão da própria sala.
 

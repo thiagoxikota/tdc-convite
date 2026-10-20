@@ -1,0 +1,55 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Respostas das apostas · TDC</title><style>@font-face{font-family:Sora;src:url('assets/Sora-400.woff2')}@font-face{font-family:Sora;src:url('assets/Sora-600.woff2');font-weight:600}@font-face{font-family:Sora;src:url('assets/Sora-700.woff2');font-weight:700}
+:root{--ink:#161722;--muted:#46454d;--paper:#e8e4dc;--accent:#dc000c;--line:#b3afa8;color:var(--ink);background:#faf9f6;font-family:Sora,system-ui,sans-serif}
+*{box-sizing:border-box}body{margin:0;background:#faf9f6}
+nav{padding:20px clamp(16px,5vw,80px);border-bottom:2px solid var(--ink);display:flex;gap:20px;flex-wrap:wrap;font-size:15px}
+a{color:inherit;text-underline-offset:4px}a:hover{color:#b4000a}:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+main{max-width:900px;margin:auto;padding:40px 16px 96px}
+h1{font-size:clamp(30px,5vw,50px);line-height:1.12;letter-spacing:-.035em;margin:0 0 8px}
+h1+h2{font-size:clamp(20px,3vw,26px);font-weight:400;margin-top:0;border:0;padding:0}
+h2{font-size:26px;letter-spacing:-.02em;margin-top:56px;padding-top:20px;border-top:3px solid var(--ink)}
+h3{font-size:19px;margin-top:32px}
+p,li{font-size:16px;line-height:1.75}p{max-width:72ch}li{margin:8px 0}
+code{font-family:ui-monospace,Menlo,monospace;font-size:.92em;overflow-wrap:anywhere}
+pre{white-space:pre-wrap;margin:0;padding:20px 22px;line-height:1.6;font-size:14px}
+.code-block{position:relative;background:#efece6;border:1px solid var(--line);border-left:4px solid var(--ink);margin:20px 0}
+.copy{display:block;margin:12px 12px 0 auto;border:2px solid var(--ink);background:#fff;font:inherit;font-size:13px;font-weight:600;padding:8px 12px;cursor:pointer;min-height:40px}
+.table-wrap{overflow-x:auto;margin:20px 0}table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.55}
+th,td{border-bottom:1px solid var(--line);padding:12px 10px;text-align:left;vertical-align:top}th{background:var(--paper);font-weight:600}
+table.grid td{border:2px solid var(--ink);padding:16px 12px;width:33%;font-weight:600;background:#fff}
+footer{padding:20px 16px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;text-align:center}
+@media print{nav,.copy,footer{display:none}main{padding:0;max-width:none}h1{font-size:26px}h2{font-size:18px;margin-top:20px;break-after:avoid}h3{font-size:14px;margin-top:12px;break-after:avoid}p,li{font-size:10pt;line-height:1.45}p{margin:6px 0}li{margin:3px 0}pre{font-size:8.5pt;line-height:1.4;padding:10px 12px}.code-block{margin:10px 0;break-inside:avoid}table{font-size:9pt}th,td{padding:6px}table.grid td{padding:10px 8px}tr{break-inside:avoid}a{text-decoration:none}@page{size:A4;margin:16mm}}
+</style></head><body><nav aria-label="Materiais"><a href="index.html">Início</a><a href="demonstracao/convite-a.html">Saída A</a><a href="demonstracao/convite-b.html">Saída B</a><a href="material-participante.html">Material</a></nav><main><h1>Respostas das apostas</h1>
+<h2>Por que a IA repete o componente genérico (e o que muda quando você especifica)</h2>
+<p>TDC Talks · 21/10/2026 · Thiago Xikota. Para ler depois da aula.</p>
+<p><strong>Bingo.</strong> As armadilhas são mensagem pessoal, avatar e link de convite: A não tem nenhuma. A tem as outras nove: "SUA EQUIPE" em caixa alta, "Trabalhar junto começa aqui.", "Um novo convite, novas possibilidades.", card centralizado com sombra, ícone, botão de largura total com seta, tela de sucesso com check e Membro/Administrador.</p>
+<p><strong>Aposta 2.</strong> A passa C3 e C6. Não atende C10, mas esse critério depende de um contexto (gestão de pessoas) que só o pedido B trouxe. Não é descumprimento de A.</p>
+<p><strong>Aposta 3.</strong> Letra C em B. A trava os campos durante a espera e não tem a ambiguidade; em compensação, puxa o foco para o título de sucesso mesmo quando você já saiu do formulário. B cumpre D1 como foi escrita: o texto falava de "depois do sucesso" e não do intervalo. A janela recria a confusão que motivou D1, num momento que D1 não cobria.</p>
+<p><strong>Aposta 4.</strong> A caixa diz "ana" e a lista mostra Ana, Anderson e Luana, porque a resposta de "an" chegou por último. Travar a busca ou mostrar recibo não faz sentido. Busca é leitura: resposta velha normalmente se descarta, com contador, <code>AbortController</code> (passando o <code>signal</code> para o <code>fetch</code>) ou o equivalente do seu framework. Em React, o mesmo vale para um <code>fetch</code> dentro de <code>useEffect</code>: use cleanup ou a identidade da requisição.</p>
+<div class="code-block"><button class="copy" type="button">Copiar</button><pre><code>let ultimo = 0;
+busca.addEventListener('input', async () =&gt; {
+  const meu = ++ultimo;
+  const termo = busca.value;
+  const pessoas = await buscarPessoas(termo);
+  if (meu !== ultimo) return; // leitura velha: descarta
+  lista.render(pessoas, termo);
+});</code></pre></div>
+<p>Convite é escrita: o convite da Ana existe, e ignorar a resposta não desfaz o envio. A interface precisa mostrar o que foi feito (trava, recibo) ou reconciliar com o servidor, nunca jogar fora. A regra curta: <strong>leitura velha se descarta; escrita feita se mostra ou se reconcilia.</strong></p>
+<h2>O código: onde a regra mora</h2>
+<p>Trecho real de <code>demonstracao/convite-b.html</code>, linhas 216 a 231, com o meio resumido:</p>
+<div class="code-block"><button class="copy" type="button">Copiar</button><pre><code>const convite = { email: email.value.trim(), perfil: perfil.value };
+aguardando = true;   // botão bloqueado, campos livres
+const resultado = await window.apiConvite(convite);
+// ... 1,2 s em que a pessoa pode mexer em tudo ...
+status.textContent = 'Convite enviado para ' + resultado.email
+  + ' com o perfil ' + nomes[resultado.perfil] + '.';</code></pre></div>
+<p>O payload é uma cópia do momento do envio, e isso está certo. A tela continua viva. O furo mora no intervalo.</p>
+<p>Patch <strong>trava</strong> (<code>kit-tdc/b-patch-trava.html</code>):</p>
+<div class="code-block"><button class="copy" type="button">Copiar</button><pre><code>aguardando = true;
+email.readOnly = true;
+perfil.disabled = true;
+// no finally: readOnly e disabled voltam para false</code></pre></div>
+<p>Patch <strong>recibo</strong> (<code>kit-tdc/b-patch-recibo.html</code>):</p>
+<div class="code-block"><button class="copy" type="button">Copiar</button><pre><code>const mudou = email.value.trim() !== convite.email || perfil.value !== convite.perfil;
+status.textContent = 'Convite enviado para ' + resultado.email + ' com o perfil ' + nomes[resultado.perfil] + '.'
+  + (mudou ? ' Os campos acima mudaram depois do envio e ainda não foram enviados.' : '');
+confirmado = !mudou; // recibo fica até o próximo envio</code></pre></div></main><footer>TDC Talks · 21/10/2026 · Thiago Xikota</footer><script>document.querySelectorAll('.copy').forEach(b=>b.addEventListener('click',async()=>{const c=b.parentElement.querySelector('code');try{await navigator.clipboard.writeText(c.textContent);b.textContent='Copiado'}catch{const r=document.createRange();r.selectNodeContents(c);const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selecionado: Ctrl/Cmd+C'}setTimeout(()=>b.textContent='Copiar',3000)}));</script></body></html>
