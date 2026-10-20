@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Base inicial | Convite para equipe</title>
+  <style>
+    :root {
+      --ink: #161722;
+      --muted: #54535b;
+      --paper: #e8e4dc;
+      --surface: #ffffff;
+      --accent: #dc000c;
+      --line: #bbb8b1;
+      --radius: 8px;
+      --space: 8px;
+      --error: #b4000a;
+      color-scheme: light;
+      font-family: system-ui, sans-serif;
+      color: var(--ink);
+      background: var(--surface);
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 32px 20px; }
+    main { max-width: 640px; margin: 0; }
+    h1 { margin: 0 0 16px; font-size: clamp(1.7rem, 5vw, 2.1rem); line-height: 1.2; }
+    p { line-height: 1.6; }
+    a { color: var(--ink); }
+    :focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+    .lab-info { color: var(--muted); font-size: .95rem; }
+    .lab-info strong { color: var(--ink); }
+    #componente { margin: 32px 0; padding: 24px; border: 1px dashed var(--line); border-radius: var(--radius); }
+    code { overflow-wrap: anywhere; }
+    .laboratorio { max-width: 640px; margin-top: 32px; border-top: 1px solid var(--line); padding-top: 16px; color: var(--muted); font-size: .9rem; }
+    .laboratorio summary { color: var(--ink); cursor: pointer; padding: 8px 0; }
+    .laboratorio p, .laboratorio li { line-height: 1.6; }
+    .laboratorio ul { padding-left: 24px; }
+    .laboratorio dl { margin: 16px 0; }
+    .laboratorio dl div { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; padding: 8px 0; border-bottom: 1px solid var(--line); }
+    .laboratorio dt { font-weight: 600; }
+    .laboratorio dd { margin: 0; color: var(--ink); overflow-wrap: anywhere; }
+    code { overflow-wrap: anywhere; }
+
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Base inicial do exercício</h1>
+    <p class="lab-info">Este arquivo contém os tokens visuais e uma API simulada. <strong>O formulário ainda não foi implementado.</strong> Use esta mesma base nas duas gerações.</p>
+    <p class="lab-info">Na aula, abra primeiro as saídas A/B salvas. Para gerar uma nova versão, use o arquivo original e preserve a API, o painel e os tokens. Salve a resposta em outro arquivo.</p>
+
+    <!-- Substitua este bloco pelo componente. Preserve os tokens e a API simulada. -->
+    <div id="componente">
+      <p>Implemente aqui o convite de uma pessoa para a equipe.</p>
+    </div>
+
+  </main>
+    <!-- PAINEL DO LABORATÓRIO: preserve este bloco fora da interface do produto. -->
+    <aside class="laboratorio" aria-label="Instrumentação do exercício">
+      <details id="painel-laboratorio">
+        <summary>Painel do laboratório</summary>
+        <p>Registro da API simulada. Este painel não faz parte do produto e não avalia a interface.</p>
+        <dl>
+          <div><dt>Chamadas</dt><dd><output id="chamadas">0</output></dd></div>
+          <div><dt>Último e-mail</dt><dd><output id="lab-email">Nenhum</output></dd></div>
+          <div><dt>Último perfil</dt><dd><output id="lab-perfil">Nenhum</output></dd></div>
+          <div><dt>Estado da última chamada</dt><dd><output id="lab-estado">Sem chamada</output></dd></div>
+        </dl>
+        <ul>
+          <li><code>novo@example.com</code>: sucesso após 1,2 segundo.</li>
+          <li><code>existe@example.com</code>: pessoa já faz parte da equipe.</li>
+          <li><code>falha@example.com</code>: primeira tentativa falha; segunda funciona.</li>
+        </ul>
+        <p>Recarregar reinicia contagem, registro e tentativas. Nenhum convite real é enviado. A simulação não implementa servidor, autenticação ou autorização.</p>
+      </details>
+    </aside>
+  <script>
+    // API SIMULADA: preserve este bloco nas duas gerações.
+    // Não há rede, persistência, autorização de servidor ou envio real.
+    (() => {
+      const tentativas = new Map();
+      window.chamadasConvite = 0;
+      window.registroConvites = [];
+
+      function atualizarPainel() {
+        const ultimo = window.registroConvites[window.registroConvites.length - 1];
+        const valores = {
+          chamadas: window.chamadasConvite,
+          'lab-email': ultimo ? ultimo.email : 'Nenhum',
+          'lab-perfil': ultimo ? ultimo.perfil : 'Nenhum',
+          'lab-estado': ultimo ? ultimo.estado : 'Sem chamada'
+        };
+        for (const [id, valor] of Object.entries(valores)) {
+          const campo = document.getElementById(id);
+          if (campo) campo.textContent = String(valor);
+        }
+      }
+
+      window.apiConvite = async ({ email, perfil }) => {
+        window.chamadasConvite += 1;
+        const registro = { id: window.chamadasConvite, email, perfil, estado: 'pendente' };
+        window.registroConvites.push(registro);
+        atualizarPainel();
+
+        const chave = String(email).trim().toLowerCase();
+        const tentativa = (tentativas.get(chave) || 0) + 1;
+        tentativas.set(chave, tentativa);
+        await new Promise((resolve) => setTimeout(resolve, 1200));
+
+        if (chave === 'existe@example.com') {
+          registro.estado = 'existente';
+          atualizarPainel();
+          return { status: 'existente', email, perfil };
+        }
+        if (chave === 'falha@example.com' && tentativa === 1) {
+          registro.estado = 'falha';
+          atualizarPainel();
+          throw new Error('Falha temporária simulada.');
+        }
+        registro.estado = 'enviado';
+        atualizarPainel();
+        return { status: 'enviado', email, perfil };
+      };
+    })();
+  </script>
+  <script>
+    // Implemente aqui o comportamento do componente.
+  </script>
+</body>
+</html>

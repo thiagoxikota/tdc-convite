@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>B + recibo (didático) | Convite para equipe</title>
+  <style>
+    :root {
+      --ink: #161722;
+      --muted: #54535b;
+      --paper: #e8e4dc;
+      --surface: #ffffff;
+      --accent: #dc000c;
+      --line: #bbb8b1;
+      --radius: 8px;
+      --space: 8px;
+      --error: #b4000a;
+      color-scheme: light;
+      font-family: system-ui, sans-serif;
+      color: var(--ink);
+      background: var(--surface);
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 32px 20px; }
+    main { max-width: 640px; margin: 0; }
+    h1 { margin: 0 0 16px; font-size: clamp(1.7rem, 5vw, 2.1rem); line-height: 1.2; }
+    p { line-height: 1.6; }
+    a { color: var(--ink); }
+    :focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+    .lab-info { color: var(--muted); font-size: .95rem; }
+    .lab-info strong { color: var(--ink); }
+    #componente { margin: 32px 0; padding: 24px; border: 1px dashed var(--line); border-radius: var(--radius); }
+    code { overflow-wrap: anywhere; }
+    .laboratorio { max-width: 640px; margin-top: 32px; border-top: 1px solid var(--line); padding-top: 16px; color: var(--muted); font-size: .9rem; }
+    .laboratorio summary { color: var(--ink); cursor: pointer; padding: 8px 0; }
+    .laboratorio p, .laboratorio li { line-height: 1.6; }
+    .laboratorio ul { padding-left: 24px; }
+    .laboratorio dl { margin: 16px 0; }
+    .laboratorio dl div { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; padding: 8px 0; border-bottom: 1px solid var(--line); }
+    .laboratorio dt { font-weight: 600; }
+    .laboratorio dd { margin: 0; color: var(--ink); overflow-wrap: anywhere; }
+    code { overflow-wrap: anywhere; }
+
+    body { padding: 32px 20px; }
+    main, form, .campo { min-width: 0; }
+    h1 { margin-bottom: 24px; font-size: 1rem; font-weight: 600; color: var(--muted); }
+    #componente { margin: 0; padding: 24px; border: 1px solid var(--line); }
+    h2 { margin: 0 0 12px; font-size: clamp(1.4rem, 5vw, 1.75rem); line-height: 1.25; }
+    .ajuda { margin: 0 0 24px; color: var(--muted); }
+    .campos { display: grid; grid-template-columns: minmax(0, 1fr); gap: 24px; }
+    label { display: block; margin-bottom: 8px; font-weight: 600; }
+    input, select, button { font: inherit; border-radius: var(--radius); }
+    input, select { display: block; width: 100%; min-width: 0; min-height: 48px; padding: 12px; border: 1px solid var(--muted); background: var(--surface); color: var(--ink); }
+    input[aria-invalid="true"] { border: 2px solid var(--error); }
+    .campo-ajuda { margin: 8px 0 0; font-size: .9rem; color: var(--muted); }
+    .erro { margin: 8px 0 0; color: var(--error); font-weight: 600; overflow-wrap: anywhere; }
+    button { display: block; max-width: 100%; min-height: 48px; margin-top: 24px; padding: 12px 20px; border: 2px solid var(--accent); background: var(--accent); color: var(--surface); font-weight: 650; cursor: pointer; white-space: normal; overflow-wrap: anywhere; }
+    button:hover { text-decoration: underline; }
+    button[aria-disabled="true"] { cursor: wait; background: var(--paper); color: var(--ink); border-color: var(--line); }
+    .status { margin: 16px 0 0; line-height: 1.6; overflow-wrap: anywhere; }
+    .status:empty { margin: 0; }
+    .aviso-didatico { margin: 0 0 24px; padding: 12px 16px; border-left: 4px solid var(--accent); background: var(--paper); line-height: 1.5; }
+    @media (min-width: 720px) { .campos { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 16px; } }
+    @media (max-width: 380px) { body { padding: 24px 16px; } #componente { padding: 16px; } }
+
+  </style>
+</head>
+<body>
+  <main>
+    <p class="aviso-didatico"><strong>Cópia didática de B.</strong> Patch de 6 linhas: dá para editar na espera, e a resposta diz de quem ela é. Não é uma saída gerada; o original está em demonstracao/convite-b.html.</p>
+    <h1>Gestão de pessoas</h1>
+    <section id="componente" aria-labelledby="titulo-convite">
+      <h2 id="titulo-convite">Convidar uma pessoa</h2>
+      <p class="ajuda">Informe o e-mail e escolha o perfil de acesso à equipe.</p>
+      <form id="form-convite" novalidate>
+        <div class="campos">
+          <div class="campo">
+            <label for="email">E-mail (obrigatório)</label>
+            <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-ajuda email-erro" aria-invalid="false">
+            <p class="campo-ajuda" id="email-ajuda">Use o e-mail da pessoa que você quer convidar.</p>
+            <p class="erro" id="email-erro" hidden></p>
+          </div>
+          <div class="campo">
+            <label for="perfil">Perfil</label>
+            <select id="perfil" name="perfil" aria-describedby="perfil-ajuda">
+              <option value="leitor" selected>Leitor</option>
+              <option value="editor">Editor</option>
+            </select>
+            <p class="campo-ajuda" id="perfil-ajuda">Leitor pode consultar. Editor pode editar.</p>
+          </div>
+        </div>
+        <button id="enviar-convite" type="submit" aria-disabled="false">Enviar convite</button>
+        <p class="status" id="status-convite" role="status" aria-live="polite" aria-atomic="true"></p>
+      </form>
+    </section>
+
+  </main>
+    <!-- PAINEL DO LABORATÓRIO: preserve este bloco fora da interface do produto. -->
+    <aside class="laboratorio" aria-label="Instrumentação do exercício">
+      <details id="painel-laboratorio">
+        <summary>Painel do laboratório</summary>
+        <p>Registro da API simulada. Este painel não faz parte do produto e não avalia a interface.</p>
+        <dl>
+          <div><dt>Chamadas</dt><dd><output id="chamadas">0</output></dd></div>
+          <div><dt>Último e-mail</dt><dd><output id="lab-email">Nenhum</output></dd></div>
+          <div><dt>Último perfil</dt><dd><output id="lab-perfil">Nenhum</output></dd></div>
+          <div><dt>Estado da última chamada</dt><dd><output id="lab-estado">Sem chamada</output></dd></div>
+        </dl>
+        <ul>
+          <li><code>novo@example.com</code>: sucesso após 1,2 segundo.</li>
+          <li><code>existe@example.com</code>: pessoa já faz parte da equipe.</li>
+          <li><code>falha@example.com</code>: primeira tentativa falha; segunda funciona.</li>
+        </ul>
+        <p>Recarregar reinicia contagem, registro e tentativas. Nenhum convite real é enviado. A simulação não implementa servidor, autenticação ou autorização.</p>
+      </details>
+    </aside>
+  <script>
+    // API SIMULADA: preserve este bloco nas duas gerações.
+    // Não há rede, persistência, autorização de servidor ou envio real.
+    (() => {
+      const tentativas = new Map();
+      window.chamadasConvite = 0;
+      window.registroConvites = [];
+
+      function atualizarPainel() {
+        const ultimo = window.registroConvites[window.registroConvites.length - 1];
+        const valores = {
+          chamadas: window.chamadasConvite,
+          'lab-email': ultimo ? ultimo.email : 'Nenhum',
+          'lab-perfil': ultimo ? ultimo.perfil : 'Nenhum',
+          'lab-estado': ultimo ? ultimo.estado : 'Sem chamada'
+        };
+        for (const [id, valor] of Object.entries(valores)) {
+          const campo = document.getElementById(id);
+          if (campo) campo.textContent = String(valor);
+        }
+      }
+
+      window.apiConvite = async ({ email, perfil }) => {
+        window.chamadasConvite += 1;
+        const registro = { id: window.chamadasConvite, email, perfil, estado: 'pendente' };
+        window.registroConvites.push(registro);
+        atualizarPainel();
+
+        const chave = String(email).trim().toLowerCase();
+        const tentativa = (tentativas.get(chave) || 0) + 1;
+        tentativas.set(chave, tentativa);
+        await new Promise((resolve) => setTimeout(resolve, 1200));
+
+        if (chave === 'existe@example.com') {
+          registro.estado = 'existente';
+          atualizarPainel();
+          return { status: 'existente', email, perfil };
+        }
+        if (chave === 'falha@example.com' && tentativa === 1) {
+          registro.estado = 'falha';
+          atualizarPainel();
+          throw new Error('Falha temporária simulada.');
+        }
+        registro.estado = 'enviado';
+        atualizarPainel();
+        return { status: 'enviado', email, perfil };
+      };
+    })();
+  </script>
+  <script>
+    (() => {
+      const form = document.getElementById('form-convite');
+      const email = document.getElementById('email');
+      const perfil = document.getElementById('perfil');
+      const erro = document.getElementById('email-erro');
+      const status = document.getElementById('status-convite');
+      const enviar = document.getElementById('enviar-convite');
+      const nomes = { leitor: 'Leitor', editor: 'Editor' };
+      let aguardando = false;
+      let confirmado = false;
+
+      function limparErro() {
+        erro.textContent = '';
+        erro.hidden = true;
+        email.setAttribute('aria-invalid', 'false');
+      }
+
+      function mostrarErro(mensagem) {
+        erro.textContent = mensagem;
+        erro.hidden = false;
+        email.setAttribute('aria-invalid', 'true');
+      }
+
+      function limparConfirmacao() {
+        if (confirmado) {
+          status.textContent = '';
+          confirmado = false;
+        }
+      }
+
+      email.addEventListener('input', () => {
+        limparErro();
+        limparConfirmacao();
+      });
+      perfil.addEventListener('change', limparConfirmacao);
+
+      form.addEventListener('submit', async (evento) => {
+        evento.preventDefault();
+        if (aguardando) return;
+        limparErro();
+        limparConfirmacao();
+        status.textContent = '';
+
+        if (!email.value.trim() || !email.validity.valid) {
+          mostrarErro(!email.value.trim()
+            ? 'Informe o e-mail da pessoa.'
+            : 'Digite um e-mail válido, como nome@example.com.');
+          email.focus();
+          return;
+        }
+
+        const convite = { email: email.value.trim(), perfil: perfil.value };
+        if (!Object.prototype.hasOwnProperty.call(nomes, convite.perfil)) return;
+        aguardando = true;
+        enviar.setAttribute('aria-disabled', 'true');
+        enviar.textContent = 'Enviando convite…';
+        status.textContent = 'Enviando convite para ' + convite.email + '. Aguarde.';
+
+        try {
+          const resultado = await window.apiConvite(convite);
+          if (resultado.status === 'existente') {
+            status.textContent = 'A pessoa com o e-mail ' + convite.email + ' já faz parte da equipe. Corrija o e-mail para convidar outra pessoa.';
+            if (email.value.trim() === convite.email) {
+              mostrarErro('Esta pessoa já faz parte da equipe. Informe outro e-mail.');
+            }
+          } else if (resultado.status === 'enviado') {
+            // patch recibo: a resposta fala do envio dela, não dos campos de agora
+            const mudou = email.value.trim() !== convite.email || perfil.value !== convite.perfil;
+            status.textContent = 'Convite enviado para ' + resultado.email + ' com o perfil ' + nomes[resultado.perfil] + '.'
+              + (mudou ? ' Os campos acima mudaram depois do envio e ainda não foram enviados.' : '');
+            confirmado = !mudou; // recibo fica até o próximo envio
+          } else {
+            throw new Error('Resposta inesperada.');
+          }
+        } catch {
+          status.textContent = 'Não foi possível enviar o convite para ' + convite.email + '. Seus campos foram preservados. Tente novamente.';
+        } finally {
+          aguardando = false;
+          enviar.setAttribute('aria-disabled', 'false');
+          enviar.textContent = 'Enviar convite';
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

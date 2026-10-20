@@ -1,0 +1,35 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Workshop TDC · Componente genérico</title><style>@font-face{font-family:Sora;src:url('assets/Sora-400.woff2')}@font-face{font-family:Sora;src:url('assets/Sora-600.woff2');font-weight:600}@font-face{font-family:Sora;src:url('assets/Sora-700.woff2');font-weight:700}
+:root{--ink:#161722;--muted:#46454d;--paper:#e8e4dc;--accent:#dc000c;--line:#b3afa8;color:var(--ink);background:#faf9f6;font-family:Sora,system-ui,sans-serif}
+*{box-sizing:border-box}body{margin:0;background:#faf9f6}
+nav{padding:20px clamp(16px,5vw,80px);border-bottom:2px solid var(--ink);display:flex;gap:20px;flex-wrap:wrap;font-size:15px}
+a{color:inherit;text-underline-offset:4px}a:hover{color:#b4000a}:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+main{max-width:900px;margin:auto;padding:40px 16px 96px}
+h1{font-size:clamp(30px,5vw,50px);line-height:1.12;letter-spacing:-.035em;margin:0 0 8px}
+h1+h2{font-size:clamp(20px,3vw,26px);font-weight:400;margin-top:0;border:0;padding:0}
+h2{font-size:26px;letter-spacing:-.02em;margin-top:56px;padding-top:20px;border-top:3px solid var(--ink)}
+h3{font-size:19px;margin-top:32px}
+p,li{font-size:16px;line-height:1.75}p{max-width:72ch}li{margin:8px 0}
+code{font-family:ui-monospace,Menlo,monospace;font-size:.92em;overflow-wrap:anywhere}
+pre{white-space:pre-wrap;margin:0;padding:20px 22px;line-height:1.6;font-size:14px}
+.code-block{position:relative;background:#efece6;border:1px solid var(--line);border-left:4px solid var(--ink);margin:20px 0}
+.copy{display:block;margin:12px 12px 0 auto;border:2px solid var(--ink);background:#fff;font:inherit;font-size:13px;font-weight:600;padding:8px 12px;cursor:pointer;min-height:40px}
+.table-wrap{overflow-x:auto;margin:20px 0}table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.55}
+th,td{border-bottom:1px solid var(--line);padding:12px 10px;text-align:left;vertical-align:top}th{background:var(--paper);font-weight:600}
+table.grid td{border:2px solid var(--ink);padding:16px 12px;width:33%;font-weight:600;background:#fff}
+footer{padding:20px 16px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;text-align:center}
+@media print{nav,.copy,footer{display:none}main{padding:0;max-width:none}h1{font-size:26px}h2{font-size:18px;margin-top:20px;break-after:avoid}h3{font-size:14px;margin-top:12px;break-after:avoid}p,li{font-size:10pt;line-height:1.45}p{margin:6px 0}li{margin:3px 0}pre{font-size:8.5pt;line-height:1.4;padding:10px 12px}.code-block{margin:10px 0;break-inside:avoid}table{font-size:9pt}th,td{padding:6px}table.grid td{padding:10px 8px}tr{break-inside:avoid}a{text-decoration:none}@page{size:A4;margin:16mm}}
+.intro p{font-size:19px}.date{font-size:15px!important;color:var(--muted)}.launch{display:flex;flex-wrap:wrap;gap:14px;margin:28px 0}.launch a{font-weight:600;padding:14px 18px;border:2px solid var(--ink);text-decoration:none;min-height:48px}.launch a.primary{background:var(--ink);color:#faf9f6}.launch a.primary:hover{color:#fff}.warn{border-left:6px solid var(--accent);background:#fff;padding:14px 18px;font-weight:600}</style></head><body><main>
+<section class="intro"><h1>Por que a IA repete o componente genérico</h1><h2>(e o que muda quando você especifica)</h2>
+<p class="date">TDC Community · TDC Talks · quarta, 21/10/2026 · 19h às 20h30 (Brasília) · Thiago Xikota</p>
+<p>Um formulário de convite, quatro apostas e um bug que ninguém pediu. Você sai com uma decisão de produto testada e pronta para virar PR.</p>
+<p class="warn">Não abra a saída A antes do começo. A primeira atividade é uma aposta.</p>
+<div class="launch"><a class="primary" href="material-participante.html">Material da prática</a><a href="material-participante.pdf">Material em PDF</a><a href="kit-participante.zip" download>Baixar o kit (ZIP)</a></div></section>
+<h2>Arquivos da prática</h2>
+<ul>
+<li><a href="demonstracao/convite-a.html">Saída A</a> e <a href="demonstracao/convite-b.html">saída B</a>: primeiras saídas guardadas, sem edição. Pedidos em <a href="demonstracao/pedido-a.txt">pedido-a.txt</a> e <a href="demonstracao/pedido-b.txt">pedido-b.txt</a>; procedência em <a href="demonstracao/LEIA-ME.md">LEIA-ME.md</a>.</li>
+<li><a href="kit-tdc/b-patch-trava.html">B com patch trava</a> e <a href="kit-tdc/b-patch-recibo.html">B com patch recibo</a>: cópias didáticas de B para testar a sua regra.</li>
+<li><a href="kit-tdc/referencia.html">Referência didática</a> e <a href="kit-tdc/base-inicial.html">base inicial</a> para gerar a sua versão, se quiser.</li>
+<li><a href="material-participante.md">Material em Markdown</a>. A apresentação acompanha a transmissão e não vem no kit, para não entregar as apostas antes da hora.</li>
+</ul>
+<p>Precisa só de navegador. Editor e IA são opcionais. Os arquivos rodam direto do disco, sem servidor, e nenhum convite real é enviado.</p>
+</main><footer>TDC Talks · 21/10/2026 · Thiago Xikota</footer></body></html>

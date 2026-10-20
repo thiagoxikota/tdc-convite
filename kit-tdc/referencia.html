@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Referência didática | Convite para equipe</title>
+  <style>
+    :root {
+      --ink: #161722;
+      --muted: #54535b;
+      --paper: #e8e4dc;
+      --surface: #ffffff;
+      --accent: #dc000c;
+      --line: #bbb8b1;
+      --radius: 8px;
+      --space: 8px;
+      --error: #b4000a;
+      color-scheme: light;
+      font-family: system-ui, sans-serif;
+      color: var(--ink);
+      background: var(--surface);
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 32px clamp(20px, 5vw, 64px); }
+    main { max-width: 640px; margin: 0; }
+    h1 { margin: 0; font-size: clamp(1.7rem, 5vw, 2.1rem); line-height: 1.2; letter-spacing: -.025em; }
+    h2 { margin: 0 0 8px; font-size: 1.4rem; line-height: 1.3; }
+    p { line-height: 1.6; }
+    .contexto { margin: 12px 0 32px; color: var(--muted); }
+    .aviso { margin: 0 0 32px; padding: 16px; border: 1px solid var(--line); border-radius: var(--radius); font-size: .9rem; color: var(--muted); }
+    .aviso strong { color: var(--ink); }
+    .ajuda { margin: 0 0 24px; color: var(--muted); }
+    .campos { display: grid; grid-template-columns: minmax(0, 1fr); gap: 24px; margin-bottom: 24px; }
+    .campo { min-width: 0; margin: 0; }
+    label { display: block; margin-bottom: 8px; font-weight: 650; }
+    input, select, button { font: inherit; }
+    input, select { display: block; width: 100%; min-width: 0; min-height: 48px; padding: 12px; border: 1px solid var(--muted); border-radius: var(--radius); background: var(--surface); color: var(--ink); }
+    input[aria-invalid="true"] { border: 2px solid var(--error); padding: 11px; }
+    .dica, .erro { margin: 8px 0 0; font-size: .95rem; line-height: 1.5; }
+    .dica { color: var(--muted); }
+    .erro { color: var(--error); font-weight: 550; }
+    button { min-height: 48px; max-width: 100%; border: 1px solid var(--ink); border-radius: var(--radius); padding: 12px 20px; background: var(--ink); color: var(--surface); font-weight: 650; cursor: pointer; }
+    button:hover { background: #30313e; }
+    button[aria-disabled="true"] { background: #54535b; border-color: #54535b; cursor: wait; }
+    input[readonly], select:disabled { opacity: 1; background: #f3f1ed; color: var(--muted); }
+    :focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+    .status { min-height: 3.5em; margin: 16px 0 0; line-height: 1.5; overflow-wrap: anywhere; }
+    .erro-envio { margin: 0; overflow-wrap: anywhere; }
+    .erro-envio:not(:empty) { margin: 12px 0 0; }
+    .laboratorio { max-width: 640px; margin-top: 32px; border-top: 1px solid var(--line); padding-top: 16px; color: var(--muted); font-size: .9rem; }
+    .laboratorio summary { color: var(--ink); cursor: pointer; padding: 8px 0; }
+    .laboratorio p, .laboratorio li { line-height: 1.6; }
+    .laboratorio ul { padding-left: 24px; }
+    .laboratorio dl { margin: 16px 0; }
+    .laboratorio dl div { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; padding: 8px 0; border-bottom: 1px solid var(--line); }
+    .laboratorio dt { font-weight: 600; }
+    .laboratorio dd { margin: 0; color: var(--ink); overflow-wrap: anywhere; }
+    code { overflow-wrap: anywhere; }
+    @media (min-width: 720px) { .campos { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); } }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Gestão de pessoas</h1>
+    <p class="contexto">Defina quem pode acessar o espaço da equipe.</p>
+    <p class="aviso"><strong>Exemplo didático preparado.</strong> Esta referência foi implementada durante a preparação do workshop. Não é uma saída das rodadas A ou B. Inclui a regra D1: editar os campos após um sucesso limpa a confirmação anterior.</p>
+
+    <section aria-labelledby="titulo-convite">
+      <h2 id="titulo-convite">Convidar uma pessoa</h2>
+      <p class="ajuda">Informe o e-mail e escolha o acesso que a pessoa terá na equipe.</p>
+
+      <form id="form-convite" novalidate>
+        <div class="campos">
+        <div class="campo">
+          <label for="email">E-mail da pessoa (obrigatório)</label>
+          <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-dica email-erro" aria-invalid="false">
+          <p id="email-dica" class="dica">No teste, use apenas os endereços fictícios indicados abaixo.</p>
+          <p id="email-erro" class="erro" role="alert" hidden></p>
+        </div>
+        <div class="campo">
+          <label for="perfil">Perfil de acesso</label>
+          <select id="perfil" name="perfil" aria-describedby="perfil-dica">
+            <option value="leitor" selected>Leitor</option>
+            <option value="editor">Editor</option>
+          </select>
+          <p id="perfil-dica" class="dica">Leitor consulta o conteúdo. Editor também pode alterá-lo.</p>
+        </div>
+        </div>
+        <button id="enviar" type="submit" aria-disabled="false">Enviar convite</button>
+        <p id="status-convite" class="status" role="status" aria-live="polite" aria-atomic="true"></p>
+        <p id="erro-envio" class="erro erro-envio" role="alert" aria-atomic="true"></p>
+      </form>
+    </section>
+
+  </main>
+    <!-- PAINEL DO LABORATÓRIO: preserve este bloco fora da interface do produto. -->
+    <aside class="laboratorio" aria-label="Instrumentação do exercício">
+      <details id="painel-laboratorio">
+        <summary>Painel do laboratório</summary>
+        <p>Registro da API simulada. Este painel não faz parte do produto e não avalia a interface.</p>
+        <dl>
+          <div><dt>Chamadas</dt><dd><output id="chamadas">0</output></dd></div>
+          <div><dt>Último e-mail</dt><dd><output id="lab-email">Nenhum</output></dd></div>
+          <div><dt>Último perfil</dt><dd><output id="lab-perfil">Nenhum</output></dd></div>
+          <div><dt>Estado da última chamada</dt><dd><output id="lab-estado">Sem chamada</output></dd></div>
+        </dl>
+        <ul>
+          <li><code>novo@example.com</code>: sucesso após 1,2 segundo.</li>
+          <li><code>existe@example.com</code>: pessoa já faz parte da equipe.</li>
+          <li><code>falha@example.com</code>: primeira tentativa falha; segunda funciona.</li>
+        </ul>
+        <p>Recarregar reinicia contagem, registro e tentativas. Nenhum convite real é enviado. A simulação não implementa servidor, autenticação ou autorização.</p>
+      </details>
+    </aside>
+  <script>
+    // API SIMULADA: preserve este bloco nas duas gerações.
+    // Não há rede, persistência, autorização de servidor ou envio real.
+    (() => {
+      const tentativas = new Map();
+      window.chamadasConvite = 0;
+      window.registroConvites = [];
+
+      function atualizarPainel() {
+        const ultimo = window.registroConvites[window.registroConvites.length - 1];
+        const valores = {
+          chamadas: window.chamadasConvite,
+          'lab-email': ultimo ? ultimo.email : 'Nenhum',
+          'lab-perfil': ultimo ? ultimo.perfil : 'Nenhum',
+          'lab-estado': ultimo ? ultimo.estado : 'Sem chamada'
+        };
+        for (const [id, valor] of Object.entries(valores)) {
+          const campo = document.getElementById(id);
+          if (campo) campo.textContent = String(valor);
+        }
+      }
+
+      window.apiConvite = async ({ email, perfil }) => {
+        window.chamadasConvite += 1;
+        const registro = { id: window.chamadasConvite, email, perfil, estado: 'pendente' };
+        window.registroConvites.push(registro);
+        atualizarPainel();
+
+        const chave = String(email).trim().toLowerCase();
+        const tentativa = (tentativas.get(chave) || 0) + 1;
+        tentativas.set(chave, tentativa);
+        await new Promise((resolve) => setTimeout(resolve, 1200));
+
+        if (chave === 'existe@example.com') {
+          registro.estado = 'existente';
+          atualizarPainel();
+          return { status: 'existente', email, perfil };
+        }
+        if (chave === 'falha@example.com' && tentativa === 1) {
+          registro.estado = 'falha';
+          atualizarPainel();
+          throw new Error('Falha temporária simulada.');
+        }
+        registro.estado = 'enviado';
+        atualizarPainel();
+        return { status: 'enviado', email, perfil };
+      };
+    })();
+  </script>
+  <script>
+    (() => {
+      const form = document.getElementById('form-convite');
+      const emailInput = document.getElementById('email');
+      const perfilInput = document.getElementById('perfil');
+      const enviar = document.getElementById('enviar');
+      const emailErro = document.getElementById('email-erro');
+      const status = document.getElementById('status-convite');
+      const erroEnvio = document.getElementById('erro-envio');
+      let enviando = false;
+      let sucessoAtivo = false;
+
+      function limparErroEmail() {
+        emailInput.setAttribute('aria-invalid', 'false');
+        emailErro.textContent = '';
+        emailErro.hidden = true;
+      }
+
+      function mostrarErroEmail(mensagem, focar = true) {
+        emailErro.textContent = mensagem;
+        emailErro.hidden = false;
+        emailInput.setAttribute('aria-invalid', 'true');
+        if (focar) emailInput.focus();
+      }
+
+      function definirEspera(espera) {
+        enviando = espera;
+        emailInput.readOnly = espera;
+        perfilInput.disabled = espera;
+        enviar.setAttribute('aria-disabled', String(espera));
+        enviar.textContent = espera ? 'Enviando...' : 'Enviar convite';
+      }
+
+      // D1: uma confirmação pertence ao envio anterior, não à próxima edição.
+      function limparConfirmacaoAnterior() {
+        if (sucessoAtivo) {
+          status.textContent = '';
+          sucessoAtivo = false;
+        }
+      }
+      emailInput.addEventListener('input', () => {
+        limparErroEmail();
+        limparConfirmacaoAnterior();
+      });
+      perfilInput.addEventListener('change', limparConfirmacaoAnterior);
+
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        if (enviando) return;
+
+        limparErroEmail();
+        erroEnvio.textContent = '';
+        status.textContent = '';
+        sucessoAtivo = false;
+        const email = emailInput.value.trim();
+        const perfil = perfilInput.value;
+
+        if (!email) {
+          mostrarErroEmail('Informe o e-mail da pessoa.');
+          return;
+        }
+        if (!emailInput.validity.valid) {
+          mostrarErroEmail('Use um e-mail válido, como novo@example.com.');
+          return;
+        }
+        if (!['leitor', 'editor'].includes(perfil)) {
+          erroEnvio.textContent = 'Escolha o perfil Leitor ou Editor.';
+          perfilInput.focus();
+          return;
+        }
+
+        // O payload é uma cópia do estado no momento do envio.
+        // A confirmação não lê campos que possam ter mudado depois.
+        const payload = { email, perfil };
+        definirEspera(true);
+        status.textContent = 'Enviando convite. Aguarde...';
+        let pessoaExistente = false;
+
+        try {
+          const resposta = await window.apiConvite(payload);
+          if (resposta.status === 'existente') {
+            status.textContent = '';
+            pessoaExistente = true;
+          } else {
+            const nomePerfil = payload.perfil === 'leitor' ? 'Leitor' : 'Editor';
+            sucessoAtivo = true;
+            status.textContent = `Convite simulado enviado para ${payload.email}, com perfil ${nomePerfil}.`;
+          }
+        } catch (error) {
+          status.textContent = '';
+          erroEnvio.textContent = 'Não foi possível enviar o convite. Seus dados foram mantidos. Tente enviar novamente.';
+        } finally {
+          definirEspera(false);
+          if (pessoaExistente) {
+            // Erro remoto anuncia o estado, sem mover o foco de quem saiu do formulário.
+            mostrarErroEmail('Essa pessoa já faz parte da equipe. Confira ou altere o e-mail.', false);
+          }
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,224 @@
+{
+  "data": "2026-10-19T19:20:22.003Z",
+  "ferramenta": "Codex, sessões independentes /root/geracao_a e /root/geracao_b, sem histórico compartilhado",
+  "modelo": "não informado pela ferramenta; configuração herdada sem override",
+  "base_sha256": "87e2bd4c7493ad02703a17a7d93cf0db961064c667f9f68e930159505825ed64",
+  "blocos_comuns": {
+    "base": {
+      "api": true,
+      "aside": true
+    },
+    "referencia": {
+      "api": true,
+      "aside": true
+    },
+    "A": {
+      "api": true,
+      "aside": true
+    },
+    "B": {
+      "api": true,
+      "aside": true
+    }
+  },
+  "hashes": {
+    "base": {
+      "file": "87e2bd4c7493ad02703a17a7d93cf0db961064c667f9f68e930159505825ed64",
+      "apiScript": "b6da5891ea6511c79dbfbf4c5a830db0c6d9407c6abf016ac6080f0dd80cec11",
+      "asidePanel": "083d45d4cf2c9ab2be2d0daf57e4864fa58fcb43ea33b3edd0fa4dd6994379fc"
+    },
+    "referencia": {
+      "file": "d0a9482a104be3fa3e8733596ce5abef53357c9eff5450b2a2279b2f9b701e57",
+      "apiScript": "b6da5891ea6511c79dbfbf4c5a830db0c6d9407c6abf016ac6080f0dd80cec11",
+      "asidePanel": "083d45d4cf2c9ab2be2d0daf57e4864fa58fcb43ea33b3edd0fa4dd6994379fc"
+    },
+    "A": {
+      "file": "4dbcec3aac7de1d58b964d0e61a3a521b970c55a44db31280f0454e9ae4fd06d",
+      "apiScript": "b6da5891ea6511c79dbfbf4c5a830db0c6d9407c6abf016ac6080f0dd80cec11",
+      "asidePanel": "083d45d4cf2c9ab2be2d0daf57e4864fa58fcb43ea33b3edd0fa4dd6994379fc"
+    },
+    "B": {
+      "file": "931571a1406ef704385f4aa8d9b3255fd87a7eb7381feb9e97de13dd5d8a5e4b",
+      "apiScript": "b6da5891ea6511c79dbfbf4c5a830db0c6d9407c6abf016ac6080f0dd80cec11",
+      "asidePanel": "083d45d4cf2c9ab2be2d0daf57e4864fa58fcb43ea33b3edd0fa4dd6994379fc"
+    }
+  },
+  "resultados": {
+    "A": {
+      "C3": true,
+      "C6": true,
+      "C4": {
+        "expected": {
+          "email": "novo@example.com",
+          "perfil": "membro"
+        },
+        "editorOptionAvailable": false,
+        "received": {
+          "id": 1,
+          "email": "novo@example.com",
+          "perfil": "membro",
+          "estado": "enviado"
+        },
+        "payloadCorrect": true,
+        "confirmationIncludesEmail": true,
+        "confirmationIncludesProfile": false,
+        "note": "A offers Membro/Administrador; Editor cannot be selected without mutating the artifact. Coherence tested with its available default; this is not the identical-profile variant of C4."
+      },
+      "D1": {
+        "pass": null,
+        "note": null
+      },
+      "estrutura": {
+        "320": {
+          "overflow": false,
+          "mesma_linha": false,
+          "proporcao": 1,
+          "main_x": 16,
+          "titulo": "Trabalhar junto começa aqui."
+        },
+        "719": {
+          "overflow": false,
+          "mesma_linha": false,
+          "proporcao": 1,
+          "main_x": 79.5,
+          "titulo": "Trabalhar junto começa aqui."
+        },
+        "720": {
+          "overflow": false,
+          "mesma_linha": false,
+          "proporcao": 1,
+          "main_x": 80,
+          "titulo": "Trabalhar junto começa aqui."
+        },
+        "1280": {
+          "overflow": false,
+          "mesma_linha": false,
+          "proporcao": 1,
+          "main_x": 360,
+          "titulo": "Trabalhar junto começa aqui."
+        }
+      },
+      "erros_js": [],
+      "requisicoes_externas": []
+    },
+    "B": {
+      "C3": true,
+      "C6": true,
+      "C4": {
+        "expected": {
+          "email": "novo@example.com",
+          "perfil": "editor"
+        },
+        "editorOptionAvailable": true,
+        "received": {
+          "id": 1,
+          "email": "novo@example.com",
+          "perfil": "editor",
+          "estado": "enviado"
+        },
+        "payloadCorrect": true,
+        "confirmationIncludesEmail": true,
+        "confirmationIncludesProfile": true,
+        "note": "Editor tested."
+      },
+      "D1": {
+        "pass": true,
+        "note": "Clears old success on editing; sent payload remains Editor in registry."
+      },
+      "estrutura": {
+        "320": {
+          "overflow": false,
+          "mesma_linha": false,
+          "proporcao": 1,
+          "main_x": 16,
+          "titulo": "Gestão de pessoas"
+        },
+        "719": {
+          "overflow": false,
+          "mesma_linha": false,
+          "proporcao": 1,
+          "main_x": 20,
+          "titulo": "Gestão de pessoas"
+        },
+        "720": {
+          "overflow": false,
+          "mesma_linha": true,
+          "proporcao": 2,
+          "main_x": 20,
+          "titulo": "Gestão de pessoas"
+        },
+        "1280": {
+          "overflow": false,
+          "mesma_linha": true,
+          "proporcao": 2,
+          "main_x": 20,
+          "titulo": "Gestão de pessoas"
+        }
+      },
+      "erros_js": [],
+      "requisicoes_externas": []
+    },
+    "referencia": {
+      "C3": true,
+      "C6": true,
+      "C4": {
+        "expected": {
+          "email": "novo@example.com",
+          "perfil": "editor"
+        },
+        "editorOptionAvailable": true,
+        "received": {
+          "id": 1,
+          "email": "novo@example.com",
+          "perfil": "editor",
+          "estado": "enviado"
+        },
+        "payloadCorrect": true,
+        "confirmationIncludesEmail": true,
+        "confirmationIncludesProfile": true,
+        "note": "Editor tested."
+      },
+      "D1": {
+        "pass": true,
+        "note": "Clears old success on editing; sent payload remains Editor in registry."
+      },
+      "estrutura": {
+        "320": {
+          "overflow": false,
+          "mesma_linha": false,
+          "proporcao": 1,
+          "main_x": 20,
+          "titulo": "Gestão de pessoas"
+        },
+        "719": {
+          "overflow": false,
+          "mesma_linha": false,
+          "proporcao": 1,
+          "main_x": 35.9375,
+          "titulo": "Gestão de pessoas"
+        },
+        "720": {
+          "overflow": false,
+          "mesma_linha": true,
+          "proporcao": 2,
+          "main_x": 36,
+          "titulo": "Gestão de pessoas"
+        },
+        "1280": {
+          "overflow": false,
+          "mesma_linha": true,
+          "proporcao": 2,
+          "main_x": 64,
+          "titulo": "Gestão de pessoas"
+        }
+      },
+      "erros_js": [],
+      "requisicoes_externas": []
+    }
+  },
+  "limitacoes": [
+    "Native browser zoom 200% not tested",
+    "Screen reader announcements not tested",
+    "Geometry observations complement manual screenshot review; not a complete accessibility audit"
+  ]
+}

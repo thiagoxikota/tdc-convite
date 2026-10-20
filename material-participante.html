@@ -1,0 +1,125 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Material do participante · TDC</title><style>@font-face{font-family:Sora;src:url('assets/Sora-400.woff2')}@font-face{font-family:Sora;src:url('assets/Sora-600.woff2');font-weight:600}@font-face{font-family:Sora;src:url('assets/Sora-700.woff2');font-weight:700}
+:root{--ink:#161722;--muted:#46454d;--paper:#e8e4dc;--accent:#dc000c;--line:#b3afa8;color:var(--ink);background:#faf9f6;font-family:Sora,system-ui,sans-serif}
+*{box-sizing:border-box}body{margin:0;background:#faf9f6}
+nav{padding:20px clamp(16px,5vw,80px);border-bottom:2px solid var(--ink);display:flex;gap:20px;flex-wrap:wrap;font-size:15px}
+a{color:inherit;text-underline-offset:4px}a:hover{color:#b4000a}:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+main{max-width:900px;margin:auto;padding:40px 16px 96px}
+h1{font-size:clamp(30px,5vw,50px);line-height:1.12;letter-spacing:-.035em;margin:0 0 8px}
+h1+h2{font-size:clamp(20px,3vw,26px);font-weight:400;margin-top:0;border:0;padding:0}
+h2{font-size:26px;letter-spacing:-.02em;margin-top:56px;padding-top:20px;border-top:3px solid var(--ink)}
+h3{font-size:19px;margin-top:32px}
+p,li{font-size:16px;line-height:1.75}p{max-width:72ch}li{margin:8px 0}
+code{font-family:ui-monospace,Menlo,monospace;font-size:.92em;overflow-wrap:anywhere}
+pre{white-space:pre-wrap;margin:0;padding:20px 22px;line-height:1.6;font-size:14px}
+.code-block{position:relative;background:#efece6;border:1px solid var(--line);border-left:4px solid var(--ink);margin:20px 0}
+.copy{display:block;margin:12px 12px 0 auto;border:2px solid var(--ink);background:#fff;font:inherit;font-size:13px;font-weight:600;padding:8px 12px;cursor:pointer;min-height:40px}
+.table-wrap{overflow-x:auto;margin:20px 0}table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.55}
+th,td{border-bottom:1px solid var(--line);padding:12px 10px;text-align:left;vertical-align:top}th{background:var(--paper);font-weight:600}
+table.grid td{border:2px solid var(--ink);padding:16px 12px;width:33%;font-weight:600;background:#fff}
+footer{padding:20px 16px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;text-align:center}
+@media print{nav,.copy,footer{display:none}main{padding:0;max-width:none}h1{font-size:26px}h2{font-size:18px;margin-top:20px;break-after:avoid}h3{font-size:14px;margin-top:12px;break-after:avoid}p,li{font-size:10pt;line-height:1.45}p{margin:6px 0}li{margin:3px 0}pre{font-size:8.5pt;line-height:1.4;padding:10px 12px}.code-block{margin:10px 0;break-inside:avoid}table{font-size:9pt}th,td{padding:6px}table.grid td{padding:10px 8px}tr{break-inside:avoid}a{text-decoration:none}@page{size:A4;margin:16mm}}
+</style></head><body><nav aria-label="Materiais"><a href="index.html">Início</a><a href="demonstracao/convite-a.html">Saída A</a><a href="demonstracao/convite-b.html">Saída B</a></nav><main><h1>Por que a IA repete o componente genérico</h1>
+<h2>(e o que muda quando você especifica)</h2>
+<p>TDC Community · TDC Talks · quarta, 21/10/2026 · 19h às 20h30 (Brasília) · Thiago Xikota</p>
+<p>Hoje você vai apostar, testar e sair com uma decisão pronta para um PR. Precisa só de navegador. Editor de código e ferramenta de IA são opcionais. Nenhum convite real é enviado.</p>
+<h2>Antes de começar</h2>
+<ol>
+<li>Abra <strong>thiagoxikota.github.io/tdc-convite</strong> no navegador. Sem internet, extraia o <code>kit-participante.zip</code> e abra <code>index.html</code>.</li>
+<li><strong>Não abra a saída A ainda.</strong> A primeira atividade é uma aposta.</li>
+<li>Se algum arquivo não abrir, acompanhe pela tela do facilitador. Todas as atividades funcionam assim.</li>
+</ol>
+<h2>Aposta 1: bingo do componente genérico</h2>
+<p>O pedido A, na parte de produto, era só isto: <em>"Crie um componente moderno e responsivo para convidar uma pessoa para uma equipe."</em> Marque o que você acha que veio. Três das doze casas são armadilhas: não vieram.</p>
+<div class="table-wrap"><table class="grid"><tbody><tr><td>☐ Sobretítulo em caixa alta</td><td>☐ Campo de mensagem pessoal</td><td>☐ Título motivacional</td><td>☐ Frase de efeito no card</td></tr><tr><td>☐ Card no centro, com sombra</td><td>☐ Foto ou avatar da pessoa</td><td>☐ Ícone num quadradinho</td><td>☐ Botão de largura total</td></tr><tr><td>☐ Setinha no botão</td><td>☐ Link de convite para copiar</td><td>☐ Tela de sucesso com check</td><td>☐ Membro / Administrador</td></tr></tbody></table></div>
+<p>Casas marcadas: ____ de 12.</p>
+<h2>Aposta 2: quantos testes A passa?</h2>
+<p>Chute antes: 0, 1, 2 ou 3. Meu chute: ____</p>
+<p>Abra <code>demonstracao/convite-a.html</code>. O <strong>Painel do laboratório</strong>, embaixo do formulário, mostra quantas chamadas a API recebeu, o último e-mail, o perfil e o estado. Recarregue a página antes de cada teste.</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Teste</th><th scope="col">Faça</th><th scope="col">Passa?</th></tr></thead><tbody><tr><td><strong>C10</strong> contexto</td><td>Olhe a página. Ela cabe dentro de uma gestão de pessoas que já existe?</td><td></td></tr><tr><td><strong>C3</strong> espera</td><td>Envie <code>novo@example.com</code> e, durante 1,2 s, aperte Enter e clique de novo. Painel: quantas chamadas?</td><td></td></tr><tr><td><strong>C6</strong> falha</td><td>Envie <code>falha@example.com</code>. Sem recarregar, envie de novo.</td><td></td></tr></tbody></table></div>
+<p>Anote uma decisão que A tomou sem ninguém pedir: ______________________________</p>
+<h2>A saída B e a decisão D1</h2>
+<p>O pedido B (<code>demonstracao/pedido-b.txt</code>) traz contexto, perfis Leitor e Editor, dez critérios e uma decisão de produto, D1: <em>depois do sucesso, editar e-mail ou perfil limpa a confirmação anterior.</em> Abra <code>demonstracao/convite-b.html</code>.</p>
+<p>Teste D1: envie <code>ana@example.com</code>, espere a confirmação e comece a apagar o e-mail. A frase sumiu? ____</p>
+<h2>Aposta 3: a janela</h2>
+<p>Envie <code>ana@example.com</code> com Leitor e, <strong>durante a espera</strong>, troque o perfil para Editor. O que aparece?</p>
+<p>A. A confirmação nem aparece · B. Aparece "perfil Editor" · C. Aparece "perfil Leitor" com o select em Editor · D. Dá erro</p>
+<p>Minha letra: ____ O que aconteceu: ______________________________</p>
+<p>Faça o mesmo em A. O que muda? ______________________________</p>
+<h2>Prática: dê um dono à janela (14 min)</h2>
+<p>Duas regras legítimas. Você pode propor uma terceira, desde que diga o custo.</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Regra</th><th scope="col">O que faz</th><th scope="col">Custo</th></tr></thead><tbody><tr><td><strong>Travar</strong></td><td>Campos travados enquanto o convite está a caminho.</td><td>Quem errou uma letra espera a resposta. Em 1,2 s, nada; numa espera de 40 s, irrita.</td></tr><tr><td><strong>Recibo</strong></td><td>Deixa editar. A resposta diz de quem ela é e avisa que os campos mudaram.</td><td>Mais estado no componente e uma frase mais longa para ler.</td></tr></tbody></table></div>
+<h3>Seu cartão D1 (5 min)</h3>
+<div class="code-block"><button class="copy" type="button">Copiar</button><pre><code>Quando:      a pessoa muda e-mail ou perfil com o convite a caminho
+A interface: [o que a tela faz]
+Custo que aceito: [o que perdemos com essa regra]
+Teste:       [passos e resultado esperado]
+             em B: falha · no patch da minha regra: passa</code></pre></div>
+<h3>Rode o seu teste (8 min)</h3>
+<div class="table-wrap"><table><thead><tr><th scope="col">Arquivo</th><th scope="col">O que esperar</th><th scope="col">Resultado</th></tr></thead><tbody><tr><td><code>demonstracao/convite-b.html</code></td><td>Falha: a tela fica ambígua</td><td></td></tr><tr><td><code>kit-tdc/b-patch-trava.html</code></td><td>Passa se você escolheu travar</td><td></td></tr><tr><td><code>kit-tdc/b-patch-recibo.html</code></td><td>Passa se você escolheu recibo</td><td></td></tr></tbody></table></div>
+<p>Escolheu outra regra? Confirme que B falha e escreva o resultado esperado. Esse teste vira o seu PR.</p>
+<p><strong>Com IA (opcional):</strong> cole seu cartão no fim de <code>demonstracao/pedido-b.txt</code>, use conversa nova e espere no máximo 4 minutos. Salve a primeira saída como <code>meu-convite.html</code>, registre a ferramenta e rode o mesmo teste. Se a IA alterar a API simulada ou o painel, o resultado não é comparável: volte para os patches.</p>
+<h2>O código: onde a regra mora</h2>
+<p>Trecho real de <code>demonstracao/convite-b.html</code>, linhas 216 a 231, com o meio resumido:</p>
+<div class="code-block"><button class="copy" type="button">Copiar</button><pre><code>const convite = { email: email.value.trim(), perfil: perfil.value };
+aguardando = true;   // botão bloqueado, campos livres
+const resultado = await window.apiConvite(convite);
+// ... 1,2 s em que a pessoa pode mexer em tudo ...
+status.textContent = 'Convite enviado para ' + resultado.email
+  + ' com o perfil ' + nomes[resultado.perfil] + '.';</code></pre></div>
+<p>O payload é uma cópia do momento do envio, e isso está certo. A tela continua viva. O furo mora no intervalo.</p>
+<p>Patch <strong>trava</strong> (<code>kit-tdc/b-patch-trava.html</code>):</p>
+<div class="code-block"><button class="copy" type="button">Copiar</button><pre><code>aguardando = true;
+email.readOnly = true;
+perfil.disabled = true;
+// no finally: readOnly e disabled voltam para false</code></pre></div>
+<p>Patch <strong>recibo</strong> (<code>kit-tdc/b-patch-recibo.html</code>):</p>
+<div class="code-block"><button class="copy" type="button">Copiar</button><pre><code>const mudou = email.value.trim() !== convite.email || perfil.value !== convite.perfil;
+status.textContent = 'Convite enviado para ' + resultado.email + ' com o perfil ' + nomes[resultado.perfil] + '.'
+  + (mudou ? ' Os campos acima mudaram depois do envio e ainda não foram enviados.' : '');
+confirmado = !mudou; // recibo fica até o próximo envio</code></pre></div>
+<h2>Aposta 4: a busca</h2>
+<div class="code-block"><button class="copy" type="button">Copiar</button><pre><code>busca.addEventListener('input', async () =&gt; {
+  const termo = busca.value;
+  const pessoas = await buscarPessoas(termo);
+  lista.render(pessoas, termo);
+});</code></pre></div>
+<p>A equipe tem Ana, Anderson e Luana. Você digita "an" e depois "ana". A rede responde "an" em 900 ms e "ana" em 200 ms. O que fica na tela no fim?</p>
+<p>______________________________</p>
+<p>Qual regra você usaria aqui? ☐ trava ☐ recibo ☐ descarta a resposta velha ☐ outra: ________</p>
+<p>Por quê? ______________________________</p>
+<h2>Seu PR</h2>
+<div class="code-block"><button class="copy" type="button">Copiar</button><pre><code>Título:  Convite: resposta fala do envio dela
+Janela:  durante a espera de apiConvite
+Regra:   [do cartão D1]
+Custo:   [do cartão D1]
+Teste:   envia ana@example.com como Leitor, troca para Editor na espera
+         → [resultado esperado]
+Hoje:    falha em convite-b.html</code></pre></div>
+<p>No seu repo, troque os arquivos e funções pelos reais. A linha "Hoje" é a mais forte: um teste que falha agora, com passo a passo.</p>
+<h2>Três perguntas para o próximo PR</h2>
+<ol>
+<li>Quais janelas esse componente tem (antes, durante, depois), e quem decidiu cada uma?</li>
+<li>Essa resposta é de leitura ou de escrita?</li>
+<li>Que teste falha se alguém mudar a regra?</li>
+</ol>
+<h2>Depois da aula: respostas e limites</h2>
+<p>Não leia esta parte antes da sessão.</p>
+<p><strong>Bingo.</strong> As armadilhas são mensagem pessoal, avatar e link de convite: A não tem nenhuma. A tem as outras nove: "SUA EQUIPE" em caixa alta, "Trabalhar junto começa aqui.", "Um novo convite, novas possibilidades.", card centralizado com sombra, ícone, botão de largura total com seta, tela de sucesso com check e Membro/Administrador.</p>
+<p><strong>Aposta 2.</strong> A passa C3 e C6. Não atende C10, mas esse critério depende de um contexto (gestão de pessoas) que só o pedido B trouxe. Não é descumprimento de A.</p>
+<p><strong>Aposta 3.</strong> Letra C em B. A trava os campos durante a espera e não tem a ambiguidade; em compensação, puxa o foco para o título de sucesso mesmo quando você já saiu do formulário. B cumpre D1 como foi escrita: o texto falava de "depois do sucesso" e não do intervalo. A janela recria a confusão que motivou D1, num momento que D1 não cobria.</p>
+<p><strong>Aposta 4.</strong> A caixa diz "ana" e a lista mostra Ana, Anderson e Luana, porque a resposta de "an" chegou por último. Travar a busca ou mostrar recibo não faz sentido. Busca é leitura: resposta velha normalmente se descarta, com contador, <code>AbortController</code> (passando o <code>signal</code> para o <code>fetch</code>) ou o equivalente do seu framework. Em React, o mesmo vale para um <code>fetch</code> dentro de <code>useEffect</code>: use cleanup ou a identidade da requisição.</p>
+<div class="code-block"><button class="copy" type="button">Copiar</button><pre><code>let ultimo = 0;
+busca.addEventListener('input', async () =&gt; {
+  const meu = ++ultimo;
+  const termo = busca.value;
+  const pessoas = await buscarPessoas(termo);
+  if (meu !== ultimo) return; // leitura velha: descarta
+  lista.render(pessoas, termo);
+});</code></pre></div>
+<p>Convite é escrita: o convite da Ana existe, e ignorar a resposta não desfaz o envio. A interface precisa mostrar o que foi feito (trava, recibo) ou reconciliar com o servidor, nunca jogar fora. A regra curta: <strong>leitura velha se descarta; escrita feita se mostra ou se reconcilia.</strong></p>
+<p><strong>De onde vêm A e B.</strong> Duas sessões separadas do Codex em 19/10/2026, uma geração por condição, mesma base, primeira saída guardada sem edição. O modelo não foi informado pela ferramenta. Pedidos integrais e registro em <code>demonstracao/</code>. Um par de saídas não mede com que frequência isso acontece; a evidência de repetição usada na aula é a previsão da própria sala.</p>
+<p><strong>O que os patches e a referência são.</strong> <code>kit-tdc/b-patch-trava.html</code> e <code>kit-tdc/b-patch-recibo.html</code> são cópias de B com patches escritos à mão para a aula, rotulados na própria página. <code>kit-tdc/referencia.html</code> é uma implementação didática completa. Nenhum deles é saída gerada.</p>
+<p><strong>O que o laboratório não prova.</strong> A API simulada (<code>window.apiConvite</code>, 1,2 s de espera) não tem rede, servidor nem autorização: aceita o perfil que recebe. Bloquear o botão não protege contra recarga ou resposta perdida; isso pede um contrato com o backend, como uma chave de idempotência. <code>falha@example.com</code> simula só uma falha conhecida. Leitor de tela e zoom nativo não foram testados.</p>
+<h3>Os dez critérios do pedido B, para consulta</h3>
+<div class="table-wrap"><table><thead><tr><th scope="col">ID</th><th scope="col">Critério</th></tr></thead><tbody><tr><td>C1</td><td>E-mail vazio ou inválido não chama a API; erro junto ao campo e foco nele.</td></tr><tr><td>C2</td><td>Leitor por padrão; só Leitor e Editor.</td></tr><tr><td>C3</td><td>Andamento visível na espera e nenhuma chamada duplicada.</td></tr><tr><td>C4</td><td>Confirmação mostra e-mail e perfil enviados.</td></tr><tr><td>C5</td><td><code>existe@example.com</code> explica que a pessoa já está na equipe e preserva os campos.</td></tr><tr><td>C6</td><td>Falha preserva campos; nova tentativa funciona.</td></tr><tr><td>C7</td><td>Teclado opera tudo, com foco visível; resposta não rouba o foco de quem saiu.</td></tr><tr><td>C8</td><td>Labels, erro associado, <code>aria-invalid</code>, região de status.</td></tr><tr><td>C9</td><td>Sem corte em 320 px e zoom de 200%.</td></tr><tr><td>C10</td><td>Bloco integrado à gestão de pessoas, tokens existentes, sem hero, sidebar ou avatar.</td></tr></tbody></table></div>
+<p>Fontes: <a href="https://www.w3.org/WAI/WCAG22/Understanding/keyboard.html">WCAG 2.2, teclado</a> · <a href="https://www.w3.org/WAI/tutorials/forms/notifications/">W3C WAI, notificações de formulário</a> · <a href="https://www.rfc-editor.org/rfc/rfc9110.html#name-idempotent-methods">RFC 9110, métodos idempotentes</a> · <a href="https://developer.mozilla.org/pt-BR/docs/Web/API/AbortController">MDN, AbortController</a></p></main><footer>TDC Talks · 21/10/2026 · Thiago Xikota</footer><script>document.querySelectorAll('.copy').forEach(b=>b.addEventListener('click',async()=>{const c=b.parentElement.querySelector('code');try{await navigator.clipboard.writeText(c.textContent);b.textContent='Copiado'}catch{const r=document.createRange();r.selectNodeContents(c);const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selecionado: Ctrl/Cmd+C'}setTimeout(()=>b.textContent='Copiar',3000)}));</script></body></html>
