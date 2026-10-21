@@ -23,7 +23,7 @@ O pedido A, na parte de produto, era só isto: *"Crie um componente moderno e re
 |---|---|---|---|
 | ☐ Sobretítulo em caixa alta | ☐ Gradiente roxo | ☐ Título motivacional | ☐ Frase de efeito no card |
 | ☐ Card no centro, com sombra | ☐ Emoji no título | ☐ Ícone num quadradinho | ☐ Botão de largura total |
-| ☐ Setinha no botão | ☐ Confete no sucesso | ☐ Tela de sucesso com check | ☐ Membro / Administrador |
+| ☐ Setinha no botão | ☐ Confete no sucesso | ☐ Tela de sucesso com check | ☐ Select de perfil inventado |
 
 Marquei **9 de 12**. Depois da revelação: caí em ____ armadilha(s). Acertei **9 menos esse número**: ____ de 9. No chat, envie só esse total de acertos, ao sinal do facilitador.
 

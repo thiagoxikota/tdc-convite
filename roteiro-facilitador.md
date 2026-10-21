@@ -45,7 +45,7 @@ Abra com a costura do título, sem um bloco novo de teoria. Diga: “Moderno e r
 
 Na aposta, cada pessoa escolhe exatamente nove das doze casas e guarda a escolha. Não peça a transcrição das nove no chat. Depois da revelação, conta quantas armadilhas marcou. Acertos são nove menos esse número; peça só esse total ao sinal. Não use “sete ou mais” como evidência de previsibilidade nem infira que o treino do modelo explica o resultado. O placar serve à brincadeira.
 
-Mostre a cartela revelada, os recortes de perfil e botão e o estado de sucesso de A. Abra o select para confirmar Membro e Administrador. Leia o título e o slogan ampliados no slide; um estado só não mostra todas as casas. A frase “Pedi um formulário. Veio um discurso de boas-vindas” cabe depois de a sala ler o título e o slogan. Se não houver reação, siga sem explicar a piada.
+Mostre a cartela revelada, os recortes de perfil e botão e o estado de sucesso de A. Abra o select para mostrar o perfil inventado: Membro e Administrador, que o pedido A não pediu. Leia o título e o slogan ampliados no slide; um estado só não mostra todas as casas. A frase “Pedi um formulário. Veio um discurso de boas-vindas” cabe depois de a sala ler o título e o slogan. Se não houver reação, siga sem explicar a piada.
 
 Faça a ponte: o pedido deixou decisões visuais abertas; vamos procurar uma decisão de comportamento que também ficou aberta. A fonte do contexto, num produto real, é o repositório, o design system, os contratos de API e o que a equipe já decidiu. No refinamento, produto e engenharia enfrentam as lacunas. O HTML isolado só deixa esses estados visíveis na bancada da aula; a decisão vai para a stack do produto.
 
