@@ -4,7 +4,9 @@
 
 TDC Community · TDC Talks · quarta, 21/10/2026 · 19h às 20h30 (Brasília) · Thiago Xikota
 
-Um formulário de convite, quatro apostas e uma decisão que ficou em aberto. Você sai com uma regra de produto, um custo assumido e um teste para levar ao próximo PR. Precisa só de navegador. Editor de código e ferramenta de IA são opcionais. Nenhum convite real é enviado.
+“Moderno e responsivo” descreve qualidades, mas não distingue as alternativas que servem ao nosso produto. Neste exemplo, vamos observar quais escolhas a IA completou e o que muda quando a equipe fornece contexto, restrições e uma regra verificável.
+
+Um formulário de convite, quatro apostas e uma decisão que ficou em aberto. Você sai com uma regra de produto, um custo assumido e um teste para levar ao próximo refinamento ou PR. Precisa só de navegador. Editor de código e ferramenta de IA são opcionais. Nenhum convite real é enviado.
 
 ## Antes de começar
 
@@ -41,6 +43,10 @@ Abra `demonstracao/convite-a.html`. O **Painel do laboratório**, embaixo do for
 
 Anote uma decisão que A tomou sem ninguém pedir: ______________________________
 
+No trabalho, esse contexto vem do repositório, do design system, dos contratos de API e de decisões anteriores da equipe. O refinamento decide o que ainda ficou aberto. Aqui, o HTML isolado é uma bancada para deixar os estados visíveis; você leva a decisão para a stack do seu produto.
+
+Quem atua em produto pode explicitar intenção, regra, custo e resultado. Quem desenvolve pode confrontá-los com os estados, contratos e código. Os dois lados desafiam e testam as decisões; qualquer pessoa participa sem precisar implementar.
+
 O pedido deixou decisões visuais abertas. Agora vamos procurar uma decisão de comportamento que também ficou aberta.
 
 ## A saída B e a decisão D1
@@ -70,13 +76,12 @@ Trabalhe em dupla, se houver esse espaço. Na transmissão, escreva primeiro o s
 ### 1. Escreva seu cartão (5 min)
 
 ```text
-Título:   [a mudança ou a regra que quero preservar]
-Janela:   altero e-mail ou perfil durante o envio
-Regra:    [o que a pessoa deve ver ou conseguir fazer]
-Custo:    [o que essa regra dificulta ou exige]
-Teste:    [passos] → [resultado observável]
-Em B:     [observado] / [atende ou não à minha regra]
-Revisão:  [o que mudei depois do contraexemplo]
+Contexto: [de onde vem a regra?]
+Regra:    [o que aparece e o que fica editável?]
+Custo:    [o que perdemos com essa escolha?]
+Teste:    [passos] → [resultado esperado]
+Em B:     [passa ou falha na regra escrita?]
+Revisão:  [o que mudou após o contraexemplo?]
 ```
 
 Escreva um resultado que outra pessoa consiga verificar. "Não fica confuso" ainda não diz o que testar. Nomeie o e-mail e o perfil do envio, os valores atuais dos campos e o que a confirmação deve dizer.
@@ -107,7 +112,7 @@ Quando o facilitador liberar, abra [as implementações de comparação](respost
 
 ### 4. Revise e defenda (2 min)
 
-Complete a última linha do cartão. Prepare uma defesa de trinta segundos: o que sua regra garante e qual custo você aceita. O outro grupo pode pedir um contraexemplo. O cartão já contém o contexto, a decisão e a verificação para um PR.
+Complete a última linha do cartão. Prepare uma defesa de trinta segundos: o que sua regra garante e qual custo você aceita. O outro grupo pode pedir um contraexemplo. O cartão já contém o contexto, a decisão e a verificação para um refinamento ou PR.
 
 ## Aposta 4: a busca
 
@@ -137,15 +142,27 @@ O que ela mostra? Como consulta o resultado? Em que condição repetir o envio �
 
 Diga qual parte dessa decisão depende do backend: ______________________________
 
-## Três perguntas para o próximo PR
+## No próximo refinamento ou PR
 
-1. Que transição ficou aberta e qual regra queremos?
+1. Que regra falta e de onde vem o contexto?
 2. Podemos descartar a resposta ou a ação já tem efeito?
 3. Que teste verifica essa regra e seu custo?
 
-## Para casa
+## Leve para o próximo refinamento ou PR
 
-**Com IA:** cole seu cartão no fim de `demonstracao/pedido-b.txt`, use conversa nova e espere no máximo 4 minutos. Salve a primeira saída como `meu-convite.html`, registre a ferramenta e rode o mesmo teste. Se a IA alterar a API simulada ou o painel, o resultado não é comparável.
+Escolha um componente real do seu produto. Escreva uma regra que ainda falta decidir, de onde vem o contexto, o custo e um teste observável. Pode usar este cartão:
+
+```text
+Componente: [qual componente e onde é usado]
+Regra ausente: [a decisão que falta]
+Fonte do contexto: [arquivo, design system, contrato ou decisão da equipe]
+Custo: [o que a regra dificulta ou exige]
+Teste: [passos] → [resultado esperado]
+```
+
+Guarde o cartão no refinamento, ticket ou PR. Produto e engenharia podem começar a conversa por ele; implementar é um próximo passo, não uma condição para participar.
+
+**Com IA, se quiser implementar depois:** cole seu cartão no fim de `demonstracao/pedido-b.txt`, use conversa nova e espere no máximo 4 minutos. Salve a primeira saída como `meu-convite.html`, registre a ferramenta e rode o mesmo teste. Se a IA alterar a API simulada ou o painel, o resultado não é comparável.
 
 [Respostas das apostas, código e patches explicados](respostas.html), depois da atividade. [Ferramenta de ensaio e visualização](ensaio.html), para acompanhar a demonstração quando o facilitador liberar. A instrumentação do ensaio é separada das saídas originais.
 

@@ -11,4 +11,4 @@ O encontro acontece em 21/10/2026, das 19h às 20h30 (Brasília). Comece pelo ma
 - `demonstracao/`: saídas A/B originais, pedidos e registro de procedência.
 - `kit-participante.zip`: pacote para uso offline; extraia e abra `index.html`.
 
-O bingo é jogo de reconhecimento, sem medir frequência ou causalidade. A prática começa pela regra e pelo custo; B pode já atender à decisão escolhida. Nesse caso, registre o teste que passa e preserve-o como regressão.
+O bingo é jogo de reconhecimento, sem medir frequência ou causalidade. A prática começa pela regra e pelo custo; B pode já atender à decisão escolhida. Nesse caso, registre o teste que passa e preserve-o como regressão. O cartão serve ao próximo refinamento ou PR: escolha um componente real, registre a regra ausente, a fonte do contexto, o custo e o teste. Produto e engenharia participam; implementar é opcional.

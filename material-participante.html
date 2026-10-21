@@ -24,10 +24,15 @@ componente genérico</h1>
 especifica)</h2>
 <p>TDC Community · TDC Talks · quarta, 21/10/2026 · 19h às 20h30
 (Brasília) · Thiago Xikota</p>
+<p>“Moderno e responsivo” descreve qualidades, mas não distingue as
+alternativas que servem ao nosso produto. Neste exemplo, vamos observar
+quais escolhas a IA completou e o que muda quando a equipe fornece
+contexto, restrições e uma regra verificável.</p>
 <p>Um formulário de convite, quatro apostas e uma decisão que ficou em
 aberto. Você sai com uma regra de produto, um custo assumido e um teste
-para levar ao próximo PR. Precisa só de navegador. Editor de código e
-ferramenta de IA são opcionais. Nenhum convite real é enviado.</p>
+para levar ao próximo refinamento ou PR. Precisa só de navegador. Editor
+de código e ferramenta de IA são opcionais. Nenhum convite real é
+enviado.</p>
 <h2 id="antes-de-começar">Antes de começar</h2>
 <ol type="1">
 <li>Abra <strong>thiagoxikota.github.io/tdc-convite</strong> no
@@ -125,6 +130,15 @@ novo.</td>
 </table></div>
 <p>Anote uma decisão que A tomou sem ninguém pedir:
 ______________________________</p>
+<p>No trabalho, esse contexto vem do repositório, do design system, dos
+contratos de API e de decisões anteriores da equipe. O refinamento
+decide o que ainda ficou aberto. Aqui, o HTML isolado é uma bancada para
+deixar os estados visíveis; você leva a decisão para a stack do seu
+produto.</p>
+<p>Quem atua em produto pode explicitar intenção, regra, custo e
+resultado. Quem desenvolve pode confrontá-los com os estados, contratos
+e código. Os dois lados desafiam e testam as decisões; qualquer pessoa
+participa sem precisar implementar.</p>
 <p>O pedido deixou decisões visuais abertas. Agora vamos procurar uma
 decisão de comportamento que também ficou aberta.</p>
 <h2 id="a-saída-b-e-a-decisão-d1">A saída B e a decisão D1</h2>
@@ -161,13 +175,12 @@ primeiro o seu cartão; a troca pelo chat tem um protocolo na etapa
 adversária. Sozinho, faça também o papel de revisor. Sem computador,
 acompanhe a demonstração e escreva a regra no papel.</p>
 <h3 id="escreva-seu-cartão-5-min">1. Escreva seu cartão (5 min)</h3>
-<div class="code-block"><button class="copy" type="button">Copiar</button><pre class="text"><code>Título:   [a mudança ou a regra que quero preservar]
-Janela:   altero e-mail ou perfil durante o envio
-Regra:    [o que a pessoa deve ver ou conseguir fazer]
-Custo:    [o que essa regra dificulta ou exige]
-Teste:    [passos] → [resultado observável]
-Em B:     [observado] / [atende ou não à minha regra]
-Revisão:  [o que mudei depois do contraexemplo]</code></pre></div>
+<div class="code-block"><button class="copy" type="button">Copiar</button><pre class="text"><code>Contexto: [de onde vem a regra?]
+Regra:    [o que aparece e o que fica editável?]
+Custo:    [o que perdemos com essa escolha?]
+Teste:    [passos] → [resultado esperado]
+Em B:     [passa ou falha na regra escrita?]
+Revisão:  [o que mudou após o contraexemplo?]</code></pre></div>
 <p>Escreva um resultado que outra pessoa consiga verificar. “Não fica
 confuso” ainda não diz o que testar. Nomeie o e-mail e o perfil do
 envio, os valores atuais dos campos e o que a confirmação deve
@@ -238,7 +251,7 @@ executá-la.</p>
 <p>Complete a última linha do cartão. Prepare uma defesa de trinta
 segundos: o que sua regra garante e qual custo você aceita. O outro
 grupo pode pedir um contraexemplo. O cartão já contém o contexto, a
-decisão e a verificação para um PR.</p>
+decisão e a verificação para um refinamento ou PR.</p>
 <h2 id="aposta-4-a-busca">Aposta 4: a busca</h2>
 <div class="sourceCode" id="cb2"><div class="code-block"><button class="copy" type="button">Copiar</button><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>busca<span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">&#39;input&#39;</span><span class="op">,</span> <span class="kw">async</span> () <span class="kw">=&gt;</span> {</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> termo <span class="op">=</span> busca<span class="op">.</span><span class="at">value</span><span class="op">;</span></span>
@@ -264,17 +277,28 @@ ______________________________</p>
 o envio é seguro? ______________________________</p>
 <p>Diga qual parte dessa decisão depende do backend:
 ______________________________</p>
-<h2 id="três-perguntas-para-o-próximo-pr">Três perguntas para o próximo
-PR</h2>
+<h2 id="no-próximo-refinamento-ou-pr">No próximo refinamento ou PR</h2>
 <ol type="1">
-<li>Que transição ficou aberta e qual regra queremos?</li>
+<li>Que regra falta e de onde vem o contexto?</li>
 <li>Podemos descartar a resposta ou a ação já tem efeito?</li>
 <li>Que teste verifica essa regra e seu custo?</li>
 </ol>
-<h2 id="para-casa">Para casa</h2>
-<p><strong>Com IA:</strong> cole seu cartão no fim de
-<code>demonstracao/pedido-b.txt</code>, use conversa nova e espere no
-máximo 4 minutos. Salve a primeira saída como
+<h2 id="leve-para-o-próximo-refinamento-ou-pr">Leve para o próximo
+refinamento ou PR</h2>
+<p>Escolha um componente real do seu produto. Escreva uma regra que
+ainda falta decidir, de onde vem o contexto, o custo e um teste
+observável. Pode usar este cartão:</p>
+<div class="code-block"><button class="copy" type="button">Copiar</button><pre class="text"><code>Componente: [qual componente e onde é usado]
+Regra ausente: [a decisão que falta]
+Fonte do contexto: [arquivo, design system, contrato ou decisão da equipe]
+Custo: [o que a regra dificulta ou exige]
+Teste: [passos] → [resultado esperado]</code></pre></div>
+<p>Guarde o cartão no refinamento, ticket ou PR. Produto e engenharia
+podem começar a conversa por ele; implementar é um próximo passo, não
+uma condição para participar.</p>
+<p><strong>Com IA, se quiser implementar depois:</strong> cole seu
+cartão no fim de <code>demonstracao/pedido-b.txt</code>, use conversa
+nova e espere no máximo 4 minutos. Salve a primeira saída como
 <code>meu-convite.html</code>, registre a ferramenta e rode o mesmo
 teste. Se a IA alterar a API simulada ou o painel, o resultado não é
 comparável.</p>
