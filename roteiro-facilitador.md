@@ -77,7 +77,7 @@ Compare com A, que trava os campos sem isso ter sido pedido. Faça a pausa para 
 
 Não mostre as duas soluções como escolhas prontas antes do cartão. Peça uma regra observável, não a palavra “seguro” ou “claro”. A pessoa precisa apontar a fonte do contexto, dizer o que pode editar, o que aparece no recibo e qual custo aceita. Quem atua em produto pode começar pela intenção e pelo resultado; quem desenvolve, pelos contratos, estados e código. Os dois lados desafiam e testam. Deixe explícito que qualquer papel participa sem implementar.
 
-**Mudança de 21/10.** A prática do cartão e do contraexemplo não roda; os dois slides estão ocultos. No lugar: mostre as duas regras, rode as duas no navegador com o ensaio de quatro segundos e peça o voto no chat, trava ou recibo, mais uma frase com o que a escolha perde. Leia algumas respostas. O cartão fica no material como exercício para o time. Os passos abaixo ficam só como referência.
+**Mudança de 21/10.** A prática do cartão e do contraexemplo não roda; os dois slides estão ocultos. No lugar: mostre as duas regras, rode as duas no navegador (loading de 1,2 s; a página de ensaio de quatro segundos reproduz só o B original, não os patches) e peça o voto no chat, trava ou recibo, mais uma frase com o que a escolha perde. Leia algumas respostas. O cartão fica no material como exercício para o time. Os passos abaixo ficam só como referência.
 
 **Cinco minutos: escrever.** Cada pessoa preenche o próprio cartão antes de ler o chat. Mantenha o slide do cartão na tela e narre o chat; a transmissão não pode ficar muda. Se alguém travar, sugira começar pelo custo. Quem terminar antes manda a regra e o custo no chat sem esperar os cinco minutos. Quem está sem computador escreve no papel.
 
