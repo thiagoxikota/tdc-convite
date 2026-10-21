@@ -2,7 +2,7 @@
 
 19h às 20h30, Brasília. Noventa minutos previstos, incluindo demonstrações, participação e perguntas. Os tempos abaixo são um plano de condução, não uma duração medida em ensaio.
 
-O núcleo é observar decisões deixadas abertas, escrever uma regra própria, admitir seu custo e verificar um comportamento. O cartão serve ao próximo refinamento ou PR. A e B são primeiras saídas preservadas. O bingo é um jogo; o par A/B não mede frequência nem isola causalidade geral. O payload de B está correto. A questão é qual relação a interface deve mostrar entre o recibo concluído e os campos que já mudaram.
+O núcleo é observar decisões deixadas abertas, escrever uma regra própria, admitir seu custo e verificar um comportamento. O cartão serve ao próximo refinamento ou PR. A e B são primeiras saídas preservadas. O bingo é um jogo; o par A/B não mede frequência nem isola causalidade geral. O envio de B está correto. A questão é qual relação a interface deve mostrar entre o recibo concluído e os campos que já mudaram.
 
 ## Antes da transmissão
 
@@ -69,7 +69,7 @@ Antes da saída B, mostre o slide com o prompt B: cinco seções, sem ler tudo. 
 
 Mostre a regra de produto como foi escrita: depois do sucesso, editar limpa a confirmação. Envie Ana, aguarde e comece a editar. B passa. Diga “Especificou, funcionou. Obrigado, boa noite.” Pare por um instante. Só então avance para a aposta sobre editar durante a espera.
 
-Feche a votação antes de executar o gesto. Revele o perfil atual, o perfil confirmado e o painel. Nomeie as três camadas: payload correto; recibo correto do envio de Ana; rascunho atual diferente. O critério adicional de apresentação ainda não foi decidido. Não diga que B convidou com o perfil errado.
+Feche a votação antes de executar o gesto. Revele o perfil atual, o perfil confirmado e o painel. Nomeie as três camadas: envio correto; recibo correto do convite da Ana; rascunho atual diferente. O critério adicional de apresentação ainda não foi decidido. Não diga que B convidou com o perfil errado.
 
 Compare com A, que trava os campos sem isso ter sido pedido. Faça a pausa para a contradição aparecer. A também tem o comportamento de puxar foco; preserve o placar honesto.
 
@@ -89,7 +89,7 @@ Não mostre as duas soluções como escolhas prontas antes do cartão. Peça uma
 
 No slide das duas regras, libere `respostas.html#patches`: cada pessoa roda os mesmos passos na trava e no recibo. Cada lado precisa dizer uma garantia e admitir um custo. O outro lado pode pedir um contraexemplo. Não existe vencedor obrigatório entre regras legítimas. O avanço é sair com um contrato mais verificável do que “componente moderno”. Outra solução pode ficar especificada; não a chame de implementada se não foi executada.
 
-O slide de código fica oculto. Diga numa frase: o payload é uma cópia dos campos no clique, e os campos continuam editáveis durante o loading. O trecho está em `respostas.html#patches` para quem quiser ver depois. Não chame o problema de duas respostas de convite fora de ordem: o exemplo seguinte da busca tem esse mecanismo, mas este não.
+O slide de código fica oculto. Diga numa frase: o envio é uma cópia dos campos no clique, e os campos continuam editáveis durante o loading. O trecho está em `respostas.html#patches` para quem quiser ver depois. Não chame o problema de duas respostas de convite fora de ordem: o exemplo seguinte da busca tem esse mecanismo, mas este não.
 
 Na comparação, travar implica aguardar para corrigir uma letra; recibo exige representar separadamente o envio e o novo rascunho. O complemento do recibo descreve a mudança ocorrida durante a espera e continua verdadeiro quando os campos voltam ao valor original.
 

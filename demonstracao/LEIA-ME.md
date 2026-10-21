@@ -42,7 +42,7 @@ A janela de espera foi achada em 20/10, numa sonda nova sobre os mesmos arquivos
 - **Linha 62:** media query de 720 px com grid 2:1 (C10).
 - **Linha 173:** `let aguardando = false;`, o único estado da espera.
 - **Linhas 188 a 199:** limpeza da confirmação ao editar (D1).
-- **Linhas 216 a 218:** cópia do payload e início da espera. O botão bloqueia; os campos, não.
+- **Linhas 216 a 218:** cópia dos campos para o envio e início da espera. O botão bloqueia; os campos, não.
 - **Linhas 231 e 232:** a frase de sucesso usa o envio, não os campos atuais, e marca a confirmação.
 - **Linha 239:** fim da espera.
 

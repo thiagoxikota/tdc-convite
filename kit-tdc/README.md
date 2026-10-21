@@ -38,7 +38,7 @@ Após duas tentativas sem capturar a janela, use `../ensaio.html` e registre “
 
 | Arquivo | Resultado |
 |---|---|
-| `../demonstracao/convite-b.html` | O select diz Editor e a frase confirma o envio como Leitor. O payload está correto; compare a apresentação com a regra que você escreveu. |
+| `../demonstracao/convite-b.html` | O select diz Editor e a frase confirma o envio como Leitor. O envio está correto; compare a apresentação com a regra que você escreveu. |
 | `b-patch-trava.html` | Não dá para editar durante a espera. Compare com sua regra e com o custo de fazer a pessoa aguardar. |
 | `b-patch-recibo.html` | A frase confirma Ana como Leitor e registra que os campos mudaram durante a espera. Ela não afirma que os campos atuais continuam diferentes. Compare com sua regra e com o custo da mensagem adicional. |
 

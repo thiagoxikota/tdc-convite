@@ -65,7 +65,7 @@ Minha letra: ____ O que aconteceu: ______________________________
 
 Faça o mesmo em A. O que muda? ______________________________
 
-Separe as observações: o que foi enviado, o que o recibo confirma e o que os campos mostram agora. Uma diferença entre recibo e rascunho pede uma regra de apresentação; não significa que o payload enviado foi alterado.
+Separe as observações: o que foi enviado, o que o recibo confirma e o que os campos mostram agora. Uma diferença entre recibo e rascunho pede uma regra de apresentação; não significa que o envio foi alterado.
 
 ## Prática: sua regra sob teste (20 min)
 
@@ -96,7 +96,7 @@ A regra resistiu ou mudou? Por quê? ______________________________
 
 ### 3. Teste no B (8 min)
 
-Rode os passos em B e registre o que aconteceu, **antes** de abrir a referência. Quem não estiver com o B aberto acompanha na transmissão: o facilitador roda algumas regras do chat no B, uma por vez, com o ensaio de quatro segundos. B já confirma o payload enviado. Ele atende sua regra adicional de apresentação? Se sim, registre que passou e preserve o teste como regressão. Se sua regra exige outro comportamento, registre a diferença e o teste que falha. Não invente um defeito para justificar um patch.
+Rode os passos em B e registre o que aconteceu, **antes** de abrir a referência. Quem não estiver com o B aberto acompanha na transmissão: o facilitador roda algumas regras do chat no B, uma por vez, com o ensaio de quatro segundos. B já confirma o que foi enviado. Ele atende sua regra adicional de apresentação? Se sim, registre que passou e preserve o teste como regressão. Se sua regra exige outro comportamento, registre a diferença e o teste que falha. Não invente um defeito para justificar um patch.
 
 Se após duas tentativas você não capturou a janela de B, use o [ensaio de quatro segundos](ensaio.html) como apoio e anote **reprodução didática observada**. Esse ensaio mostra o comportamento da janela; ele não executa os patches nem substitui testes de falha ou outros contraexemplos.
 
