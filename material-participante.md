@@ -120,7 +120,9 @@ O facilitador mostra duas regras possíveis, a trava e o recibo. Aí sim, abra [
 
 Mande no chat qual regra você defende e o que ela perde.
 
-## Aposta 4: a busca
+## Extra para depois: a busca
+
+Este bloco não roda na aula. Fica como leitura.
 
 A equipe tem Ana, Anderson e Luana. Cada letra digitada dispara uma busca, e a lista mostra a resposta que chegar. A busca de "an" sai em **0 ms**; a de "ana", **100 ms depois**. A primeira leva **900 ms** para responder; a segunda, **200 ms**. Considere só essas duas buscas em andamento. O que fica na tela no fim?
 

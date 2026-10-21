@@ -26,7 +26,7 @@ O núcleo é observar decisões deixadas abertas, escrever uma regra própria, a
 | 19h43–19h46 | 43–46 | Resumo do par e instrução da prática |
 | 19h46–20h06 | 46–66 | Cartão, contraexemplo no chat, teste no B e revisão |
 | 20h06–20h13 | 66–73 | Duas regras, patches liberados e defesa no chat |
-| 20h13–20h20 | 73–80 | Busca, resposta perdida e três perguntas para o time |
+| 20h13–20h20 | 73–80 | Resposta perdida e três perguntas para o time (a busca fica fora; slides ocultos) |
 | 20h20–20h30 | 80–90 | Perguntas |
 
 Se houver atraso, reduza o debate inicial. Preserve a prática e o teste da regra de produto. O desafio de resposta perdida pode virar uma pergunta rápida, com a resposta disponível no material posterior. Encerre a atividade e abra perguntas às 20h20.
@@ -94,6 +94,8 @@ O slide de código fica oculto. Diga numa frase: o envio é uma cópia dos campo
 Na comparação, travar implica aguardar para corrigir uma letra; recibo exige representar separadamente o envio e o novo rascunho. O complemento do recibo descreve a mudança ocorrida durante a espera e continua verdadeiro quando os campos voltam ao valor original.
 
 ## Transferência: busca e resposta perdida
+
+A aposta da busca não roda na aula (decisão de 21/10): os dois slides estão ocultos no deck. Vá da comparação trava/recibo direto ao cenário da resposta perdida. O texto da busca fica abaixo só como referência.
 
 Na busca, explicite os instantes: `an` sai em 0 ms e `ana` em 100 ms. Com latências de 900 ms e 200 ms, chegam em 900 ms e 300 ms. Peça o que fica na tela e a regra, juntos. A lista de `an` chega por último e inclui Anderson. O contador impede essa resposta antiga de substituir a intenção atual. Se citar `AbortController`, diga que o `signal` precisa chegar ao `fetch` e preserve a identidade da requisição conforme a implementação.
 
