@@ -2,12 +2,12 @@
 
 19h às 20h30, Brasília. Noventa minutos previstos, incluindo demonstrações, participação e perguntas. Os tempos abaixo são um plano de condução, não uma duração medida em ensaio.
 
-O núcleo é observar decisões deixadas abertas, escrever uma regra própria, admitir seu custo e verificar um comportamento. O cartão serve ao próximo refinamento ou PR. A e B são primeiras saídas preservadas. O bingo é um jogo; o par A/B não mede frequência nem isola causalidade geral. O envio de B está correto. A questão é qual relação a interface deve mostrar entre o recibo concluído e os campos que já mudaram.
+O núcleo é observar decisões deixadas abertas, nomear a regra que falta e o custo dela. O cartão do kit serve ao próximo refinamento ou PR. A e B são primeiras saídas preservadas. O bingo é um jogo; o par A/B não mede frequência nem isola causalidade geral. O envio de B está correto. A questão é qual relação a interface deve mostrar entre o recibo concluído e os campos que já mudaram.
 
 ## Antes da transmissão
 
 - Abra o deck no mesmo navegador e modo de compartilhamento que usará na aula. Confira notas e escala.
-- Abra A, B, os dois patches e `ensaio.html` em abas separadas, sem projetar respostas antes da hora.
+- Abra A, B e, como apoio opcional, `ensaio.html` em abas separadas, sem projetar respostas antes da hora.
 - Baixe e extraia o ZIP. Abra o `index.html` extraído para conferir que o caminho offline está disponível.
 - Ensaie a regra de produto do B: envie Ana, espere o sucesso e edite. A confirmação deve sumir em B. Essa demonstração deixa "bruno@" no campo; recarregue o B antes da aposta 3.
 - Ensaie a mudança durante o envio: foco no e-mail, Leitor, Enter, Tab, E. O select nativo pode variar. A demonstração tem uma janela de 1,2 segundo; não conte com a velocidade da plateia para garantir a revelação.
@@ -23,13 +23,10 @@ O núcleo é observar decisões deixadas abertas, escrever uma regra própria, a
 | 19h13–19h22 | 13–22 | Aposta 2, testes de A e decisões de produto |
 | 19h22–19h32 | 22–32 | Design: A sem tokens, sinais de AI slop, prompt de UI, revisão e lista do que não entra |
 | 19h32–19h43 | 32–43 | Contexto, B, regra de produto, falso encerramento, edição durante o loading e comparação com A |
-| 19h43–19h46 | 43–46 | Resumo do par e instrução da prática |
-| 19h46–19h56 | 46–56 | Duas regras rodando no navegador e votação trava ou recibo no chat |
-| 19h56–20h00 | 56–60 | Patches liberados e leitura das respostas do chat |
-| 20h00–20h07 | 60–67 | Resposta perdida e três perguntas para o time (a busca fica fora; slides ocultos) |
-| 20h07–20h30 | 67–90 | Perguntas |
+| 19h43–19h48 | 43–48 | Resumo do par e três perguntas para o time |
+| 19h48–20h30 | 48–90 | Perguntas e conversa |
 
-Se houver atraso, reduza o debate inicial. Preserve a prática e o teste da regra de produto. O desafio de resposta perdida pode virar uma pergunta rápida, com a resposta disponível no material posterior. Encerre a atividade e abra perguntas às 20h20.
+Se houver atraso, reduza o debate inicial. Preserve o teste da regra de produto e o bloco de design. Encerre a atividade e abra perguntas às 20h20.
 
 ## Apostas: uma cadência para as quatro
 
@@ -77,7 +74,7 @@ Compare com A, que trava os campos sem isso ter sido pedido. Faça a pausa para 
 
 Não mostre as duas soluções como escolhas prontas antes do cartão. Peça uma regra observável, não a palavra “seguro” ou “claro”. A pessoa precisa apontar a fonte do contexto, dizer o que pode editar, o que aparece no recibo e qual custo aceita. Quem atua em produto pode começar pela intenção e pelo resultado; quem desenvolve, pelos contratos, estados e código. Os dois lados desafiam e testam. Deixe explícito que qualquer papel participa sem implementar.
 
-**Mudança de 21/10.** A prática do cartão e do contraexemplo não roda; os dois slides estão ocultos. No lugar: mostre as duas regras, rode as duas no navegador (loading de 1,2 s; a página de ensaio de quatro segundos reproduz só o B original, não os patches) e peça o voto no chat, trava ou recibo, mais uma frase com o que a escolha perde. Leia algumas respostas. O cartão fica no material como exercício para o time. Os passos abaixo ficam só como referência.
+**Mudança de 21/10.** A prática não roda: os slides do cartão, da votação trava ou recibo, da busca e da resposta perdida foram apagados. Do slide "O envio tá certo. Um estado ficou sem regra." vá direto às três perguntas para o time. Os passos abaixo ficam só como referência para outra sessão.
 
 **Cinco minutos: escrever.** Cada pessoa preenche o próprio cartão antes de ler o chat. Mantenha o slide do cartão na tela e narre o chat; a transmissão não pode ficar muda. Se alguém travar, sugira começar pelo custo. Quem terminar antes manda a regra e o custo no chat sem esperar os cinco minutos. Quem está sem computador escreve no papel.
 
@@ -91,13 +88,13 @@ Não mostre as duas soluções como escolhas prontas antes do cartão. Peça uma
 
 No slide das duas regras, libere `respostas.html#patches`: cada pessoa roda os mesmos passos na trava e no recibo. Cada lado precisa dizer uma garantia e admitir um custo. O outro lado pode pedir um contraexemplo. Não existe vencedor obrigatório entre regras legítimas. O avanço é sair com um contrato mais verificável do que “componente moderno”. Outra solução pode ficar especificada; não a chame de implementada se não foi executada.
 
-O slide de código fica oculto. Diga numa frase: o envio é uma cópia dos campos no clique, e os campos continuam editáveis durante o loading. O trecho está em `respostas.html#patches` para quem quiser ver depois. Não chame o problema de duas respostas de convite fora de ordem: o exemplo seguinte da busca tem esse mecanismo, mas este não.
+Não há slide de código. Diga numa frase: o envio é uma cópia dos campos no clique, e os campos continuam editáveis durante o loading. O trecho está em `respostas.html#patches` para quem quiser ver depois. Não chame o problema de duas respostas de convite fora de ordem: o exemplo seguinte da busca tem esse mecanismo, mas este não.
 
 Na comparação, travar implica aguardar para corrigir uma letra; recibo exige representar separadamente o envio e o novo rascunho. O complemento do recibo descreve a mudança ocorrida durante a espera e continua verdadeiro quando os campos voltam ao valor original.
 
 ## Transferência: busca e resposta perdida
 
-A aposta da busca não roda na aula (decisão de 21/10): os dois slides estão ocultos no deck. Vá da comparação trava/recibo direto ao cenário da resposta perdida. O texto da busca fica abaixo só como referência.
+A busca e a resposta perdida não rodam na aula (decisão de 21/10): os slides foram apagados. O texto abaixo fica só como referência.
 
 Na busca, explicite os instantes: `an` sai em 0 ms e `ana` em 100 ms. Com latências de 900 ms e 200 ms, chegam em 900 ms e 300 ms. Peça o que fica na tela e a regra, juntos. A lista de `an` chega por último e inclui Anderson. O contador impede essa resposta antiga de substituir a intenção atual. Se citar `AbortController`, diga que o `signal` precisa chegar ao `fetch` e preserve a identidade da requisição conforme a implementação.
 
@@ -107,6 +104,6 @@ Identifique esse cenário como discussão fora da API simulada. Não improvise u
 
 ## Fecho e perguntas
 
-Recupere uma regra e um custo defendidos pela sala. Volte ao título: no pedido A, “moderno” deixava escolhas abertas; B explicitou contexto e critérios; o durante ainda exigiu uma decisão. Especificar deu critérios para avaliar a saída, inclusive com IA implementando. Peça que uma pessoa escolha um componente real do próprio trabalho e nomeie uma regra ausente, a fonte do contexto, o custo e um teste. O cartão pode ir ao refinamento, ticket ou PR. Entregue o link de respostas e encerre a atividade, mesmo que alguém esteja terminando.
+Volte ao título: no pedido A, “moderno” deixava escolhas abertas; B explicitou contexto e critérios; o durante ainda exigiu uma decisão. Especificar deu critérios para avaliar a saída, inclusive com IA implementando. Peça que uma pessoa escolha um componente real do próprio trabalho e nomeie uma regra ausente, a fonte do contexto, o custo e um teste. O cartão pode ir ao refinamento, ticket ou PR. Entregue o link de respostas e encerre a atividade, mesmo que alguém esteja terminando.
 
 Nas perguntas, preserve os limites: duas saídas, mesma base técnica, contextos de produto diferentes, uma geração cada, arquivos originais mantidos e modelo não informado. Se perguntarem o modelo: A e B saíram do Codex CLI em 19/10, com a configuração herdada da conta e sem registro do modelo; a versão sem tokens saiu do Codex em 21/10 com gpt-6-sol. Não chute identificador. O bingo não muda essas limitações. Quando algo não foi testado, diga isso e aponte onde o material permite continuar depois.

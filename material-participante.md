@@ -6,7 +6,7 @@ TDC Community · TDC Talks · quarta, 21/10/2026 · 19h às 20h30 (Brasília) ·
 
 “Moderno e responsivo” descreve qualidades, mas não distingue as alternativas que servem ao nosso produto. Neste exemplo, vamos observar quais escolhas a IA completou e o que muda quando a equipe fornece contexto, restrições e uma regra verificável.
 
-Um formulário de convite, três apostas e uma decisão que ficou em aberto. Você sai com uma regra de produto, um custo assumido e um teste para levar ao próximo refinamento ou PR. Precisa só de navegador. Editor de código e ferramenta de IA são opcionais. Nenhum convite real é enviado.
+Um formulário de convite, três apostas e uma decisão que ficou em aberto. Você leva um cartão, duas regras prontas e um teste para o próximo refinamento ou PR. Precisa só de navegador. Editor de código e ferramenta de IA são opcionais. Nenhum convite real é enviado.
 
 ## Antes de começar
 
@@ -69,7 +69,7 @@ Separe as observações: o que foi enviado, o que o recibo confirma e o que os c
 
 ## Prática: sua regra sob teste (20 min)
 
-Na aula de 21/10, a prática ao vivo é a votação no chat: trava ou recibo, e o que a escolha perde. O cartão e os passos abaixo ficam como exercício para levar ao seu time.
+Na aula de 21/10, esta prática não roda ao vivo. O cartão, os passos e as duas regras prontas ficam como exercício para levar ao seu time.
 
 **Não abra os patches ainda.** Primeiro decida o que a interface deve fazer quando alguém altera e-mail ou perfil durante o envio. Depois tente quebrar a decisão.
 
