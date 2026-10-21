@@ -6,7 +6,7 @@ TDC Community · TDC Talks · quarta, 21/10/2026 · 19h às 20h30 (Brasília) ·
 
 “Moderno e responsivo” descreve qualidades, mas não distingue as alternativas que servem ao nosso produto. Neste exemplo, vamos observar quais escolhas a IA completou e o que muda quando a equipe fornece contexto, restrições e uma regra verificável.
 
-Um formulário de convite, quatro apostas e uma decisão que ficou em aberto. Você sai com uma regra de produto, um custo assumido e um teste para levar ao próximo refinamento ou PR. Precisa só de navegador. Editor de código e ferramenta de IA são opcionais. Nenhum convite real é enviado.
+Um formulário de convite, três apostas e uma decisão que ficou em aberto. Você sai com uma regra de produto, um custo assumido e um teste para levar ao próximo refinamento ou PR. Precisa só de navegador. Editor de código e ferramenta de IA são opcionais. Nenhum convite real é enviado.
 
 ## Antes de começar
 
