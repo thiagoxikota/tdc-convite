@@ -21,9 +21,9 @@ O pedido A, na parte de produto, era só isto: *"Crie um componente moderno e re
 
 | | | | |
 |---|---|---|---|
-| ☐ Sobretítulo em caixa alta | ☐ Campo de mensagem pessoal | ☐ Título motivacional | ☐ Frase de efeito no card |
-| ☐ Card no centro, com sombra | ☐ Foto ou avatar da pessoa | ☐ Ícone num quadradinho | ☐ Botão de largura total |
-| ☐ Setinha no botão | ☐ Link de convite para copiar | ☐ Tela de sucesso com check | ☐ Membro / Administrador |
+| ☐ Sobretítulo em caixa alta | ☐ Gradiente roxo | ☐ Título motivacional | ☐ Frase de efeito no card |
+| ☐ Card no centro, com sombra | ☐ Emoji no título | ☐ Ícone num quadradinho | ☐ Botão de largura total |
+| ☐ Setinha no botão | ☐ Confete no sucesso | ☐ Tela de sucesso com check | ☐ Membro / Administrador |
 
 Marquei **9 de 12**. Depois da revelação: caí em ____ armadilha(s). Acertei **9 menos esse número**: ____ de 9. No chat, envie só esse total de acertos, ao sinal do facilitador.
 
@@ -36,10 +36,10 @@ Chute antes: 0, 1, 2 ou 3. Meu chute: ____
 Abra `demonstracao/convite-a.html`. O **Painel do laboratório**, embaixo do formulário, mostra quantas chamadas a API recebeu, o último e-mail, o perfil e o estado. Recarregue a página antes de cada teste.
 
 | Teste | Faça | Passa? |
-|---|---|---|
-| **C10** contexto | Olhe a página. Ela cabe dentro de uma gestão de pessoas que já existe? | |
-| **C3** espera | Envie `novo@example.com` e, durante 1,2 s, aperte Enter e clique de novo. Painel: quantas chamadas? | |
-| **C6** falha | Envie `falha@example.com`. Sem recarregar, envie de novo. | |
+|---|---------|--|
+| **1.** Contexto | Olhe a página. Ela cabe dentro de uma gestão de pessoas que já existe? | |
+| **2.** Loading | Envie `novo@example.com` e, durante o loading de 1,2 s, aperte Enter e clique de novo. Painel: quantas chamadas? | |
+| **3.** Falha | Envie `falha@example.com`. Sem recarregar, envie de novo. | |
 
 Anote uma decisão que A tomou sem ninguém pedir: ______________________________
 
@@ -49,15 +49,15 @@ Quem atua em produto pode explicitar intenção, regra, custo e resultado. Quem 
 
 O pedido deixou decisões visuais abertas. Agora vamos procurar uma decisão de comportamento que também ficou aberta.
 
-## A saída B e a decisão D1
+## A saída B e a regra de produto
 
-O pedido B (`demonstracao/pedido-b.txt`) traz contexto, perfis Leitor e Editor, dez critérios e uma decisão de produto, D1: *depois do sucesso, editar e-mail ou perfil limpa a confirmação anterior.* Abra `demonstracao/convite-b.html`.
+O pedido B (`demonstracao/pedido-b.txt`) traz contexto, perfis Leitor e Editor, dez critérios e uma regra de produto: *depois do sucesso, editar e-mail ou perfil limpa a confirmação anterior.* Abra `demonstracao/convite-b.html`.
 
-Teste D1: envie `ana@example.com`, espere a confirmação e comece a apagar o e-mail. A frase sumiu? ____
+Teste a regra: envie `ana@example.com`, espere a confirmação e comece a apagar o e-mail. A frase sumiu? ____
 
 ## Aposta 3: a janela
 
-Escolha uma letra antes do teste. Envie `ana@example.com` com Leitor e, **durante a espera**, troque o perfil para Editor. Com o foco no e-mail, a sequência é **Enter, Tab e E**. A operação do select pode variar no seu navegador. Após duas tentativas sem capturar a janela, use o [ensaio de quatro segundos](ensaio.html) e registre que observou a reprodução didática, separada de B original. Quem não conseguir abrir pode acompanhar a demonstração. O que aparece?
+Escolha uma letra antes do teste. Envie `ana@example.com` com Leitor e, **durante o loading**, troque o perfil para Editor. Com o foco no e-mail, a sequência é **Enter, Tab e E**. A operação do select pode variar no seu navegador. Após duas tentativas sem capturar a janela, use o [ensaio de quatro segundos](ensaio.html) e registre que observou a reprodução didática, separada de B original. Quem não conseguir abrir pode acompanhar a demonstração. O que aparece?
 
 A. A confirmação nem aparece · B. Aparece "perfil Editor" · C. Aparece "perfil Leitor" com o select em Editor · D. Dá erro
 
@@ -71,7 +71,7 @@ Separe as observações: o que foi enviado, o que o recibo confirma e o que os c
 
 **Não abra os patches ainda.** Primeiro decida o que a interface deve fazer quando alguém altera e-mail ou perfil durante o envio. Depois tente quebrar a decisão.
 
-Trabalhe em dupla, se houver esse espaço. Na transmissão, escreva primeiro o seu cartão; a troca pelo chat tem um protocolo na etapa adversária. Sozinho, faça também o papel de revisor. Sem computador, acompanhe a demonstração e escreva a regra no papel.
+Tudo acontece pelo chat da transmissão, e ninguém precisa escrever código. Escreva primeiro o seu cartão; a troca pelo chat vem na etapa 2. Sem computador, acompanhe a demonstração e escreva a regra no papel.
 
 ### 1. Escreva seu cartão (5 min)
 
@@ -86,11 +86,9 @@ Revisão:  [o que mudou após o contraexemplo?]
 
 Escreva um resultado que outra pessoa consiga verificar. "Não fica confuso" ainda não diz o que testar. Nomeie o e-mail e o perfil do envio, os valores atuais dos campos e o que a confirmação deve dizer.
 
-### 2. Tente quebrar a regra (5 min)
+### 2. Tente quebrar a regra no chat (5 min)
 
-Troque os cartões. A dupla revisora propõe um caso e pergunta: o que acontece aqui? Pode ser editar duas vezes, mudar e voltar ao valor original, errar uma letra, receber falha ou tentar enviar outra vez. Não precisa encontrar defeito: uma regra que resiste também é resultado.
-
-**No remoto:** ao sinal, publique **Regra + Custo**. O facilitador escolhe dois cartões e identifica seus autores. Escolha um deles e responda com **nome do cartão + passos que tentam quebrá-lo**. Quem não publicar pode revisar o próprio cartão ou um dos dois escolhidos.
+Ao sinal, mande no chat a sua **regra e o custo** que você aceita. O facilitador lê alguns cartões em voz alta e diz de quem são. Escolha um e responda com **o nome de quem escreveu e os passos que tentam quebrar a regra**. Pode ser editar duas vezes, mudar e voltar ao valor original, errar uma letra, receber falha ou tentar enviar outra vez. Não precisa encontrar defeito: uma regra que resiste também é resultado. Se preferir não postar, tente quebrar o seu próprio cartão.
 
 Nosso contraexemplo: ______________________________
 
@@ -110,21 +108,13 @@ Quando o facilitador liberar, abra [as implementações de comparação](respost
 | Implementação de comparação escolhida | | |
 | Outra regra, se houver | Escreva o esperado; implementação opcional | |
 
-### 4. Revise e defenda (2 min)
+### 4. Revise e defenda no chat (2 min)
 
-Complete a última linha do cartão. Prepare uma defesa de trinta segundos: o que sua regra garante e qual custo você aceita. O outro grupo pode pedir um contraexemplo. O cartão já contém o contexto, a decisão e a verificação para um refinamento ou PR.
+Complete a última linha do cartão. Mande no chat, numa frase, o que a sua regra garante e qual custo você aceita. O cartão já contém o contexto, a decisão e a verificação para um refinamento ou PR.
 
 ## Aposta 4: a busca
 
-```js
-busca.addEventListener('input', async () => {
-  const termo = busca.value;
-  const pessoas = await buscarPessoas(termo);
-  lista.render(pessoas, termo);
-});
-```
-
-A equipe tem Ana, Anderson e Luana. A busca de "an" sai em **0 ms**; a de "ana", **100 ms depois**. A primeira leva **900 ms** para responder; a segunda, **200 ms**. O que fica na tela no fim?
+A equipe tem Ana, Anderson e Luana. Cada letra digitada dispara uma busca, e a lista mostra a resposta que chegar. A busca de "an" sai em **0 ms**; a de "ana", **100 ms depois**. A primeira leva **900 ms** para responder; a segunda, **200 ms**. O que fica na tela no fim?
 
 ______________________________
 
@@ -178,17 +168,17 @@ Os links do PDF abrem o kit online. Para usar sem internet, extraia o ZIP e abra
 
 ### Os dez critérios do pedido B, para consulta
 
-| ID | Critério |
-|---|---|
-| C1 | E-mail vazio ou inválido não chama a API; erro junto ao campo e foco nele. |
-| C2 | Leitor por padrão; só Leitor e Editor. |
-| C3 | Andamento visível na espera e nenhuma chamada duplicada. |
-| C4 | Confirmação mostra e-mail e perfil enviados. |
-| C5 | `existe@example.com` explica que a pessoa já está na equipe e preserva os campos. |
-| C6 | Falha preserva campos; nova tentativa funciona. |
-| C7 | Teclado opera tudo, com foco visível; resposta não rouba o foco de quem saiu. |
-| C8 | Labels, erro associado, `aria-invalid`, região de status. |
-| C9 | Sem corte em 320 px e zoom de 200%. |
-| C10 | Bloco integrado à gestão de pessoas, tokens existentes, sem hero, sidebar ou avatar. |
+| Nº | Critério |
+|--|------------------|
+| 1 | E-mail vazio ou inválido não chama a API; erro junto ao campo e foco nele. |
+| 2 | Leitor por padrão; só Leitor e Editor. |
+| 3 | Andamento visível na espera e nenhuma chamada duplicada. |
+| 4 | Confirmação mostra e-mail e perfil enviados. |
+| 5 | `existe@example.com` explica que a pessoa já está na equipe e preserva os campos. |
+| 6 | Falha preserva campos; nova tentativa funciona. |
+| 7 | Teclado opera tudo, com foco visível; resposta não rouba o foco de quem saiu. |
+| 8 | Labels, erro associado, `aria-invalid`, região de status. |
+| 9 | Sem corte em 320 px e zoom de 200%. |
+| 10 | Bloco integrado à gestão de pessoas, tokens existentes, sem hero, sidebar ou avatar. |
 
 Fontes: [WCAG 2.2, teclado](https://www.w3.org/WAI/WCAG22/Understanding/keyboard.html) · [W3C WAI, notificações de formulário](https://www.w3.org/WAI/tutorials/forms/notifications/) · [RFC 9110, métodos idempotentes](https://www.rfc-editor.org/rfc/rfc9110.html#name-idempotent-methods) · [MDN, AbortController](https://developer.mozilla.org/pt-BR/docs/Web/API/AbortController)

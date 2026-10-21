@@ -63,19 +63,19 @@ armadilhas: não vieram. Você tem um minuto.</p>
 <tbody>
 <tr>
 <td>☐ Sobretítulo em caixa alta</td>
-<td>☐ Campo de mensagem pessoal</td>
+<td>☐ Gradiente roxo</td>
 <td>☐ Título motivacional</td>
 <td>☐ Frase de efeito no card</td>
 </tr>
 <tr>
 <td>☐ Card no centro, com sombra</td>
-<td>☐ Foto ou avatar da pessoa</td>
+<td>☐ Emoji no título</td>
 <td>☐ Ícone num quadradinho</td>
 <td>☐ Botão de largura total</td>
 </tr>
 <tr>
 <td>☐ Setinha no botão</td>
-<td>☐ Link de convite para copiar</td>
+<td>☐ Confete no sucesso</td>
 <td>☐ Tela de sucesso com check</td>
 <td>☐ Membro / Administrador</td>
 </tr>
@@ -96,9 +96,9 @@ API recebeu, o último e-mail, o perfil e o estado. Recarregue a página
 antes de cada teste.</p>
 <div class="table-wrap"><table>
 <colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
+<col style="width: 21%" />
+<col style="width: 64%" />
+<col style="width: 14%" />
 </colgroup>
 <thead>
 <tr>
@@ -109,19 +109,19 @@ antes de cada teste.</p>
 </thead>
 <tbody>
 <tr>
-<td><strong>C10</strong> contexto</td>
+<td><strong>1.</strong> Contexto</td>
 <td>Olhe a página. Ela cabe dentro de uma gestão de pessoas que já
 existe?</td>
 <td></td>
 </tr>
 <tr>
-<td><strong>C3</strong> espera</td>
-<td>Envie <code>novo@example.com</code> e, durante 1,2 s, aperte Enter e
-clique de novo. Painel: quantas chamadas?</td>
+<td><strong>2.</strong> Loading</td>
+<td>Envie <code>novo@example.com</code> e, durante o loading de 1,2 s,
+aperte Enter e clique de novo. Painel: quantas chamadas?</td>
 <td></td>
 </tr>
 <tr>
-<td><strong>C6</strong> falha</td>
+<td><strong>3.</strong> Falha</td>
 <td>Envie <code>falha@example.com</code>. Sem recarregar, envie de
 novo.</td>
 <td></td>
@@ -141,16 +141,17 @@ e código. Os dois lados desafiam e testam as decisões; qualquer pessoa
 participa sem precisar implementar.</p>
 <p>O pedido deixou decisões visuais abertas. Agora vamos procurar uma
 decisão de comportamento que também ficou aberta.</p>
-<h2 id="a-saída-b-e-a-decisão-d1">A saída B e a decisão D1</h2>
+<h2 id="a-saída-b-e-a-regra-de-produto">A saída B e a regra de
+produto</h2>
 <p>O pedido B (<code>demonstracao/pedido-b.txt</code>) traz contexto,
-perfis Leitor e Editor, dez critérios e uma decisão de produto, D1:
-<em>depois do sucesso, editar e-mail ou perfil limpa a confirmação
-anterior.</em> Abra <code>demonstracao/convite-b.html</code>.</p>
-<p>Teste D1: envie <code>ana@example.com</code>, espere a confirmação e
-comece a apagar o e-mail. A frase sumiu? ____</p>
+perfis Leitor e Editor, dez critérios e uma regra de produto: <em>depois
+do sucesso, editar e-mail ou perfil limpa a confirmação anterior.</em>
+Abra <code>demonstracao/convite-b.html</code>.</p>
+<p>Teste a regra: envie <code>ana@example.com</code>, espere a
+confirmação e comece a apagar o e-mail. A frase sumiu? ____</p>
 <h2 id="aposta-3-a-janela">Aposta 3: a janela</h2>
 <p>Escolha uma letra antes do teste. Envie <code>ana@example.com</code>
-com Leitor e, <strong>durante a espera</strong>, troque o perfil para
+com Leitor e, <strong>durante o loading</strong>, troque o perfil para
 Editor. Com o foco no e-mail, a sequência é <strong>Enter, Tab e
 E</strong>. A operação do select pode variar no seu navegador. Após duas
 tentativas sem capturar a janela, use o <a href="ensaio.html">ensaio de
@@ -170,10 +171,9 @@ alterado.</p>
 <p><strong>Não abra os patches ainda.</strong> Primeiro decida o que a
 interface deve fazer quando alguém altera e-mail ou perfil durante o
 envio. Depois tente quebrar a decisão.</p>
-<p>Trabalhe em dupla, se houver esse espaço. Na transmissão, escreva
-primeiro o seu cartão; a troca pelo chat tem um protocolo na etapa
-adversária. Sozinho, faça também o papel de revisor. Sem computador,
-acompanhe a demonstração e escreva a regra no papel.</p>
+<p>Tudo acontece pelo chat da transmissão, e ninguém precisa escrever
+código. Escreva primeiro o seu cartão; a troca pelo chat vem na etapa 2.
+Sem computador, acompanhe a demonstração e escreva a regra no papel.</p>
 <h3 id="escreva-seu-cartão-5-min">1. Escreva seu cartão (5 min)</h3>
 <div class="code-block"><button class="copy" type="button">Copiar</button><pre class="text"><code>Contexto: [de onde vem a regra?]
 Regra:    [o que aparece e o que fica editável?]
@@ -185,17 +185,16 @@ Revisão:  [o que mudou após o contraexemplo?]</code></pre></div>
 confuso” ainda não diz o que testar. Nomeie o e-mail e o perfil do
 envio, os valores atuais dos campos e o que a confirmação deve
 dizer.</p>
-<h3 id="tente-quebrar-a-regra-5-min">2. Tente quebrar a regra (5
-min)</h3>
-<p>Troque os cartões. A dupla revisora propõe um caso e pergunta: o que
-acontece aqui? Pode ser editar duas vezes, mudar e voltar ao valor
-original, errar uma letra, receber falha ou tentar enviar outra vez. Não
-precisa encontrar defeito: uma regra que resiste também é resultado.</p>
-<p><strong>No remoto:</strong> ao sinal, publique <strong>Regra +
-Custo</strong>. O facilitador escolhe dois cartões e identifica seus
-autores. Escolha um deles e responda com <strong>nome do cartão + passos
-que tentam quebrá-lo</strong>. Quem não publicar pode revisar o próprio
-cartão ou um dos dois escolhidos.</p>
+<h3 id="tente-quebrar-a-regra-no-chat-5-min">2. Tente quebrar a regra no
+chat (5 min)</h3>
+<p>Ao sinal, mande no chat a sua <strong>regra e o custo</strong> que
+você aceita. O facilitador lê alguns cartões em voz alta e diz de quem
+são. Escolha um e responda com <strong>o nome de quem escreveu e os
+passos que tentam quebrar a regra</strong>. Pode ser editar duas vezes,
+mudar e voltar ao valor original, errar uma letra, receber falha ou
+tentar enviar outra vez. Não precisa encontrar defeito: uma regra que
+resiste também é resultado. Se preferir não postar, tente quebrar o seu
+próprio cartão.</p>
 <p>Nosso contraexemplo: ______________________________</p>
 <p>A regra resistiu ou mudou? Por quê?
 ______________________________</p>
@@ -247,21 +246,17 @@ executá-la.</p>
 </tr>
 </tbody>
 </table></div>
-<h3 id="revise-e-defenda-2-min">4. Revise e defenda (2 min)</h3>
-<p>Complete a última linha do cartão. Prepare uma defesa de trinta
-segundos: o que sua regra garante e qual custo você aceita. O outro
-grupo pode pedir um contraexemplo. O cartão já contém o contexto, a
-decisão e a verificação para um refinamento ou PR.</p>
+<h3 id="revise-e-defenda-no-chat-2-min">4. Revise e defenda no chat (2
+min)</h3>
+<p>Complete a última linha do cartão. Mande no chat, numa frase, o que a
+sua regra garante e qual custo você aceita. O cartão já contém o
+contexto, a decisão e a verificação para um refinamento ou PR.</p>
 <h2 id="aposta-4-a-busca">Aposta 4: a busca</h2>
-<div class="sourceCode" id="cb2"><div class="code-block"><button class="copy" type="button">Copiar</button><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>busca<span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">&#39;input&#39;</span><span class="op">,</span> <span class="kw">async</span> () <span class="kw">=&gt;</span> {</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> termo <span class="op">=</span> busca<span class="op">.</span><span class="at">value</span><span class="op">;</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> pessoas <span class="op">=</span> <span class="cf">await</span> <span class="fu">buscarPessoas</span>(termo)<span class="op">;</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  lista<span class="op">.</span><span class="fu">render</span>(pessoas<span class="op">,</span> termo)<span class="op">;</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code></pre></div></div>
-<p>A equipe tem Ana, Anderson e Luana. A busca de “an” sai em <strong>0
-ms</strong>; a de “ana”, <strong>100 ms depois</strong>. A primeira leva
-<strong>900 ms</strong> para responder; a segunda, <strong>200
-ms</strong>. O que fica na tela no fim?</p>
+<p>A equipe tem Ana, Anderson e Luana. Cada letra digitada dispara uma
+busca, e a lista mostra a resposta que chegar. A busca de “an” sai em
+<strong>0 ms</strong>; a de “ana”, <strong>100 ms depois</strong>. A
+primeira leva <strong>900 ms</strong> para responder; a segunda,
+<strong>200 ms</strong>. O que fica na tela no fim?</p>
 <hr />
 <p>Qual regra você usaria aqui? ☐ trava ☐ recibo ☐ descarta a resposta
 velha ☐ outra: ________</p>
@@ -333,58 +328,58 @@ foram testados.</p>
 pedido B, para consulta</h3>
 <div class="table-wrap"><table>
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col style="width: 10%" />
+<col style="width: 90%" />
 </colgroup>
 <thead>
 <tr>
-<th>ID</th>
+<th>Nº</th>
 <th>Critério</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>C1</td>
+<td>1</td>
 <td>E-mail vazio ou inválido não chama a API; erro junto ao campo e foco
 nele.</td>
 </tr>
 <tr>
-<td>C2</td>
+<td>2</td>
 <td>Leitor por padrão; só Leitor e Editor.</td>
 </tr>
 <tr>
-<td>C3</td>
+<td>3</td>
 <td>Andamento visível na espera e nenhuma chamada duplicada.</td>
 </tr>
 <tr>
-<td>C4</td>
+<td>4</td>
 <td>Confirmação mostra e-mail e perfil enviados.</td>
 </tr>
 <tr>
-<td>C5</td>
+<td>5</td>
 <td><code>existe@example.com</code> explica que a pessoa já está na
 equipe e preserva os campos.</td>
 </tr>
 <tr>
-<td>C6</td>
+<td>6</td>
 <td>Falha preserva campos; nova tentativa funciona.</td>
 </tr>
 <tr>
-<td>C7</td>
+<td>7</td>
 <td>Teclado opera tudo, com foco visível; resposta não rouba o foco de
 quem saiu.</td>
 </tr>
 <tr>
-<td>C8</td>
+<td>8</td>
 <td>Labels, erro associado, <code>aria-invalid</code>, região de
 status.</td>
 </tr>
 <tr>
-<td>C9</td>
+<td>9</td>
 <td>Sem corte em 320 px e zoom de 200%.</td>
 </tr>
 <tr>
-<td>C10</td>
+<td>10</td>
 <td>Bloco integrado à gestão de pessoas, tokens existentes, sem hero,
 sidebar ou avatar.</td>
 </tr>
