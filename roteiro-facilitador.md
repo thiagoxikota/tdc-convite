@@ -26,7 +26,7 @@ O núcleo é observar decisões deixadas abertas, nomear a regra que falta e o c
 | 19h43–19h48 | 43–48 | Resumo do par e três perguntas para o time |
 | 19h48–20h30 | 48–90 | Perguntas e conversa |
 
-Se houver atraso, reduza o debate inicial. Preserve o teste da regra de produto e o bloco de design. Encerre a atividade e abra perguntas às 20h20.
+Se houver atraso, reduza o debate inicial. Preserve o teste da regra de produto e o bloco de design. Feche o conteúdo até 19h50 e abra as perguntas.
 
 ## Apostas: uma cadência para as quatro
 
@@ -72,9 +72,9 @@ Compare com A, que trava os campos sem isso ter sido pedido. Faça a pausa para 
 
 ## Prática de vinte minutos
 
-Não mostre as duas soluções como escolhas prontas antes do cartão. Peça uma regra observável, não a palavra “seguro” ou “claro”. A pessoa precisa apontar a fonte do contexto, dizer o que pode editar, o que aparece no recibo e qual custo aceita. Quem atua em produto pode começar pela intenção e pelo resultado; quem desenvolve, pelos contratos, estados e código. Os dois lados desafiam e testam. Deixe explícito que qualquer papel participa sem implementar.
-
 **Mudança de 21/10.** A prática não roda: os slides do cartão, da votação trava ou recibo, da busca e da resposta perdida foram apagados. Do slide "O envio tá certo. Um estado ficou sem regra." vá direto às três perguntas para o time. Os passos abaixo ficam só como referência para outra sessão.
+
+Não mostre as duas soluções como escolhas prontas antes do cartão. Peça uma regra observável, não a palavra “seguro” ou “claro”. A pessoa precisa apontar a fonte do contexto, dizer o que pode editar, o que aparece no recibo e qual custo aceita. Quem atua em produto pode começar pela intenção e pelo resultado; quem desenvolve, pelos contratos, estados e código. Os dois lados desafiam e testam. Deixe explícito que qualquer papel participa sem implementar.
 
 **Cinco minutos: escrever.** Cada pessoa preenche o próprio cartão antes de ler o chat. Mantenha o slide do cartão na tela e narre o chat; a transmissão não pode ficar muda. Se alguém travar, sugira começar pelo custo. Quem terminar antes manda a regra e o custo no chat sem esperar os cinco minutos. Quem está sem computador escreve no papel.
 
@@ -86,7 +86,7 @@ Não mostre as duas soluções como escolhas prontas antes do cartão. Peça uma
 
 ## Duas regras e defesa
 
-No slide das duas regras, libere `respostas.html#patches`: cada pessoa roda os mesmos passos na trava e no recibo. Cada lado precisa dizer uma garantia e admitir um custo. O outro lado pode pedir um contraexemplo. Não existe vencedor obrigatório entre regras legítimas. O avanço é sair com um contrato mais verificável do que “componente moderno”. Outra solução pode ficar especificada; não a chame de implementada se não foi executada.
+Não há slide das duas regras (apagado em 21/10). Se a pergunta surgir na conversa final, aponte `respostas.html#patches`: cada pessoa roda os mesmos passos na trava e no recibo. Cada lado precisa dizer uma garantia e admitir um custo. O outro lado pode pedir um contraexemplo. Não existe vencedor obrigatório entre regras legítimas. O avanço é sair com um contrato mais verificável do que “componente moderno”. Outra solução pode ficar especificada; não a chame de implementada se não foi executada.
 
 Não há slide de código. Diga numa frase: o envio é uma cópia dos campos no clique, e os campos continuam editáveis durante o loading. O trecho está em `respostas.html#patches` para quem quiser ver depois. Não chame o problema de duas respostas de convite fora de ordem: o exemplo seguinte da busca tem esse mecanismo, mas este não.
 
@@ -104,6 +104,6 @@ Identifique esse cenário como discussão fora da API simulada. Não improvise u
 
 ## Fecho e perguntas
 
-Volte ao título: no pedido A, “moderno” deixava escolhas abertas; B explicitou contexto e critérios; o durante ainda exigiu uma decisão. Especificar deu critérios para avaliar a saída, inclusive com IA implementando. Peça que uma pessoa escolha um componente real do próprio trabalho e nomeie uma regra ausente, a fonte do contexto, o custo e um teste. O cartão pode ir ao refinamento, ticket ou PR. Entregue o link de respostas e encerre a atividade, mesmo que alguém esteja terminando.
+Volte ao título: no pedido A, “moderno” deixava escolhas abertas; B explicitou contexto e critérios; o durante ainda exigiu uma decisão. Especificar deu critérios para avaliar a saída, inclusive com IA implementando. O cartão do kit leva isso pro refinamento, ticket ou PR. Entregue o link de respostas e abra as perguntas.
 
 Nas perguntas, preserve os limites: duas saídas, mesma base técnica, contextos de produto diferentes, uma geração cada, arquivos originais mantidos e modelo não informado. Se perguntarem o modelo: A e B saíram do Codex CLI em 19/10, com a configuração herdada da conta e sem registro do modelo; a versão sem tokens saiu do Codex em 21/10 com gpt-6-sol. Não chute identificador. O bingo não muda essas limitações. Quando algo não foi testado, diga isso e aponte onde o material permite continuar depois.
