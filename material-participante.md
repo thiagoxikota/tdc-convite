@@ -69,6 +69,8 @@ Separe as observações: o que foi enviado, o que o recibo confirma e o que os c
 
 ## Prática: sua regra sob teste (20 min)
 
+Na aula de 21/10, a prática ao vivo é a votação no chat: trava ou recibo, e o que a escolha perde. O cartão e os passos abaixo ficam como exercício para levar ao seu time.
+
 **Não abra os patches ainda.** Primeiro decida o que a interface deve fazer quando alguém altera e-mail ou perfil durante o envio. Depois tente quebrar a decisão.
 
 A conversa acontece pelo chat da transmissão e o teste, no navegador. Ninguém precisa escrever código. Escreva primeiro o seu cartão; a troca pelo chat vem na etapa 2. Sem computador, acompanhe a demonstração e escreva a regra no papel.

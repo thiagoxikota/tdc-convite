@@ -24,10 +24,10 @@ O núcleo é observar decisões deixadas abertas, escrever uma regra própria, a
 | 19h22–19h32 | 22–32 | Design: A sem tokens, sinais de AI slop, prompt de UI, revisão e lista do que não entra |
 | 19h32–19h43 | 32–43 | Contexto, B, regra de produto, falso encerramento, edição durante o loading e comparação com A |
 | 19h43–19h46 | 43–46 | Resumo do par e instrução da prática |
-| 19h46–20h06 | 46–66 | Cartão, contraexemplo no chat, teste no B e revisão |
-| 20h06–20h13 | 66–73 | Duas regras, patches liberados e defesa no chat |
-| 20h13–20h20 | 73–80 | Resposta perdida e três perguntas para o time (a busca fica fora; slides ocultos) |
-| 20h20–20h30 | 80–90 | Perguntas |
+| 19h46–19h56 | 46–56 | Duas regras rodando no navegador e votação trava ou recibo no chat |
+| 19h56–20h00 | 56–60 | Patches liberados e leitura das respostas do chat |
+| 20h00–20h07 | 60–67 | Resposta perdida e três perguntas para o time (a busca fica fora; slides ocultos) |
+| 20h07–20h30 | 67–90 | Perguntas |
 
 Se houver atraso, reduza o debate inicial. Preserve a prática e o teste da regra de produto. O desafio de resposta perdida pode virar uma pergunta rápida, com a resposta disponível no material posterior. Encerre a atividade e abra perguntas às 20h20.
 
@@ -76,6 +76,8 @@ Compare com A, que trava os campos sem isso ter sido pedido. Faça a pausa para 
 ## Prática de vinte minutos
 
 Não mostre as duas soluções como escolhas prontas antes do cartão. Peça uma regra observável, não a palavra “seguro” ou “claro”. A pessoa precisa apontar a fonte do contexto, dizer o que pode editar, o que aparece no recibo e qual custo aceita. Quem atua em produto pode começar pela intenção e pelo resultado; quem desenvolve, pelos contratos, estados e código. Os dois lados desafiam e testam. Deixe explícito que qualquer papel participa sem implementar.
+
+**Mudança de 21/10.** A prática do cartão e do contraexemplo não roda; os dois slides estão ocultos. No lugar: mostre as duas regras, rode as duas no navegador com o ensaio de quatro segundos e peça o voto no chat, trava ou recibo, mais uma frase com o que a escolha perde. Leia algumas respostas. O cartão fica no material como exercício para o time. Os passos abaixo ficam só como referência.
 
 **Cinco minutos: escrever.** Cada pessoa preenche o próprio cartão antes de ler o chat. Mantenha o slide do cartão na tela e narre o chat; a transmissão não pode ficar muda. Se alguém travar, sugira começar pelo custo. Quem terminar antes manda a regra e o custo no chat sem esperar os cinco minutos. Quem está sem computador escreve no papel.
 
