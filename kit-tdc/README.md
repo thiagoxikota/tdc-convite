@@ -2,6 +2,8 @@
 
 Abra os arquivos no navegador. Não precisa instalar nada, subir servidor nem ter conta de IA. Nenhum convite real é enviado.
 
+**Durante a aula, escreva seu cartão e ouça um contraexemplo antes de abrir os patches.** Esta pasta é comparação posterior, não um gabarito para preencher a regra.
+
 ## Arquivos desta pasta
 
 | Arquivo | O que é |
@@ -34,9 +36,17 @@ Recarregue antes de cada teste. No teste de falha, não recarregue entre as duas
 
 | Arquivo | Resultado |
 |---|---|
-| `../demonstracao/convite-b.html` | Falha: o select diz Editor e a frase diz "perfil Leitor". |
-| `b-patch-trava.html` | Passa: não dá para editar durante a espera. |
-| `b-patch-recibo.html` | Passa: a frase diz que o convite foi para Ana como Leitor e que os campos mudaram depois. |
+| `../demonstracao/convite-b.html` | O select diz Editor e a frase confirma o envio como Leitor. O payload está correto; compare a apresentação com a regra que você escreveu. |
+| `b-patch-trava.html` | Não dá para editar durante a espera. Compare com sua regra e com o custo de fazer a pessoa aguardar. |
+| `b-patch-recibo.html` | A frase diz que o convite foi para Ana como Leitor e que os campos mudaram depois. Compare com sua regra e com o custo da mensagem adicional. |
+
+Se B já atende à sua regra, registre que passou e guarde o teste como regressão. Se a regra exige outra relação entre recibo e rascunho, registre o comportamento esperado, mostre a diferença em B e só então compare o patch. Outra regra é permitida; escrevê-la não prova que foi implementada.
+
+## O cartão em vinte minutos
+
+Cinco minutos para regra, custo e resultado observável; cinco para a dupla revisora propor um contraexemplo; oito para testar B e, ao sinal do facilitador, comparar os patches; dois para revisar o cartão e preparar a defesa. Quem está sozinho pode fazer a revisão e trocar um contraexemplo pelo chat.
+
+O cenário de resposta perdida depois de uma escrita é discussão posterior. A simulação não tem servidor e não prova idempotência.
 
 ## Para gerar a sua versão (opcional)
 

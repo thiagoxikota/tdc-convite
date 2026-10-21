@@ -4,17 +4,18 @@
 
 TDC Community · TDC Talks · quarta, 21/10/2026 · 19h às 20h30 (Brasília) · Thiago Xikota
 
-Hoje você vai apostar, testar e sair com uma decisão pronta para um PR. Precisa só de navegador. Editor de código e ferramenta de IA são opcionais. Nenhum convite real é enviado.
+Um formulário de convite, quatro apostas e uma decisão que ficou em aberto. Você sai com uma regra de produto, um custo assumido e um teste para levar ao próximo PR. Precisa só de navegador. Editor de código e ferramenta de IA são opcionais. Nenhum convite real é enviado.
 
 ## Antes de começar
 
-1. Abra **thiagoxikota.github.io/tdc-convite** no navegador do computador. A prática precisa de teclado; no celular fica difícil. Sem internet, extraia o `kit-participante.zip` e abra `index.html`.
+1. Abra **thiagoxikota.github.io/tdc-convite** no navegador do computador. A prática precisa de teclado. Sem internet, extraia o `kit-participante.zip` e abra `index.html`.
 2. **Não abra a saída A ainda.** A primeira atividade é uma aposta.
-3. Se algum arquivo não abrir, acompanhe pela tela do facilitador. Todas as atividades funcionam assim.
+3. Guarde sua resposta antes de ver o resultado. No chat, envie só ao sinal do facilitador.
+4. Se algum arquivo não abrir, acompanhe pela tela do facilitador e anote no papel. A prática também funciona assim.
 
 ## Aposta 1: bingo do componente genérico
 
-O pedido A, na parte de produto, era só isto: *"Crie um componente moderno e responsivo para convidar uma pessoa para uma equipe."* Marque o que você acha que veio. Três das doze casas são armadilhas: não vieram.
+O pedido A, na parte de produto, era só isto: *"Crie um componente moderno e responsivo para convidar uma pessoa para uma equipe."* **Escolha exatamente nove casas.** Três das doze são armadilhas: não vieram. Você tem um minuto.
 
 | | | | |
 |---|---|---|---|
@@ -22,7 +23,9 @@ O pedido A, na parte de produto, era só isto: *"Crie um componente moderno e re
 | ☐ Card no centro, com sombra | ☐ Foto ou avatar da pessoa | ☐ Ícone num quadradinho | ☐ Botão de largura total |
 | ☐ Setinha no botão | ☐ Link de convite para copiar | ☐ Tela de sucesso com check | ☐ Membro / Administrador |
 
-Casas marcadas: ____ de 12.
+Marquei **9 de 12**. Depois da revelação: caí em ____ armadilha(s). Acertei **9 menos esse número**: ____ de 9.
+
+Esse é um jogo de reconhecimento. O placar não mede com que frequência uma IA repete um padrão. Na revelação, veja o formulário e o estado de sucesso: uma imagem só não mostra todas as casas.
 
 ## Aposta 2: quantos testes A passa?
 
@@ -38,6 +41,8 @@ Abra `demonstracao/convite-a.html`. O **Painel do laboratório**, embaixo do for
 
 Anote uma decisão que A tomou sem ninguém pedir: ______________________________
 
+O pedido deixou decisões visuais abertas. Agora vamos procurar uma decisão de comportamento que também ficou aberta.
+
 ## A saída B e a decisão D1
 
 O pedido B (`demonstracao/pedido-b.txt`) traz contexto, perfis Leitor e Editor, dez critérios e uma decisão de produto, D1: *depois do sucesso, editar e-mail ou perfil limpa a confirmação anterior.* Abra `demonstracao/convite-b.html`.
@@ -46,7 +51,7 @@ Teste D1: envie `ana@example.com`, espere a confirmação e comece a apagar o e-
 
 ## Aposta 3: a janela
 
-Envie `ana@example.com` com Leitor e, **durante a espera**, troque o perfil para Editor. Para dar tempo: **Enter, Tab e a tecla E**. O que aparece?
+Escolha uma letra antes do teste. Envie `ana@example.com` com Leitor e, **durante a espera**, troque o perfil para Editor. Com o foco no e-mail, a sequência é **Enter, Tab e E**. A operação do select pode variar no seu navegador. Se não der tempo, acompanhe a demonstração. O que aparece?
 
 A. A confirmação nem aparece · B. Aparece "perfil Editor" · C. Aparece "perfil Leitor" com o select em Editor · D. Dá erro
 
@@ -54,38 +59,51 @@ Minha letra: ____ O que aconteceu: ______________________________
 
 Faça o mesmo em A. O que muda? ______________________________
 
-## Prática: dê um dono à janela (14 min)
+Separe as observações: o que foi enviado, o que o recibo confirma e o que os campos mostram agora. Uma diferença entre recibo e rascunho pede uma regra de apresentação; não significa que o payload enviado foi alterado.
 
-Duas regras legítimas. Você pode propor uma terceira, desde que diga o custo.
+## Prática: sua regra sob teste (20 min)
 
-| Regra | O que faz | Custo |
-|---|---|---|
-| **Travar** | Campos travados enquanto o convite está a caminho. | Quem errou uma letra espera a resposta. Em 1,2 s, nada; numa espera de 40 s, irrita. |
-| **Recibo** | Deixa editar. A resposta diz de quem ela é e avisa que os campos mudaram. | Mais estado no componente e uma frase mais longa para ler. |
+**Não abra os patches ainda.** Primeiro decida o que a interface deve fazer quando alguém altera e-mail ou perfil durante o envio. Depois tente quebrar a decisão.
 
-### Seu cartão da janela, já como PR (5 min)
+Trabalhe em dupla, se houver esse espaço. Sozinho ou na transmissão, escreva seu cartão e faça o papel de revisor; você pode trocar um contraexemplo pelo chat, ao sinal do facilitador. Sem computador, acompanhe a demonstração e escreva a regra no papel.
+
+### 1. Escreva seu cartão (5 min)
 
 ```text
-Título:  Convite: a resposta fala do envio dela
-Janela:  a pessoa muda e-mail ou perfil com o convite a caminho
-Regra:   [o que a tela faz]
-Custo:   [o que perdemos com essa regra]
-Teste:   envia ana@example.com como Leitor, Enter, Tab, E
-         → [resultado esperado]
-Hoje:    falha em convite-b.html · passa no patch da minha regra
+Título:   [a mudança ou a regra que quero preservar]
+Janela:   altero e-mail ou perfil durante o envio
+Regra:    [o que a pessoa deve ver ou conseguir fazer]
+Custo:    [o que essa regra dificulta ou exige]
+Teste:    [passos] → [resultado observável]
+Em B:     [observado] / [atende ou não à minha regra]
+Revisão:  [o que mudei depois do contraexemplo]
 ```
 
-A linha "Hoje" é a mais forte do PR: um teste que falha agora, com passo a passo. No seu repo, troque arquivos e funções pelos reais.
+Escreva um resultado que outra pessoa consiga verificar. "Não fica confuso" ainda não diz o que testar. Nomeie o e-mail e o perfil do envio, os valores atuais dos campos e o que a confirmação deve dizer.
 
-### Rode o seu teste (8 min)
+### 2. Tente quebrar a regra (5 min)
 
-| Arquivo | O que esperar | Resultado |
+Troque os cartões. A dupla revisora propõe um caso e pergunta: o que acontece aqui? Pode ser editar duas vezes, mudar e voltar ao valor original, errar uma letra, receber falha ou tentar enviar outra vez. Não precisa encontrar defeito: uma regra que resiste também é resultado.
+
+Nosso contraexemplo: ______________________________
+
+A regra resistiu ou mudou? Por quê? ______________________________
+
+### 3. Teste e compare (8 min)
+
+Rode os passos em B e registre o que aconteceu, **antes** de abrir a referência. B já confirma o payload enviado. Ele atende sua regra adicional de apresentação? Se sim, registre que passou e preserve o teste como regressão. Se sua regra exige outro comportamento, registre a diferença e o teste que falha. Não invente um defeito para justificar um patch.
+
+Quando o facilitador liberar, abra [as implementações de comparação](respostas.html#patches). Rode os mesmos passos. Se sua regra for outra, escreva o esperado da sua versão; implementação é opcional. Não declare que ela passou sem executá-la.
+
+| Versão | Resultado observado | Atende à regra escrita? |
 |---|---|---|
-| `demonstracao/convite-b.html` | Falha: a tela fica ambígua | |
-| `kit-tdc/b-patch-trava.html` | Passa se você escolheu travar | |
-| `kit-tdc/b-patch-recibo.html` | Passa se você escolheu recibo | |
+| B | | |
+| Implementação de comparação escolhida | | |
+| Outra regra, se houver | Escreva o esperado; implementação opcional | |
 
-Escolheu outra regra? Confirme que B falha e escreva o resultado esperado. Esse teste vira o seu PR.
+### 4. Revise e defenda (2 min)
+
+Complete a última linha do cartão. Prepare uma defesa de trinta segundos: o que sua regra garante e qual custo você aceita. O outro grupo pode pedir um contraexemplo. O cartão já contém o contexto, a decisão e a verificação para um PR.
 
 ## Aposta 4: a busca
 
@@ -105,25 +123,35 @@ Qual regra você usaria aqui? ☐ trava ☐ recibo ☐ descarta a resposta velha
 
 Por quê? ______________________________
 
+## Desafio sênior: o servidor gravou, a resposta se perdeu
+
+**Cenário para discussão, fora da API simulada.** O servidor criou o convite da Ana. A resposta não chegou ao navegador, que só observou uma falha de rede.
+
+O que a interface sabe com certeza? ______________________________
+
+O que ela mostra? Como consulta o resultado? Em que condição repetir o envio é seguro? ______________________________
+
+Diga qual parte dessa decisão depende do backend: ______________________________
+
 ## Três perguntas para o próximo PR
 
-1. Quais janelas esse componente tem (antes, durante, depois), e quem decidiu cada uma?
-2. Essa resposta é de leitura ou de escrita?
-3. Que teste falha se alguém mudar a regra?
+1. Que transição ficou aberta e qual regra queremos?
+2. Podemos descartar a resposta ou a ação já tem efeito?
+3. Que teste verifica essa regra e seu custo?
 
 ## Para casa
 
 **Com IA:** cole seu cartão no fim de `demonstracao/pedido-b.txt`, use conversa nova e espere no máximo 4 minutos. Salve a primeira saída como `meu-convite.html`, registre a ferramenta e rode o mesmo teste. Se a IA alterar a API simulada ou o painel, o resultado não é comparável.
 
-**Respostas das apostas, o código e os patches explicados:** thiagoxikota.github.io/tdc-convite/respostas.html, depois da aula.
+[Respostas das apostas, código e patches explicados](respostas.html), depois da atividade. [Ferramenta de ensaio e visualização](ensaio.html), para acompanhar a demonstração quando o facilitador liberar. A instrumentação do ensaio é separada das saídas originais.
 
 ## Procedência e limites
 
-**De onde vêm A e B.** Duas sessões separadas do Codex em 19/10/2026, uma geração por condição, mesma base, primeira saída guardada sem edição. O modelo não foi informado pela ferramenta. Pedidos integrais e registro em `demonstracao/`. Um par de saídas não mede com que frequência isso acontece; a evidência de repetição usada na aula é a previsão da própria sala.
+**De onde vêm A e B.** Duas sessões separadas do Codex em 19/10/2026, uma geração por condição, mesma base, primeira saída guardada sem edição. O modelo não foi informado pela ferramenta. Pedidos integrais e registro em `demonstracao/`. Um par de saídas e o bingo não medem frequência nem isolam uma causa geral para a repetição.
 
-**O que os patches e a referência são.** `kit-tdc/b-patch-trava.html` e `kit-tdc/b-patch-recibo.html` são cópias de B com patches escritos à mão para a aula, rotulados na própria página. `kit-tdc/referencia.html` é uma implementação didática completa. Nenhum deles é saída gerada.
+**O que as comparações são.** Os dois patches em `kit-tdc/` são cópias de B com alterações escritas à mão para a aula, rotuladas na própria página. A referência completa também é didática. Nenhum deles é saída gerada.
 
-**O que o laboratório não prova.** A API simulada (`window.apiConvite`, 1,2 s de espera) não tem rede, servidor nem autorização: aceita o perfil que recebe. Bloquear o botão não protege contra recarga ou resposta perdida; isso pede um contrato com o backend, como uma chave de idempotência. `falha@example.com` simula só uma falha conhecida. Leitor de tela e zoom nativo não foram testados.
+**O que o laboratório não prova.** A API simulada (`window.apiConvite`, 1,2 s de espera) não tem rede, servidor nem autorização: aceita o perfil que recebe. Bloquear o botão evita chamadas concorrentes nessa página; não protege por si só contra recarga ou resposta perdida. Uma nova tentativa segura pode exigir uma chave de idempotência, com deduplicação no servidor e consulta do resultado. `falha@example.com` simula uma falha conhecida, não uma escrita de resultado desconhecido. Leitor de tela e zoom nativo não foram testados.
 
 ### Os dez critérios do pedido B, para consulta
 

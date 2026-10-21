@@ -21,9 +21,10 @@ footer{padding:20px 16px;border-top:1px solid var(--line);color:var(--muted);fon
 </style></head><body><nav aria-label="Materiais"><a href="index.html">Início</a><a href="demonstracao/convite-a.html">Saída A</a><a href="demonstracao/convite-b.html">Saída B</a><a href="material-participante.html">Material</a></nav><main><h1>Respostas das apostas</h1>
 <h2>Por que a IA repete o componente genérico (e o que muda quando você especifica)</h2>
 <p>TDC Talks · 21/10/2026 · Thiago Xikota. Para ler depois da aula.</p>
-<p><strong>Bingo.</strong> As armadilhas são mensagem pessoal, avatar e link de convite: A não tem nenhuma. A tem as outras nove: "SUA EQUIPE" em caixa alta, "Trabalhar junto começa aqui.", "Um novo convite, novas possibilidades.", card centralizado com sombra, ícone, botão de largura total com seta, tela de sucesso com check e Membro/Administrador.</p>
+<p><strong>Bingo.</strong> As armadilhas são mensagem pessoal, avatar e link de convite: A não tem nenhuma. A tem as outras nove: "SUA EQUIPE" em caixa alta, "Trabalhar junto começa aqui.", "Um novo convite, novas possibilidades.", card centralizado com sombra, ícone, botão de largura total com seta, tela de sucesso com check e Membro/Administrador. Com nove escolhas, seus acertos são nove menos as armadilhas que marcou. O formulário e o estado de sucesso mostram casas diferentes.</p>
+<p>O bingo é reconhecimento e diversão. Seu placar não demonstra frequência nem causa geral da repetição. A pergunta útil para a prática é quais decisões visuais e de comportamento ficaram abertas para quem implementou.</p>
 <p><strong>Aposta 2.</strong> A passa C3 e C6. Não atende C10, mas esse critério depende de um contexto (gestão de pessoas) que só o pedido B trouxe. Não é descumprimento de A.</p>
-<p><strong>Aposta 3.</strong> Letra C em B. A trava os campos durante a espera e não tem a ambiguidade; em compensação, puxa o foco para o título de sucesso mesmo quando você já saiu do formulário. B cumpre D1 como foi escrita: o texto falava de "depois do sucesso" e não do intervalo. A janela recria a confusão que motivou D1, num momento que D1 não cobria.</p>
+<p><strong>Aposta 3.</strong> Letra C em B. O payload está correto e o recibo confirma o convite enviado para Ana como Leitor. Os campos atuais já dizem Editor. A regra que relaciona esse recibo ao novo rascunho ficou em aberto. A trava os campos durante a espera; em compensação, puxa o foco para o título de sucesso mesmo quando você já saiu do formulário. B cumpre D1 como foi escrita: o texto falava de "depois do sucesso" e não do intervalo.</p>
 <p><strong>Aposta 4.</strong> A caixa diz "ana" e a lista mostra Ana, Anderson e Luana, porque a resposta de "an" chegou por último. Travar a busca ou mostrar recibo não faz sentido. Busca é leitura: resposta velha normalmente se descarta, com contador, <code>AbortController</code> (passando o <code>signal</code> para o <code>fetch</code>) ou o equivalente do seu framework. Em React, o mesmo vale para um <code>fetch</code> dentro de <code>useEffect</code>: use cleanup ou a identidade da requisição.</p>
 <div class="code-block"><button class="copy" type="button">Copiar</button><pre><code>let ultimo = 0;
 busca.addEventListener('input', async () =&gt; {
@@ -33,16 +34,19 @@ busca.addEventListener('input', async () =&gt; {
   if (meu !== ultimo) return; // leitura velha: descarta
   lista.render(pessoas, termo);
 });</code></pre></div>
-<p>Convite é escrita: o convite da Ana existe, e ignorar a resposta não desfaz o envio. A interface precisa mostrar o que foi feito (trava, recibo) ou reconciliar com o servidor, nunca jogar fora. A regra curta: <strong>leitura velha se descarta; escrita feita se mostra ou se reconcilia.</strong></p>
+<p>Convite é escrita: o convite da Ana existe, e ignorar a resposta não desfaz o envio. A interface precisa representar o que foi feito ou reconciliar o resultado com o servidor. Nesta busca, a leitura antiga já não atende à intenção atual e pode ser descartada. A regra curta para estes exemplos: <strong>leitura velha se descarta; escrita feita se mostra ou se reconcilia.</strong></p>
+<h2 id="patches">Implementações para comparar com a sua regra</h2>
+<p>Abra depois de escrever o cartão e ouvir um contraexemplo. <a href="kit-tdc/b-patch-trava.html">Trava</a> impede a edição durante a espera: quem errou uma letra precisa aguardar. <a href="kit-tdc/b-patch-recibo.html">Recibo</a> permite editar e identifica o envio concluído: exige mais estado e uma mensagem adicional. Você pode defender outra regra se disser o comportamento observável e o custo.</p>
+<p>Registre o que B já cumpre. Se ele atende à regra que você escreveu, o teste passa e vira regressão. Se você exige um comportamento diferente, demonstre a diferença antes de comparar o patch. Os patches são referências didáticas escritas à mão; não são novas saídas da IA nem gabarito universal.</p>
 <h2>O código: onde a regra mora</h2>
 <p>Trecho real de <code>demonstracao/convite-b.html</code>, linhas 216 a 231, com o meio resumido:</p>
 <div class="code-block"><button class="copy" type="button">Copiar</button><pre><code>const convite = { email: email.value.trim(), perfil: perfil.value };
 aguardando = true;   // botão bloqueado, campos livres
+// durante o await, os campos continuam editáveis
 const resultado = await window.apiConvite(convite);
-// ... 1,2 s em que a pessoa pode mexer em tudo ...
 status.textContent = 'Convite enviado para ' + resultado.email
   + ' com o perfil ' + nomes[resultado.perfil] + '.';</code></pre></div>
-<p>O payload é uma cópia do momento do envio, e isso está certo. A tela continua viva. O furo mora no intervalo.</p>
+<p>O payload é uma cópia do momento do envio, e isso está certo. A tela continua viva. A especificação não definiu a relação entre o recibo desse envio e os campos editados durante a espera.</p>
 <p>Patch <strong>trava</strong> (<code>kit-tdc/b-patch-trava.html</code>):</p>
 <div class="code-block"><button class="copy" type="button">Copiar</button><pre><code>aguardando = true;
 email.readOnly = true;
@@ -52,4 +56,10 @@ perfil.disabled = true;
 <div class="code-block"><button class="copy" type="button">Copiar</button><pre><code>const mudou = email.value.trim() !== convite.email || perfil.value !== convite.perfil;
 status.textContent = 'Convite enviado para ' + resultado.email + ' com o perfil ' + nomes[resultado.perfil] + '.'
   + (mudou ? ' Os campos acima mudaram depois do envio e ainda não foram enviados.' : '');
-confirmado = !mudou; // recibo fica até o próximo envio</code></pre></div></main><footer>TDC Talks · 21/10/2026 · Thiago Xikota</footer><script>document.querySelectorAll('.copy').forEach(b=>b.addEventListener('click',async()=>{const c=b.parentElement.querySelector('code');try{await navigator.clipboard.writeText(c.textContent);b.textContent='Copiado'}catch{const r=document.createRange();r.selectNodeContents(c);const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selecionado: Ctrl/Cmd+C'}setTimeout(()=>b.textContent='Copiar',3000)}));</script></body></html>
+confirmado = !mudou; // se mudou, preserva o recibo ao continuar digitando</code></pre></div>
+<h2 id="resposta-perdida">Desafio sênior: o servidor gravou, a resposta se perdeu</h2>
+<p>O público sabe pelo enunciado que o servidor gravou. O navegador não sabe: viu apenas uma falha de rede. Ele não pode afirmar que o convite falhou nem reenviar cegamente. Um estado como "Não conseguimos confirmar o resultado" preserva essa incerteza enquanto a aplicação consulta a operação.</p>
+<p>Reconciliar exige um contrato com o backend. Uma chave de idempotência só torna a nova tentativa segura se o servidor reconhecer a mesma operação, deduplicar e devolver seu resultado; gerar uma chave nova a cada clique não resolve. O contrato também precisa definir como consultar o estado e por quanto tempo essa identidade vale.</p>
+<p>É um cenário de discussão, fora da API simulada desta aula. <code>falha@example.com</code> representa uma falha conhecida. Bloquear o botão na página não prova idempotência no servidor. Referência: <a href="https://www.rfc-editor.org/rfc/rfc9110.html#name-idempotent-methods">RFC 9110, métodos idempotentes</a>.</p>
+<p><a href="ensaio.html">Ferramenta de ensaio e visualização</a> · <a href="kit-tdc/referencia.html">Referência didática completa</a> · <a href="material-participante.html">Voltar ao cartão da prática</a></p>
+</main><footer>TDC Talks · 21/10/2026 · Thiago Xikota</footer><script>document.querySelectorAll('.copy').forEach(b=>b.addEventListener('click',async()=>{const c=b.parentElement.querySelector('code');try{await navigator.clipboard.writeText(c.textContent);b.textContent='Copiado'}catch{const r=document.createRange();r.selectNodeContents(c);const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selecionado: Ctrl/Cmd+C'}setTimeout(()=>b.textContent='Copiar',3000)}));</script></body></html>

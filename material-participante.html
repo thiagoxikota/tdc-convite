@@ -15,74 +15,347 @@ pre{white-space:pre-wrap;margin:0;padding:20px 22px;line-height:1.6;font-size:14
 .copy{display:block;margin:12px 12px 0 auto;border:2px solid var(--ink);background:#fff;font:inherit;font-size:13px;font-weight:600;padding:8px 12px;cursor:pointer;min-height:40px}
 .table-wrap{overflow-x:auto;margin:20px 0}table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.55}
 th,td{border-bottom:1px solid var(--line);padding:12px 10px;text-align:left;vertical-align:top}th{background:var(--paper);font-weight:600}
-table.grid td{border:2px solid var(--ink);padding:16px 12px;width:33%;font-weight:600;background:#fff}
+table.grid td{border:2px solid var(--ink);padding:16px 12px;width:25%;font-weight:600;background:#fff}
 footer{padding:20px 16px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;text-align:center}
 @media print{nav,.copy,footer{display:none}main{padding:0;max-width:none}h1{font-size:26px}h2{font-size:18px;margin-top:20px;break-after:avoid}h3{font-size:14px;margin-top:12px;break-after:avoid}p,li{font-size:10pt;line-height:1.45}p{margin:6px 0}li{margin:3px 0}pre{font-size:8.5pt;line-height:1.4;padding:10px 12px}.code-block{margin:10px 0;break-inside:avoid}table{font-size:9pt}th,td{padding:6px}table.grid td{padding:10px 8px}tr{break-inside:avoid}a{text-decoration:none}@page{size:A4;margin:16mm}}
-</style></head><body><nav aria-label="Materiais"><a href="index.html">Início</a><a href="demonstracao/convite-a.html">Saída A</a><a href="demonstracao/convite-b.html">Saída B</a></nav><main><h1>Por que a IA repete o componente genérico</h1>
-<h2>(e o que muda quando você especifica)</h2>
-<p>TDC Community · TDC Talks · quarta, 21/10/2026 · 19h às 20h30 (Brasília) · Thiago Xikota</p>
-<p>Hoje você vai apostar, testar e sair com uma decisão pronta para um PR. Precisa só de navegador. Editor de código e ferramenta de IA são opcionais. Nenhum convite real é enviado.</p>
-<h2>Antes de começar</h2>
-<ol>
-<li>Abra <strong>thiagoxikota.github.io/tdc-convite</strong> no navegador do computador. A prática precisa de teclado; no celular fica difícil. Sem internet, extraia o <code>kit-participante.zip</code> e abra <code>index.html</code>.</li>
-<li><strong>Não abra a saída A ainda.</strong> A primeira atividade é uma aposta.</li>
-<li>Se algum arquivo não abrir, acompanhe pela tela do facilitador. Todas as atividades funcionam assim.</li>
+</style></head><body><nav aria-label="Materiais"><a href="index.html">Início</a><a href="demonstracao/convite-a.html">Saída A</a><a href="demonstracao/convite-b.html">Saída B</a></nav><main><h1 id="por-que-a-ia-repete-o-componente-genérico">Por que a IA repete o
+componente genérico</h1>
+<h2 id="e-o-que-muda-quando-você-especifica">(e o que muda quando você
+especifica)</h2>
+<p>TDC Community · TDC Talks · quarta, 21/10/2026 · 19h às 20h30
+(Brasília) · Thiago Xikota</p>
+<p>Um formulário de convite, quatro apostas e uma decisão que ficou em
+aberto. Você sai com uma regra de produto, um custo assumido e um teste
+para levar ao próximo PR. Precisa só de navegador. Editor de código e
+ferramenta de IA são opcionais. Nenhum convite real é enviado.</p>
+<h2 id="antes-de-começar">Antes de começar</h2>
+<ol type="1">
+<li>Abra <strong>thiagoxikota.github.io/tdc-convite</strong> no
+navegador do computador. A prática precisa de teclado. Sem internet,
+extraia o <code>kit-participante.zip</code> e abra
+<code>index.html</code>.</li>
+<li><strong>Não abra a saída A ainda.</strong> A primeira atividade é
+uma aposta.</li>
+<li>Guarde sua resposta antes de ver o resultado. No chat, envie só ao
+sinal do facilitador.</li>
+<li>Se algum arquivo não abrir, acompanhe pela tela do facilitador e
+anote no papel. A prática também funciona assim.</li>
 </ol>
-<h2>Aposta 1: bingo do componente genérico</h2>
-<p>O pedido A, na parte de produto, era só isto: <em>"Crie um componente moderno e responsivo para convidar uma pessoa para uma equipe."</em> Marque o que você acha que veio. Três das doze casas são armadilhas: não vieram.</p>
-<div class="table-wrap"><table class="grid"><tbody><tr><td>☐ Sobretítulo em caixa alta</td><td>☐ Campo de mensagem pessoal</td><td>☐ Título motivacional</td><td>☐ Frase de efeito no card</td></tr><tr><td>☐ Card no centro, com sombra</td><td>☐ Foto ou avatar da pessoa</td><td>☐ Ícone num quadradinho</td><td>☐ Botão de largura total</td></tr><tr><td>☐ Setinha no botão</td><td>☐ Link de convite para copiar</td><td>☐ Tela de sucesso com check</td><td>☐ Membro / Administrador</td></tr></tbody></table></div>
-<p>Casas marcadas: ____ de 12.</p>
-<h2>Aposta 2: quantos testes A passa?</h2>
+<h2 id="aposta-1-bingo-do-componente-genérico">Aposta 1: bingo do
+componente genérico</h2>
+<p>O pedido A, na parte de produto, era só isto: <em>“Crie um componente
+moderno e responsivo para convidar uma pessoa para uma equipe.”</em>
+<strong>Escolha exatamente nove casas.</strong> Três das doze são
+armadilhas: não vieram. Você tem um minuto.</p>
+<div class="table-wrap"><table class="grid">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<tbody>
+<tr>
+<td>☐ Sobretítulo em caixa alta</td>
+<td>☐ Campo de mensagem pessoal</td>
+<td>☐ Título motivacional</td>
+<td>☐ Frase de efeito no card</td>
+</tr>
+<tr>
+<td>☐ Card no centro, com sombra</td>
+<td>☐ Foto ou avatar da pessoa</td>
+<td>☐ Ícone num quadradinho</td>
+<td>☐ Botão de largura total</td>
+</tr>
+<tr>
+<td>☐ Setinha no botão</td>
+<td>☐ Link de convite para copiar</td>
+<td>☐ Tela de sucesso com check</td>
+<td>☐ Membro / Administrador</td>
+</tr>
+</tbody>
+</table></div>
+<p>Marquei <strong>9 de 12</strong>. Depois da revelação: caí em ____
+armadilha(s). Acertei <strong>9 menos esse número</strong>: ____ de
+9.</p>
+<p>Esse é um jogo de reconhecimento. O placar não mede com que
+frequência uma IA repete um padrão. Na revelação, veja o formulário e o
+estado de sucesso: uma imagem só não mostra todas as casas.</p>
+<h2 id="aposta-2-quantos-testes-a-passa">Aposta 2: quantos testes A
+passa?</h2>
 <p>Chute antes: 0, 1, 2 ou 3. Meu chute: ____</p>
-<p>Abra <code>demonstracao/convite-a.html</code>. O <strong>Painel do laboratório</strong>, embaixo do formulário, mostra quantas chamadas a API recebeu, o último e-mail, o perfil e o estado. Recarregue a página antes de cada teste.</p>
-<div class="table-wrap"><table><thead><tr><th scope="col">Teste</th><th scope="col">Faça</th><th scope="col">Passa?</th></tr></thead><tbody><tr><td><strong>C10</strong> contexto</td><td>Olhe a página. Ela cabe dentro de uma gestão de pessoas que já existe?</td><td></td></tr><tr><td><strong>C3</strong> espera</td><td>Envie <code>novo@example.com</code> e, durante 1,2 s, aperte Enter e clique de novo. Painel: quantas chamadas?</td><td></td></tr><tr><td><strong>C6</strong> falha</td><td>Envie <code>falha@example.com</code>. Sem recarregar, envie de novo.</td><td></td></tr></tbody></table></div>
-<p>Anote uma decisão que A tomou sem ninguém pedir: ______________________________</p>
-<h2>A saída B e a decisão D1</h2>
-<p>O pedido B (<code>demonstracao/pedido-b.txt</code>) traz contexto, perfis Leitor e Editor, dez critérios e uma decisão de produto, D1: <em>depois do sucesso, editar e-mail ou perfil limpa a confirmação anterior.</em> Abra <code>demonstracao/convite-b.html</code>.</p>
-<p>Teste D1: envie <code>ana@example.com</code>, espere a confirmação e comece a apagar o e-mail. A frase sumiu? ____</p>
-<h2>Aposta 3: a janela</h2>
-<p>Envie <code>ana@example.com</code> com Leitor e, <strong>durante a espera</strong>, troque o perfil para Editor. Para dar tempo: <strong>Enter, Tab e a tecla E</strong>. O que aparece?</p>
-<p>A. A confirmação nem aparece · B. Aparece "perfil Editor" · C. Aparece "perfil Leitor" com o select em Editor · D. Dá erro</p>
+<p>Abra <code>demonstracao/convite-a.html</code>. O <strong>Painel do
+laboratório</strong>, embaixo do formulário, mostra quantas chamadas a
+API recebeu, o último e-mail, o perfil e o estado. Recarregue a página
+antes de cada teste.</p>
+<div class="table-wrap"><table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Teste</th>
+<th>Faça</th>
+<th>Passa?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>C10</strong> contexto</td>
+<td>Olhe a página. Ela cabe dentro de uma gestão de pessoas que já
+existe?</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>C3</strong> espera</td>
+<td>Envie <code>novo@example.com</code> e, durante 1,2 s, aperte Enter e
+clique de novo. Painel: quantas chamadas?</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>C6</strong> falha</td>
+<td>Envie <code>falha@example.com</code>. Sem recarregar, envie de
+novo.</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<p>Anote uma decisão que A tomou sem ninguém pedir:
+______________________________</p>
+<p>O pedido deixou decisões visuais abertas. Agora vamos procurar uma
+decisão de comportamento que também ficou aberta.</p>
+<h2 id="a-saída-b-e-a-decisão-d1">A saída B e a decisão D1</h2>
+<p>O pedido B (<code>demonstracao/pedido-b.txt</code>) traz contexto,
+perfis Leitor e Editor, dez critérios e uma decisão de produto, D1:
+<em>depois do sucesso, editar e-mail ou perfil limpa a confirmação
+anterior.</em> Abra <code>demonstracao/convite-b.html</code>.</p>
+<p>Teste D1: envie <code>ana@example.com</code>, espere a confirmação e
+comece a apagar o e-mail. A frase sumiu? ____</p>
+<h2 id="aposta-3-a-janela">Aposta 3: a janela</h2>
+<p>Escolha uma letra antes do teste. Envie <code>ana@example.com</code>
+com Leitor e, <strong>durante a espera</strong>, troque o perfil para
+Editor. Com o foco no e-mail, a sequência é <strong>Enter, Tab e
+E</strong>. A operação do select pode variar no seu navegador. Se não
+der tempo, acompanhe a demonstração. O que aparece?</p>
+<p>A. A confirmação nem aparece · B. Aparece “perfil Editor” · C.
+Aparece “perfil Leitor” com o select em Editor · D. Dá erro</p>
 <p>Minha letra: ____ O que aconteceu: ______________________________</p>
 <p>Faça o mesmo em A. O que muda? ______________________________</p>
-<h2>Prática: dê um dono à janela (14 min)</h2>
-<p>Duas regras legítimas. Você pode propor uma terceira, desde que diga o custo.</p>
-<div class="table-wrap"><table><thead><tr><th scope="col">Regra</th><th scope="col">O que faz</th><th scope="col">Custo</th></tr></thead><tbody><tr><td><strong>Travar</strong></td><td>Campos travados enquanto o convite está a caminho.</td><td>Quem errou uma letra espera a resposta. Em 1,2 s, nada; numa espera de 40 s, irrita.</td></tr><tr><td><strong>Recibo</strong></td><td>Deixa editar. A resposta diz de quem ela é e avisa que os campos mudaram.</td><td>Mais estado no componente e uma frase mais longa para ler.</td></tr></tbody></table></div>
-<h3>Seu cartão da janela, já como PR (5 min)</h3>
-<div class="code-block"><button class="copy" type="button">Copiar</button><pre><code>Título:  Convite: a resposta fala do envio dela
-Janela:  a pessoa muda e-mail ou perfil com o convite a caminho
-Regra:   [o que a tela faz]
-Custo:   [o que perdemos com essa regra]
-Teste:   envia ana@example.com como Leitor, Enter, Tab, E
-         → [resultado esperado]
-Hoje:    falha em convite-b.html · passa no patch da minha regra</code></pre></div>
-<p>A linha "Hoje" é a mais forte do PR: um teste que falha agora, com passo a passo. No seu repo, troque arquivos e funções pelos reais.</p>
-<h3>Rode o seu teste (8 min)</h3>
-<div class="table-wrap"><table><thead><tr><th scope="col">Arquivo</th><th scope="col">O que esperar</th><th scope="col">Resultado</th></tr></thead><tbody><tr><td><code>demonstracao/convite-b.html</code></td><td>Falha: a tela fica ambígua</td><td></td></tr><tr><td><code>kit-tdc/b-patch-trava.html</code></td><td>Passa se você escolheu travar</td><td></td></tr><tr><td><code>kit-tdc/b-patch-recibo.html</code></td><td>Passa se você escolheu recibo</td><td></td></tr></tbody></table></div>
-<p>Escolheu outra regra? Confirme que B falha e escreva o resultado esperado. Esse teste vira o seu PR.</p>
-<h2>Aposta 4: a busca</h2>
-<div class="code-block"><button class="copy" type="button">Copiar</button><pre><code>busca.addEventListener('input', async () =&gt; {
+<p>Separe as observações: o que foi enviado, o que o recibo confirma e o
+que os campos mostram agora. Uma diferença entre recibo e rascunho pede
+uma regra de apresentação; não significa que o payload enviado foi
+alterado.</p>
+<h2 id="prática-sua-regra-sob-teste-20-min">Prática: sua regra sob teste
+(20 min)</h2>
+<p><strong>Não abra os patches ainda.</strong> Primeiro decida o que a
+interface deve fazer quando alguém altera e-mail ou perfil durante o
+envio. Depois tente quebrar a decisão.</p>
+<p>Trabalhe em dupla, se houver esse espaço. Sozinho ou na transmissão,
+escreva seu cartão e faça o papel de revisor; você pode trocar um
+contraexemplo pelo chat, ao sinal do facilitador. Sem computador,
+acompanhe a demonstração e escreva a regra no papel.</p>
+<h3 id="escreva-seu-cartão-5-min">1. Escreva seu cartão (5 min)</h3>
+<div class="code-block"><button class="copy" type="button">Copiar</button><pre class="text"><code>Título:   [a mudança ou a regra que quero preservar]
+Janela:   altero e-mail ou perfil durante o envio
+Regra:    [o que a pessoa deve ver ou conseguir fazer]
+Custo:    [o que essa regra dificulta ou exige]
+Teste:    [passos] → [resultado observável]
+Em B:     [observado] / [atende ou não à minha regra]
+Revisão:  [o que mudei depois do contraexemplo]</code></pre></div>
+<p>Escreva um resultado que outra pessoa consiga verificar. “Não fica
+confuso” ainda não diz o que testar. Nomeie o e-mail e o perfil do
+envio, os valores atuais dos campos e o que a confirmação deve
+dizer.</p>
+<h3 id="tente-quebrar-a-regra-5-min">2. Tente quebrar a regra (5
+min)</h3>
+<p>Troque os cartões. A dupla revisora propõe um caso e pergunta: o que
+acontece aqui? Pode ser editar duas vezes, mudar e voltar ao valor
+original, errar uma letra, receber falha ou tentar enviar outra vez. Não
+precisa encontrar defeito: uma regra que resiste também é resultado.</p>
+<p>Nosso contraexemplo: ______________________________</p>
+<p>A regra resistiu ou mudou? Por quê?
+______________________________</p>
+<h3 id="teste-e-compare-8-min">3. Teste e compare (8 min)</h3>
+<p>Rode os passos em B e registre o que aconteceu,
+<strong>antes</strong> de abrir a referência. B já confirma o payload
+enviado. Ele atende sua regra adicional de apresentação? Se sim,
+registre que passou e preserve o teste como regressão. Se sua regra
+exige outro comportamento, registre a diferença e o teste que falha. Não
+invente um defeito para justificar um patch.</p>
+<p>Quando o facilitador liberar, abra <a
+href="respostas.html#patches">as implementações de comparação</a>. Rode
+os mesmos passos. Se sua regra for outra, escreva o esperado da sua
+versão; implementação é opcional. Não declare que ela passou sem
+executá-la.</p>
+<div class="table-wrap"><table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Versão</th>
+<th>Resultado observado</th>
+<th>Atende à regra escrita?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>B</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Implementação de comparação escolhida</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Outra regra, se houver</td>
+<td>Escreva o esperado; implementação opcional</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="revise-e-defenda-2-min">4. Revise e defenda (2 min)</h3>
+<p>Complete a última linha do cartão. Prepare uma defesa de trinta
+segundos: o que sua regra garante e qual custo você aceita. O outro
+grupo pode pedir um contraexemplo. O cartão já contém o contexto, a
+decisão e a verificação para um PR.</p>
+<h2 id="aposta-4-a-busca">Aposta 4: a busca</h2>
+<div class="code-block"><button class="copy" type="button">Copiar</button><pre class="js"><code>busca.addEventListener(&#39;input&#39;, async () =&gt; {
   const termo = busca.value;
   const pessoas = await buscarPessoas(termo);
   lista.render(pessoas, termo);
 });</code></pre></div>
-<p>A equipe tem Ana, Anderson e Luana. Você digita "an" e depois "ana". A rede responde "an" em 900 ms e "ana" em 200 ms. O que fica na tela no fim?</p>
-<p>______________________________</p>
-<p>Qual regra você usaria aqui? ☐ trava ☐ recibo ☐ descarta a resposta velha ☐ outra: ________</p>
+<p>A equipe tem Ana, Anderson e Luana. Você digita “an” e depois “ana”.
+A rede responde “an” em 900 ms e “ana” em 200 ms. O que fica na tela no
+fim?</p>
+<hr />
+<p>Qual regra você usaria aqui? ☐ trava ☐ recibo ☐ descarta a resposta
+velha ☐ outra: ________</p>
 <p>Por quê? ______________________________</p>
-<h2>Três perguntas para o próximo PR</h2>
-<ol>
-<li>Quais janelas esse componente tem (antes, durante, depois), e quem decidiu cada uma?</li>
-<li>Essa resposta é de leitura ou de escrita?</li>
-<li>Que teste falha se alguém mudar a regra?</li>
+<h2 id="desafio-sênior-o-servidor-gravou-a-resposta-se-perdeu">Desafio
+sênior: o servidor gravou, a resposta se perdeu</h2>
+<p><strong>Cenário para discussão, fora da API simulada.</strong> O
+servidor criou o convite da Ana. A resposta não chegou ao navegador, que
+só observou uma falha de rede.</p>
+<p>O que a interface sabe com certeza?
+______________________________</p>
+<p>O que ela mostra? Como consulta o resultado? Em que condição repetir
+o envio é seguro? ______________________________</p>
+<p>Diga qual parte dessa decisão depende do backend:
+______________________________</p>
+<h2 id="três-perguntas-para-o-próximo-pr">Três perguntas para o próximo
+PR</h2>
+<ol type="1">
+<li>Que transição ficou aberta e qual regra queremos?</li>
+<li>Podemos descartar a resposta ou a ação já tem efeito?</li>
+<li>Que teste verifica essa regra e seu custo?</li>
 </ol>
-<h2>Para casa</h2>
-<p><strong>Com IA:</strong> cole seu cartão no fim de <code>demonstracao/pedido-b.txt</code>, use conversa nova e espere no máximo 4 minutos. Salve a primeira saída como <code>meu-convite.html</code>, registre a ferramenta e rode o mesmo teste. Se a IA alterar a API simulada ou o painel, o resultado não é comparável.</p>
-<p><strong>Respostas das apostas, o código e os patches explicados:</strong> thiagoxikota.github.io/tdc-convite/respostas.html, depois da aula.</p>
-<h2>Procedência e limites</h2>
-<p><strong>De onde vêm A e B.</strong> Duas sessões separadas do Codex em 19/10/2026, uma geração por condição, mesma base, primeira saída guardada sem edição. O modelo não foi informado pela ferramenta. Pedidos integrais e registro em <code>demonstracao/</code>. Um par de saídas não mede com que frequência isso acontece; a evidência de repetição usada na aula é a previsão da própria sala.</p>
-<p><strong>O que os patches e a referência são.</strong> <code>kit-tdc/b-patch-trava.html</code> e <code>kit-tdc/b-patch-recibo.html</code> são cópias de B com patches escritos à mão para a aula, rotulados na própria página. <code>kit-tdc/referencia.html</code> é uma implementação didática completa. Nenhum deles é saída gerada.</p>
-<p><strong>O que o laboratório não prova.</strong> A API simulada (<code>window.apiConvite</code>, 1,2 s de espera) não tem rede, servidor nem autorização: aceita o perfil que recebe. Bloquear o botão não protege contra recarga ou resposta perdida; isso pede um contrato com o backend, como uma chave de idempotência. <code>falha@example.com</code> simula só uma falha conhecida. Leitor de tela e zoom nativo não foram testados.</p>
-<h3>Os dez critérios do pedido B, para consulta</h3>
-<div class="table-wrap"><table><thead><tr><th scope="col">ID</th><th scope="col">Critério</th></tr></thead><tbody><tr><td>C1</td><td>E-mail vazio ou inválido não chama a API; erro junto ao campo e foco nele.</td></tr><tr><td>C2</td><td>Leitor por padrão; só Leitor e Editor.</td></tr><tr><td>C3</td><td>Andamento visível na espera e nenhuma chamada duplicada.</td></tr><tr><td>C4</td><td>Confirmação mostra e-mail e perfil enviados.</td></tr><tr><td>C5</td><td><code>existe@example.com</code> explica que a pessoa já está na equipe e preserva os campos.</td></tr><tr><td>C6</td><td>Falha preserva campos; nova tentativa funciona.</td></tr><tr><td>C7</td><td>Teclado opera tudo, com foco visível; resposta não rouba o foco de quem saiu.</td></tr><tr><td>C8</td><td>Labels, erro associado, <code>aria-invalid</code>, região de status.</td></tr><tr><td>C9</td><td>Sem corte em 320 px e zoom de 200%.</td></tr><tr><td>C10</td><td>Bloco integrado à gestão de pessoas, tokens existentes, sem hero, sidebar ou avatar.</td></tr></tbody></table></div>
-<p>Fontes: <a href="https://www.w3.org/WAI/WCAG22/Understanding/keyboard.html">WCAG 2.2, teclado</a> · <a href="https://www.w3.org/WAI/tutorials/forms/notifications/">W3C WAI, notificações de formulário</a> · <a href="https://www.rfc-editor.org/rfc/rfc9110.html#name-idempotent-methods">RFC 9110, métodos idempotentes</a> · <a href="https://developer.mozilla.org/pt-BR/docs/Web/API/AbortController">MDN, AbortController</a></p></main><footer>TDC Talks · 21/10/2026 · Thiago Xikota</footer><script>document.querySelectorAll('.copy').forEach(b=>b.addEventListener('click',async()=>{const c=b.parentElement.querySelector('code');try{await navigator.clipboard.writeText(c.textContent);b.textContent='Copiado'}catch{const r=document.createRange();r.selectNodeContents(c);const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selecionado: Ctrl/Cmd+C'}setTimeout(()=>b.textContent='Copiar',3000)}));</script></body></html>
+<h2 id="para-casa">Para casa</h2>
+<p><strong>Com IA:</strong> cole seu cartão no fim de
+<code>demonstracao/pedido-b.txt</code>, use conversa nova e espere no
+máximo 4 minutos. Salve a primeira saída como
+<code>meu-convite.html</code>, registre a ferramenta e rode o mesmo
+teste. Se a IA alterar a API simulada ou o painel, o resultado não é
+comparável.</p>
+<p><a href="respostas.html">Respostas das apostas, código e patches
+explicados</a>, depois da atividade. <a href="ensaio.html">Ferramenta de
+ensaio e visualização</a>, para acompanhar a demonstração quando o
+facilitador liberar. A instrumentação do ensaio é separada das saídas
+originais.</p>
+<h2 id="procedência-e-limites">Procedência e limites</h2>
+<p><strong>De onde vêm A e B.</strong> Duas sessões separadas do Codex
+em 19/10/2026, uma geração por condição, mesma base, primeira saída
+guardada sem edição. O modelo não foi informado pela ferramenta. Pedidos
+integrais e registro em <code>demonstracao/</code>. Um par de saídas e o
+bingo não medem frequência nem isolam uma causa geral para a
+repetição.</p>
+<p><strong>O que as comparações são.</strong> Os dois patches em
+<code>kit-tdc/</code> são cópias de B com alterações escritas à mão para
+a aula, rotuladas na própria página. A referência completa também é
+didática. Nenhum deles é saída gerada.</p>
+<p><strong>O que o laboratório não prova.</strong> A API simulada
+(<code>window.apiConvite</code>, 1,2 s de espera) não tem rede, servidor
+nem autorização: aceita o perfil que recebe. Bloquear o botão evita
+chamadas concorrentes nessa página; não protege por si só contra recarga
+ou resposta perdida. Uma nova tentativa segura pode exigir uma chave de
+idempotência, com deduplicação no servidor e consulta do resultado.
+<code>falha@example.com</code> simula uma falha conhecida, não uma
+escrita de resultado desconhecido. Leitor de tela e zoom nativo não
+foram testados.</p>
+<h3 id="os-dez-critérios-do-pedido-b-para-consulta">Os dez critérios do
+pedido B, para consulta</h3>
+<div class="table-wrap"><table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>ID</th>
+<th>Critério</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C1</td>
+<td>E-mail vazio ou inválido não chama a API; erro junto ao campo e foco
+nele.</td>
+</tr>
+<tr>
+<td>C2</td>
+<td>Leitor por padrão; só Leitor e Editor.</td>
+</tr>
+<tr>
+<td>C3</td>
+<td>Andamento visível na espera e nenhuma chamada duplicada.</td>
+</tr>
+<tr>
+<td>C4</td>
+<td>Confirmação mostra e-mail e perfil enviados.</td>
+</tr>
+<tr>
+<td>C5</td>
+<td><code>existe@example.com</code> explica que a pessoa já está na
+equipe e preserva os campos.</td>
+</tr>
+<tr>
+<td>C6</td>
+<td>Falha preserva campos; nova tentativa funciona.</td>
+</tr>
+<tr>
+<td>C7</td>
+<td>Teclado opera tudo, com foco visível; resposta não rouba o foco de
+quem saiu.</td>
+</tr>
+<tr>
+<td>C8</td>
+<td>Labels, erro associado, <code>aria-invalid</code>, região de
+status.</td>
+</tr>
+<tr>
+<td>C9</td>
+<td>Sem corte em 320 px e zoom de 200%.</td>
+</tr>
+<tr>
+<td>C10</td>
+<td>Bloco integrado à gestão de pessoas, tokens existentes, sem hero,
+sidebar ou avatar.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Fontes: <a
+href="https://www.w3.org/WAI/WCAG22/Understanding/keyboard.html">WCAG
+2.2, teclado</a> · <a
+href="https://www.w3.org/WAI/tutorials/forms/notifications/">W3C WAI,
+notificações de formulário</a> · <a
+href="https://www.rfc-editor.org/rfc/rfc9110.html#name-idempotent-methods">RFC
+9110, métodos idempotentes</a> · <a
+href="https://developer.mozilla.org/pt-BR/docs/Web/API/AbortController">MDN,
+AbortController</a></p>
+</main><footer>TDC Talks · 21/10/2026 · Thiago Xikota</footer><script>document.querySelectorAll('.copy').forEach(b=>b.addEventListener('click',async()=>{const c=b.parentElement.querySelector('code');try{await navigator.clipboard.writeText(c.textContent);b.textContent='Copiado'}catch{const r=document.createRange();r.selectNodeContents(c);const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selecionado: Ctrl/Cmd+C'}setTimeout(()=>b.textContent='Copiar',3000)}));</script></body></html>

@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ensaio das janelas · TDC Talks</title>
+  <style>
+    @font-face{font-family:Sora;src:url('assets/Sora-400.woff2') format('woff2');font-weight:400;font-display:swap}
+    @font-face{font-family:Sora;src:url('assets/Sora-600.woff2') format('woff2');font-weight:600;font-display:swap}
+    @font-face{font-family:Sora;src:url('assets/Sora-700.woff2') format('woff2');font-weight:700;font-display:swap}
+    :root{font-family:Sora,system-ui,sans-serif;color:#161722;background:#fafafa;color-scheme:light;--red:#dc000c;--muted:#54535b;--line:#d8d8dc}
+    *{box-sizing:border-box}body{margin:0}main{max-width:1120px;margin:auto;padding:40px 24px 64px}a{color:inherit;text-underline-offset:3px}a:hover{color:var(--red)}h1{font-size:clamp(28px,4vw,44px);letter-spacing:-.045em;line-height:1.15;margin:24px 0 16px}h2{font-size:26px;letter-spacing:-.035em;line-height:1.25;margin:0 0 16px}h3{font-size:17px;margin:0 0 10px}p{line-height:1.6;margin:10px 0}.intro{max-width:78ch;color:var(--muted)}.notice{border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:24px 0 40px;background:white}.notice strong{display:block;margin-bottom:6px}.notice p{margin:0;font-size:14px}.links{display:flex;gap:20px;flex-wrap:wrap;margin-top:12px;font-size:14px}.lab{margin:40px 0 0}.head{display:flex;align-items:baseline;justify-content:space-between;gap:20px}.tag{color:var(--muted);font-size:14px;white-space:nowrap}.grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:20px 0}.surface{padding:24px;border:1px solid var(--line);border-radius:14px;background:white}.instrument{background:#101115;color:#fff;border:0}.instrument p,.instrument dt{color:#c7c7cf}.instrument dd{color:#fff}.field{margin-bottom:20px}label{display:block;font-weight:600;margin-bottom:8px;font-size:15px}input,select,button{font:inherit}input[type=email],input[type=search],select{width:100%;min-height:48px;border:1px solid #a7a7ae;border-radius:7px;background:white;color:#161722;padding:10px 12px}button{border:1px solid var(--red);border-radius:7px;background:var(--red);color:white;min-height:46px;padding:10px 16px;cursor:pointer;font-size:14px;font-weight:600}button.secondary{background:white;color:#161722;border-color:#aaaab2}button[aria-disabled=true],button:disabled{opacity:.6;cursor:wait}.actions{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0}.help{font-size:13px;color:var(--muted)}.status{min-height:58px;font-size:15px;margin:20px 0 0;line-height:1.6}.status:empty{min-height:0}.summary{margin:0;display:grid;gap:18px}.summary div{border-bottom:1px solid #43434c;padding-bottom:14px}.summary dt{font-size:13px;margin-bottom:6px}.summary dd{margin:0;font-size:20px;line-height:1.4;overflow-wrap:anywhere;font-weight:600}.summary small{font-size:14px;font-weight:400}.row{display:grid;grid-template-columns:1fr 160px;gap:16px}.check{display:flex;gap:10px;align-items:flex-start;font-weight:400;line-height:1.5}.check input{margin-top:4px;accent-color:var(--red)}ul.results{margin:0;padding-left:24px;min-height:70px;line-height:1.8}.log{min-height:74px;white-space:pre-line;color:var(--muted);font-size:13px}.divider{border:0;border-top:1px solid var(--line);margin-top:44px}.foot{font-size:13px;color:var(--muted);margin-top:36px}:focus-visible{outline:3px solid var(--red);outline-offset:4px}[hidden]{display:none!important}@media(max-width:760px){main{padding:24px 18px 48px}.grid{grid-template-columns:1fr}.row{grid-template-columns:1fr}.head{display:block}.surface{padding:20px}.tag{white-space:normal}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+  </style>
+</head>
+<body>
+<main>
+  <a href="index.html">Voltar ao kit</a>
+  <h1>O que acontece enquanto você espera?</h1>
+  <p class="intro">Um modo lento para enxergar a diferença entre o que foi enviado e o que está na tela. Depois, a mesma atenção ao tempo numa busca.</p>
+  <aside class="notice" aria-label="Procedência deste laboratório">
+    <strong>Instrumentação didática, criada para o ensaio.</strong>
+    <p>Esta página é uma implementação separada. O convite reproduz a janela de edição de B com espera de 4 segundos; A e B originais continuam com 1,2 segundo e sem alteração. O botão de sequência simula a edição para tornar a revelação repetível. Nada é enviado e não há servidor.</p>
+    <nav class="links" aria-label="Fontes"><a href="demonstracao/convite-a.html">A original</a><a href="demonstracao/convite-b.html">B original</a><a href="demonstracao/LEIA-ME.md">Registro A/B</a></nav>
+  </aside>
+  <section class="lab" aria-labelledby="convite-titulo">
+    <div class="head"><h2 id="convite-titulo">1. Um envio. Dois momentos.</h2><span class="tag">Espera didática: 4 s</span></div>
+    <p>Envie Ana como Leitor e troque o perfil para Editor durante a espera. Ou rode a sequência automática.</p>
+    <div class="actions"><button id="repetir-convite" type="button">Repetir: Ana / Leitor → Editor</button><button id="reiniciar-convite" class="secondary" type="button">Reiniciar convite</button></div>
+    <div class="grid">
+      <div class="surface">
+        <h3>Rascunho atual</h3>
+        <form id="ensaio-convite">
+          <div class="row"><div class="field"><label for="email">E-mail</label><input id="email" name="email" type="email" required value="ana@example.com" autocomplete="off"></div><div class="field"><label for="perfil">Perfil</label><select id="perfil" name="perfil"><option value="leitor">Leitor</option><option value="editor">Editor</option></select></div></div>
+          <button id="enviar" type="submit" aria-disabled="false">Enviar convite</button>
+          <p class="help">Os campos continuam livres durante a espera, como em B. Editar depois do sucesso limpa a confirmação, como D1 pede.</p>
+          <p id="convite-status" class="status" role="status" aria-live="polite" aria-atomic="true"></p>
+        </form>
+      </div>
+      <aside class="surface instrument" aria-label="Painel didático do convite">
+        <dl class="summary"><div><dt>Payload capturado ao enviar</dt><dd id="payload">Nenhum envio</dd></div><div><dt>Campos agora</dt><dd id="rascunho">ana@example.com<br><small>Leitor</small></dd></div><div><dt>Chamadas / estado</dt><dd id="convite-painel">0 / sem chamada</dd></div></dl>
+        <p class="help">O payload é uma cópia. Editar o formulário não modifica o envio que já começou.</p>
+      </aside>
+    </div>
+  </section>
+  <hr class="divider">
+  <section class="lab" aria-labelledby="busca-titulo">
+    <div class="head"><h2 id="busca-titulo">2. A resposta mais velha chega por último.</h2><span class="tag">“an”: 900 ms · “ana”: 200 ms</span></div>
+    <p>A sequência digita “an” e, 100 ms depois, “ana”. Compare o resultado com e sem descartar a resposta antiga.</p>
+    <div class="grid">
+      <div class="surface">
+        <label for="termo">Buscar pessoas</label><input id="termo" type="search" autocomplete="off" placeholder="Digite an ou ana" aria-describedby="busca-ajuda">
+        <p id="busca-ajuda" class="help">Busca local por trecho do nome: Ana, Anderson e Luana.</p>
+        <label class="check" for="descartar"><input type="checkbox" id="descartar"><span>Descartar respostas de consultas anteriores, usando um contador</span></label>
+        <div class="actions"><button id="repetir-busca" type="button">Repetir: an → ana</button><button id="reiniciar-busca" class="secondary" type="button">Reiniciar busca</button></div>
+        <p id="busca-status" class="status" role="status" aria-live="polite" aria-atomic="true">Nenhuma busca.</p>
+        <ul id="resultados" class="results" aria-label="Resultados da busca"></ul>
+      </div>
+      <aside class="surface instrument" aria-label="Painel didático da busca">
+        <dl class="summary"><div><dt>Campo atual</dt><dd id="campo-busca">Vazio</dd></div><div><dt>Última resposta aplicada</dt><dd id="resposta-busca">Nenhuma</dd></div></dl>
+        <p id="log-busca" class="log" aria-label="Ordem das respostas"></p>
+        <p>Uma resposta descartada aqui não apaga uma escrita no servidor. A busca e o convite têm consequências diferentes.</p>
+      </aside>
+    </div>
+  </section>
+  <p class="foot">TDC Talks · 21/10/2026 · Thiago Xikota. Funciona offline com os arquivos do kit. Esta página demonstra estados; não simula timeout depois de escrita, autenticação, autorização ou idempotência de backend.</p>
+</main>
+<script>
+(() => {
+  'use strict';
+  const $ = id => document.getElementById(id);
+  const nomes = { leitor: 'Leitor', editor: 'Editor' };
+  const conviteTimers = new Set();
+  let rodadaConvite = 0, aguardando = false, confirmado = false, chamadas = 0;
+  const depois = (timers, fn, ms) => { const id = setTimeout(() => { timers.delete(id); fn(); }, ms); timers.add(id); return id; };
+  const cancelar = timers => { for (const id of timers) clearTimeout(id); timers.clear(); };
+  function rascunho() {
+    const el = $('rascunho'); el.replaceChildren(document.createTextNode($('email').value.trim() || 'E-mail vazio'), document.createElement('br'));
+    const perfil = document.createElement('small'); perfil.textContent = nomes[$('perfil').value]; el.append(perfil);
+  }
+  function textoPayload(email, perfil) {
+    const el = $('payload'); el.replaceChildren(document.createTextNode(email), document.createElement('br'));
+    const nome = document.createElement('small'); nome.textContent = nomes[perfil]; el.append(nome);
+  }
+  function editar() {
+    rascunho();
+    if (confirmado) { $('convite-status').textContent = ''; confirmado = false; }
+  }
+  function reiniciarConvite() {
+    cancelar(conviteTimers); rodadaConvite++; aguardando = false; confirmado = false; chamadas = 0;
+    $('email').value = 'ana@example.com'; $('perfil').value = 'leitor';
+    $('enviar').setAttribute('aria-disabled', 'false'); $('enviar').textContent = 'Enviar convite';
+    $('repetir-convite').disabled = false; $('payload').textContent = 'Nenhum envio'; $('convite-status').textContent = ''; $('convite-painel').textContent = '0 / sem chamada'; rascunho();
+  }
+  $('email').addEventListener('input', editar); $('perfil').addEventListener('change', editar);
+  $('ensaio-convite').addEventListener('submit', e => {
+    e.preventDefault();
+    if (aguardando || !$('ensaio-convite').reportValidity()) return;
+    const envio = Object.freeze({ email: $('email').value.trim(), perfil: $('perfil').value });
+    if (!Object.hasOwn(nomes, envio.perfil)) return;
+    aguardando = true; confirmado = false; chamadas++; const rodada = rodadaConvite;
+    textoPayload(envio.email, envio.perfil); $('convite-painel').textContent = chamadas + ' / pendente';
+    $('enviar').setAttribute('aria-disabled', 'true'); $('enviar').textContent = 'Enviando convite…'; $('repetir-convite').disabled = true;
+    $('convite-status').textContent = 'Enviando convite para ' + envio.email + '. Aguarde.';
+    depois(conviteTimers, () => {
+      if (rodada !== rodadaConvite) return;
+      $('convite-status').textContent = 'Convite enviado para ' + envio.email + ' com o perfil ' + nomes[envio.perfil] + '.';
+      confirmado = true; aguardando = false;
+      $('convite-painel').textContent = chamadas + ' / enviado'; $('enviar').setAttribute('aria-disabled', 'false'); $('enviar').textContent = 'Enviar convite'; $('repetir-convite').disabled = false;
+    }, 4000);
+  });
+  $('repetir-convite').addEventListener('click', () => {
+    if (aguardando) return;
+    reiniciarConvite(); $('ensaio-convite').requestSubmit();
+    depois(conviteTimers, () => { $('perfil').value = 'editor'; $('perfil').dispatchEvent(new Event('change', { bubbles: true })); }, 750);
+  });
+  $('reiniciar-convite').addEventListener('click', reiniciarConvite);
+
+  const buscaTimers = new Set();
+  const pessoas = ['Ana', 'Anderson', 'Luana'];
+  let ultimo = 0, rodadaBusca = 0, replayBusca = false;
+  function buscar() {
+    const termo = $('termo').value.trim().toLowerCase(), meu = ++ultimo, rodada = rodadaBusca;
+    const protegido = $('descartar').checked;
+    $('campo-busca').textContent = termo || 'Vazio';
+    if (!termo) { $('resultados').replaceChildren(); $('resposta-busca').textContent = 'Nenhuma'; $('busca-status').textContent = 'Nenhuma busca.'; return; }
+    $('busca-status').textContent = 'Buscando “' + termo + '”…';
+    depois(buscaTimers, () => {
+      if (rodada !== rodadaBusca) return;
+      const descarta = protegido && meu !== ultimo;
+      $('log-busca').textContent += 'Resposta de “' + termo + '” ' + (descarta ? 'descartada' : 'aplicada') + '.\n';
+      if (descarta) return;
+      const encontrados = pessoas.filter(nome => nome.toLowerCase().includes(termo));
+      $('resultados').replaceChildren(...encontrados.map(nome => { const li = document.createElement('li'); li.textContent = nome; return li; }));
+      $('resposta-busca').textContent = '“' + termo + '”';
+      $('busca-status').textContent = encontrados.length + ' resultados da consulta “' + termo + '”.';
+    }, termo === 'an' ? 900 : 200);
+  }
+  function reiniciarBusca() {
+    cancelar(buscaTimers); rodadaBusca++; ultimo++; replayBusca = false; $('repetir-busca').disabled = false;
+    $('termo').value = ''; $('campo-busca').textContent = 'Vazio'; $('resposta-busca').textContent = 'Nenhuma'; $('busca-status').textContent = 'Nenhuma busca.'; $('log-busca').textContent = ''; $('resultados').replaceChildren();
+  }
+  $('termo').addEventListener('input', buscar);
+  $('descartar').addEventListener('change', reiniciarBusca);
+  $('repetir-busca').addEventListener('click', () => {
+    if (replayBusca) return;
+    reiniciarBusca(); replayBusca = true; $('repetir-busca').disabled = true;
+    $('termo').value = 'an'; buscar();
+    depois(buscaTimers, () => { $('termo').value = 'ana'; buscar(); }, 100);
+    depois(buscaTimers, () => { replayBusca = false; $('repetir-busca').disabled = false; }, 1100);
+  });
+  $('reiniciar-busca').addEventListener('click', reiniciarBusca);
+})();
+</script>
+</body>
+</html>
