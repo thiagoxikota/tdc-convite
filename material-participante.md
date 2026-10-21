@@ -71,7 +71,7 @@ Separe as observações: o que foi enviado, o que o recibo confirma e o que os c
 
 **Não abra os patches ainda.** Primeiro decida o que a interface deve fazer quando alguém altera e-mail ou perfil durante o envio. Depois tente quebrar a decisão.
 
-Tudo acontece pelo chat da transmissão, e ninguém precisa escrever código. Escreva primeiro o seu cartão; a troca pelo chat vem na etapa 2. Sem computador, acompanhe a demonstração e escreva a regra no papel.
+A conversa acontece pelo chat da transmissão e o teste, no navegador. Ninguém precisa escrever código. Escreva primeiro o seu cartão; a troca pelo chat vem na etapa 2. Sem computador, acompanhe a demonstração e escreva a regra no papel.
 
 ### 1. Escreva seu cartão (5 min)
 
@@ -94,27 +94,35 @@ Nosso contraexemplo: ______________________________
 
 A regra resistiu ou mudou? Por quê? ______________________________
 
-### 3. Teste e compare (8 min)
+### 3. Teste no B (8 min)
 
 Rode os passos em B e registre o que aconteceu, **antes** de abrir a referência. B já confirma o payload enviado. Ele atende sua regra adicional de apresentação? Se sim, registre que passou e preserve o teste como regressão. Se sua regra exige outro comportamento, registre a diferença e o teste que falha. Não invente um defeito para justificar um patch.
 
 Se após duas tentativas você não capturou a janela de B, use o [ensaio de quatro segundos](ensaio.html) como apoio e anote **reprodução didática observada**. Esse ensaio mostra o comportamento da janela; ele não executa os patches nem substitui testes de falha ou outros contraexemplos.
 
-Quando o facilitador liberar, abra [as implementações de comparação](respostas.html#patches). Rode os mesmos passos. Se sua regra for outra, escreva o esperado da sua versão; implementação é opcional. Não declare que ela passou sem executá-la.
-
 | Versão | Resultado observado | Atende à regra escrita? |
 |---|---|---|
 | B | | |
-| Implementação de comparação escolhida | | |
-| Outra regra, se houver | Escreva o esperado; implementação opcional | |
 
 ### 4. Revise e defenda no chat (2 min)
 
 Complete a última linha do cartão. Mande no chat, numa frase, o que a sua regra garante e qual custo você aceita. O cartão já contém o contexto, a decisão e a verificação para um refinamento ou PR.
 
+### Depois da prática: compare com duas regras
+
+O facilitador mostra duas regras possíveis, a trava e o recibo. Aí sim, abra [as implementações de comparação](respostas.html#patches) e rode os mesmos passos nas duas. Se sua regra for outra, escreva o esperado da sua versão; implementação é opcional. Não declare que ela passou sem executá-la.
+
+| Versão | Resultado observado | Atende à regra escrita? |
+|---|---|---|
+| Trava | | |
+| Recibo | | |
+| Outra regra, se houver | Escreva o esperado; implementação opcional | |
+
+Mande no chat qual regra você defende e o que ela perde.
+
 ## Aposta 4: a busca
 
-A equipe tem Ana, Anderson e Luana. Cada letra digitada dispara uma busca, e a lista mostra a resposta que chegar. A busca de "an" sai em **0 ms**; a de "ana", **100 ms depois**. A primeira leva **900 ms** para responder; a segunda, **200 ms**. O que fica na tela no fim?
+A equipe tem Ana, Anderson e Luana. Cada letra digitada dispara uma busca, e a lista mostra a resposta que chegar. A busca de "an" sai em **0 ms**; a de "ana", **100 ms depois**. A primeira leva **900 ms** para responder; a segunda, **200 ms**. Considere só essas duas buscas em andamento. O que fica na tela no fim?
 
 ______________________________
 

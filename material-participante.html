@@ -171,9 +171,10 @@ alterado.</p>
 <p><strong>Não abra os patches ainda.</strong> Primeiro decida o que a
 interface deve fazer quando alguém altera e-mail ou perfil durante o
 envio. Depois tente quebrar a decisão.</p>
-<p>Tudo acontece pelo chat da transmissão, e ninguém precisa escrever
-código. Escreva primeiro o seu cartão; a troca pelo chat vem na etapa 2.
-Sem computador, acompanhe a demonstração e escreva a regra no papel.</p>
+<p>A conversa acontece pelo chat da transmissão e o teste, no navegador.
+Ninguém precisa escrever código. Escreva primeiro o seu cartão; a troca
+pelo chat vem na etapa 2. Sem computador, acompanhe a demonstração e
+escreva a regra no papel.</p>
 <h3 id="escreva-seu-cartão-5-min">1. Escreva seu cartão (5 min)</h3>
 <div class="code-block"><button class="copy" type="button">Copiar</button><pre class="text"><code>Contexto: [de onde vem a regra?]
 Regra:    [o que aparece e o que fica editável?]
@@ -198,7 +199,7 @@ próprio cartão.</p>
 <p>Nosso contraexemplo: ______________________________</p>
 <p>A regra resistiu ou mudou? Por quê?
 ______________________________</p>
-<h3 id="teste-e-compare-8-min">3. Teste e compare (8 min)</h3>
+<h3 id="teste-no-b-8-min">3. Teste no B (8 min)</h3>
 <p>Rode os passos em B e registre o que aconteceu,
 <strong>antes</strong> de abrir a referência. B já confirma o payload
 enviado. Ele atende sua regra adicional de apresentação? Se sim,
@@ -210,11 +211,34 @@ href="ensaio.html">ensaio de quatro segundos</a> como apoio e anote
 <strong>reprodução didática observada</strong>. Esse ensaio mostra o
 comportamento da janela; ele não executa os patches nem substitui testes
 de falha ou outros contraexemplos.</p>
-<p>Quando o facilitador liberar, abra <a
-href="respostas.html#patches">as implementações de comparação</a>. Rode
-os mesmos passos. Se sua regra for outra, escreva o esperado da sua
-versão; implementação é opcional. Não declare que ela passou sem
-executá-la.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Versão</th>
+<th>Resultado observado</th>
+<th>Atende à regra escrita?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>B</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="revise-e-defenda-no-chat-2-min">4. Revise e defenda no chat (2
+min)</h3>
+<p>Complete a última linha do cartão. Mande no chat, numa frase, o que a
+sua regra garante e qual custo você aceita. O cartão já contém o
+contexto, a decisão e a verificação para um refinamento ou PR.</p>
+<h3 id="depois-da-prática-compare-com-duas-regras">Depois da prática:
+compare com duas regras</h3>
+<p>O facilitador mostra duas regras possíveis, a trava e o recibo. Aí
+sim, abra <a href="respostas.html#patches">as implementações de
+comparação</a> e rode os mesmos passos nas duas. Se sua regra for outra,
+escreva o esperado da sua versão; implementação é opcional. Não declare
+que ela passou sem executá-la.</p>
 <div class="table-wrap"><table>
 <colgroup>
 <col style="width: 33%" />
@@ -230,12 +254,12 @@ executá-la.</p>
 </thead>
 <tbody>
 <tr>
-<td>B</td>
+<td>Trava</td>
 <td></td>
 <td></td>
 </tr>
 <tr>
-<td>Implementação de comparação escolhida</td>
+<td>Recibo</td>
 <td></td>
 <td></td>
 </tr>
@@ -246,17 +270,14 @@ executá-la.</p>
 </tr>
 </tbody>
 </table></div>
-<h3 id="revise-e-defenda-no-chat-2-min">4. Revise e defenda no chat (2
-min)</h3>
-<p>Complete a última linha do cartão. Mande no chat, numa frase, o que a
-sua regra garante e qual custo você aceita. O cartão já contém o
-contexto, a decisão e a verificação para um refinamento ou PR.</p>
+<p>Mande no chat qual regra você defende e o que ela perde.</p>
 <h2 id="aposta-4-a-busca">Aposta 4: a busca</h2>
 <p>A equipe tem Ana, Anderson e Luana. Cada letra digitada dispara uma
 busca, e a lista mostra a resposta que chegar. A busca de “an” sai em
 <strong>0 ms</strong>; a de “ana”, <strong>100 ms depois</strong>. A
 primeira leva <strong>900 ms</strong> para responder; a segunda,
-<strong>200 ms</strong>. O que fica na tela no fim?</p>
+<strong>200 ms</strong>. Considere só essas duas buscas em andamento. O
+que fica na tela no fim?</p>
 <hr />
 <p>Qual regra você usaria aqui? ☐ trava ☐ recibo ☐ descarta a resposta
 velha ☐ outra: ________</p>

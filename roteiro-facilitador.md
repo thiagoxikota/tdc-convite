@@ -6,7 +6,7 @@ O núcleo é observar decisões deixadas abertas, escrever uma regra própria, a
 
 ## Antes da transmissão
 
-- Abra o deck no mesmo navegador e modo de compartilhamento que usará na aula. Confira notas, escala e leitura do código.
+- Abra o deck no mesmo navegador e modo de compartilhamento que usará na aula. Confira notas e escala.
 - Abra A, B, os dois patches e `ensaio.html` em abas separadas, sem projetar respostas antes da hora.
 - Baixe e extraia o ZIP. Abra o `index.html` extraído para conferir que o caminho offline está disponível.
 - Ensaie a regra de produto do B: envie Ana, espere o sucesso e edite. A confirmação deve sumir em B.
@@ -18,17 +18,18 @@ O núcleo é observar decisões deixadas abertas, escrever uma regra própria, a
 
 | Horário | Minutos | Bloco |
 |---|---|---|
-| 19h00–19h05 | 0–5 | Entrada no kit, promessa e regra de participação |
-| 19h05–19h15 | 5–15 | Pedido, bingo, cartela revelada e A em dois estados |
-| 19h15–19h27 | 15–27 | Testes de A, decisões de produto e ponte para comportamento |
-| 19h27–19h40 | 27–40 | B, regra de produto, falso encerramento, edição durante a espera e comparação com A |
-| 19h40–19h45 | 40–45 | Antes/durante/depois e instrução da prática |
-| 19h45–20h05 | 45–65 | Cartão, contraexemplo, teste, comparação e revisão |
-| 20h05–20h15 | 65–75 | Defesa das regras, código e custos dos patches |
-| 20h15–20h22 | 75–82 | Busca, resposta perdida e perguntas para o próximo refinamento ou PR |
-| 20h22–20h30 | 82–90 | Perguntas |
+| 19h00–19h05 | 0–5 | Abertura, apresentação e entrada no kit |
+| 19h05–19h13 | 5–13 | Pedido, bingo, cartela revelada e A em dois estados |
+| 19h13–19h22 | 13–22 | Aposta 2, testes de A e decisões de produto |
+| 19h22–19h32 | 22–32 | Design: A sem tokens, sinais de AI slop, prompt de UI, revisão e lista do que não entra |
+| 19h32–19h43 | 32–43 | Contexto, B, regra de produto, falso encerramento, edição durante o loading e comparação com A |
+| 19h43–19h46 | 43–46 | Resumo do par e instrução da prática |
+| 19h46–20h06 | 46–66 | Cartão, contraexemplo no chat, teste no B e revisão |
+| 20h06–20h13 | 66–73 | Duas regras, patches liberados e defesa no chat |
+| 20h13–20h20 | 73–80 | Busca, resposta perdida e três perguntas para o time |
+| 20h20–20h30 | 80–90 | Perguntas |
 
-Se houver atraso, reduza o debate inicial e o tempo de leitura de código. Preserve a prática e o teste da regra de produto. O desafio de resposta perdida pode virar uma pergunta rápida, com a resposta disponível no material posterior. Encerre a atividade e abra perguntas às 20h22.
+Se houver atraso, reduza o debate inicial. Preserve a prática e o teste da regra de produto. O desafio de resposta perdida pode virar uma pergunta rápida, com a resposta disponível no material posterior. Encerre a atividade e abra perguntas às 20h20.
 
 ## Apostas: uma cadência para as quatro
 
@@ -56,6 +57,12 @@ Mostre os testes de loading e de falha funcionando. O de contexto avalia uma ges
 
 Escolha uma decisão para debate curto. Pergunte a uma pessoa qual padrão adotaria e o que perderia com ele.
 
+## Design: o mesmo pedido sem os tokens
+
+Depois das decisões de A, mostre o mesmo pedido gerado sem a base de tokens, com os sinais marcados no print: sobretítulo, slogan, frase de efeito, ícone num quadradinho, fonte sem escala e os mesmos ícones de A. Em seguida, mostre que o A do kit tem a mesma receita, só que com a cor do design system. Os números de fonte são valores renderizados na tela inicial, medidos no navegador: oito tamanhos e sete pesos na versão sem tokens; oito tamanhos no A do kit, cinco deles abaixo de quinze pixels. A versão sem tokens é uma geração única de 21/10, dois dias depois de A, e não está no kit. Ela mostra que a receita se repete sem o design system; não é experimento controlado.
+
+De onde vem o genérico é hipótese: o exemplo mostra o efeito e não prova a causa. Feche o bloco com o prompt de UI, a revisão em três perguntas e a lista do que não entra no repositório. Depois volte ao comportamento: B recebeu contexto de produto.
+
 ## B, a regra de produto e a virada
 
 Mostre a regra de produto como foi escrita: depois do sucesso, editar limpa a confirmação. Envie Ana, aguarde e comece a editar. B passa. Diga “Especificou, funcionou. Obrigado, boa noite.” Pare por um instante. Só então avance para a aposta sobre editar durante a espera.
@@ -72,17 +79,17 @@ Não mostre as duas soluções como escolhas prontas antes do cartão. Peça uma
 
 **Cinco minutos: quebrar no chat.** Peça “Mandem no chat a regra e o custo”, leia alguns cartões em voz alta e diga de quem são. Depois peça “Achou um caso que quebra? Mande os passos pra reproduzir, com o nome de quem escreveu”. Quem não publicar pode revisar o próprio cartão. Proponha apenas se a sala travar: mudar duas vezes, voltar ao valor original, editar antes de uma falha ou tentar novo envio. Uma regra que resiste não precisa ganhar um defeito inventado.
 
-**Oito minutos: testar.** Primeiro B, anotando o observado. Após duas tentativas sem capturar a janela, libere o ensaio de quatro segundos e peça o registro “reprodução didática observada”. Esse apoio não executa patches nem substitui testes de falha ou outros contraexemplos. Se a regra já existe, B passa e o teste vira regressão. Se exige outro comportamento, mostre o resultado esperado e a diferença. Só depois libere `respostas.html#patches` para comparar as implementações. Outra solução pode ficar especificada; não a chame de implementada se não foi executada.
+**Oito minutos: testar.** Primeiro B, anotando o observado. Após duas tentativas sem capturar a janela, libere o ensaio de quatro segundos e peça o registro “reprodução didática observada”. Esse apoio não executa patches nem substitui testes de falha ou outros contraexemplos. Se a regra já existe, B passa e o teste vira regressão. Se exige outro comportamento, mostre o resultado esperado e a diferença. Os patches ficam para o slide das duas regras, depois da prática.
 
 **Dois minutos: revisar.** Atualizem o cartão e preparem a defesa de trinta segundos. Escolha duas regras diferentes para ouvir. Se a sala produziu trava e recibo, convide “time trava” e “time recibo”; se produziu outra decisão, use o nome escolhido pela pessoa.
 
-## Defesa e código
+## Duas regras e defesa
 
-Cada lado precisa dizer uma garantia e admitir um custo. O outro lado pode pedir um contraexemplo. Não existe vencedor obrigatório entre regras legítimas. O avanço é sair com um contrato mais verificável do que “componente moderno”.
+No slide das duas regras, libere `respostas.html#patches`: cada pessoa roda os mesmos passos na trava e no recibo. Cada lado precisa dizer uma garantia e admitir um custo. O outro lado pode pedir um contraexemplo. Não existe vencedor obrigatório entre regras legítimas. O avanço é sair com um contrato mais verificável do que “componente moderno”. Outra solução pode ficar especificada; não a chame de implementada se não foi executada.
 
-Mostre o trecho do payload antes do `await` e o recibo depois. O campo pode mudar durante o intervalo. Não chame o problema de duas respostas de convite fora de ordem: o exemplo seguinte da busca tem esse mecanismo, mas este não.
+O slide de código fica oculto. Diga numa frase: o payload é uma cópia dos campos no clique, e os campos continuam editáveis durante o loading. O trecho está em `respostas.html#patches` para quem quiser ver depois. Não chame o problema de duas respostas de convite fora de ordem: o exemplo seguinte da busca tem esse mecanismo, mas este não.
 
-Na comparação, travar implica aguardar para corrigir uma letra; recibo exige representar separadamente o envio e o novo rascunho. O complemento do recibo descreve a mudança ocorrida durante a espera e continua verdadeiro quando os campos voltam ao valor original. Mostre só as linhas necessárias e abra o fonte completo se alguém perguntar. Não leia todo o código projetado.
+Na comparação, travar implica aguardar para corrigir uma letra; recibo exige representar separadamente o envio e o novo rascunho. O complemento do recibo descreve a mudança ocorrida durante a espera e continua verdadeiro quando os campos voltam ao valor original.
 
 ## Transferência: busca e resposta perdida
 

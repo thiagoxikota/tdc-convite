@@ -46,7 +46,7 @@ Se B já atende à sua regra, registre que passou e guarde o teste como regress�
 
 ## O cartão em vinte minutos
 
-Cinco minutos para regra, custo e resultado observável; cinco para o chat procurar contraexemplos; oito para testar B e, ao sinal do facilitador, comparar os patches; dois para revisar o cartão. Ao sinal, mande a regra e o custo no chat; o facilitador lê alguns cartões, e quem tentar quebrar uma regra responde com o nome de quem escreveu e os passos. Quem preferir não postar revisa o próprio cartão.
+Cinco minutos para regra, custo e resultado observável; cinco para o chat procurar contraexemplos; oito para testar B; dois para revisar o cartão. Os patches entram depois da prática, quando o facilitador mostra a trava e o recibo. Ao sinal, mande a regra e o custo no chat; o facilitador lê alguns cartões, e quem tentar quebrar uma regra responde com o nome de quem escreveu e os passos. Quem preferir não postar revisa o próprio cartão.
 
 O cenário de resposta perdida depois de uma escrita é discussão posterior. A simulação não tem servidor e não prova idempotência.
 
