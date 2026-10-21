@@ -233,7 +233,7 @@
             // patch recibo: a resposta fala do envio dela, não dos campos de agora
             const mudou = email.value.trim() !== convite.email || perfil.value !== convite.perfil;
             status.textContent = 'Convite enviado para ' + resultado.email + ' com o perfil ' + nomes[resultado.perfil] + '.'
-              + (mudou ? ' Os campos acima mudaram depois do envio e ainda não foram enviados.' : '');
+              + (mudou ? ' Os campos mudaram durante a espera. Editá-los não altera o convite confirmado neste recibo.' : '');
             confirmado = !mudou; // recibo fica até o próximo envio
           } else {
             throw new Error('Resposta inesperada.');

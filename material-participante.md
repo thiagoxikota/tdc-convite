@@ -10,7 +10,7 @@ Um formulário de convite, quatro apostas e uma decisão que ficou em aberto. Vo
 
 1. Abra **thiagoxikota.github.io/tdc-convite** no navegador do computador. A prática precisa de teclado. Sem internet, extraia o `kit-participante.zip` e abra `index.html`.
 2. **Não abra a saída A ainda.** A primeira atividade é uma aposta.
-3. Guarde sua resposta antes de ver o resultado. No chat, envie só ao sinal do facilitador.
+3. Guarde sua resposta antes de ver o resultado. No bingo, mantenha as nove escolhas privadas e envie só o número de acertos depois da revelação. Nas outras apostas, responda ao sinal do facilitador.
 4. Se algum arquivo não abrir, acompanhe pela tela do facilitador e anote no papel. A prática também funciona assim.
 
 ## Aposta 1: bingo do componente genérico
@@ -23,7 +23,7 @@ O pedido A, na parte de produto, era só isto: *"Crie um componente moderno e re
 | ☐ Card no centro, com sombra | ☐ Foto ou avatar da pessoa | ☐ Ícone num quadradinho | ☐ Botão de largura total |
 | ☐ Setinha no botão | ☐ Link de convite para copiar | ☐ Tela de sucesso com check | ☐ Membro / Administrador |
 
-Marquei **9 de 12**. Depois da revelação: caí em ____ armadilha(s). Acertei **9 menos esse número**: ____ de 9.
+Marquei **9 de 12**. Depois da revelação: caí em ____ armadilha(s). Acertei **9 menos esse número**: ____ de 9. No chat, envie só esse total de acertos, ao sinal do facilitador.
 
 Esse é um jogo de reconhecimento. O placar não mede com que frequência uma IA repete um padrão. Na revelação, veja o formulário e o estado de sucesso: uma imagem só não mostra todas as casas.
 
@@ -51,7 +51,7 @@ Teste D1: envie `ana@example.com`, espere a confirmação e comece a apagar o e-
 
 ## Aposta 3: a janela
 
-Escolha uma letra antes do teste. Envie `ana@example.com` com Leitor e, **durante a espera**, troque o perfil para Editor. Com o foco no e-mail, a sequência é **Enter, Tab e E**. A operação do select pode variar no seu navegador. Se não der tempo, acompanhe a demonstração. O que aparece?
+Escolha uma letra antes do teste. Envie `ana@example.com` com Leitor e, **durante a espera**, troque o perfil para Editor. Com o foco no e-mail, a sequência é **Enter, Tab e E**. A operação do select pode variar no seu navegador. Após duas tentativas sem capturar a janela, use o [ensaio de quatro segundos](ensaio.html) e registre que observou a reprodução didática, separada de B original. Quem não conseguir abrir pode acompanhar a demonstração. O que aparece?
 
 A. A confirmação nem aparece · B. Aparece "perfil Editor" · C. Aparece "perfil Leitor" com o select em Editor · D. Dá erro
 
@@ -65,7 +65,7 @@ Separe as observações: o que foi enviado, o que o recibo confirma e o que os c
 
 **Não abra os patches ainda.** Primeiro decida o que a interface deve fazer quando alguém altera e-mail ou perfil durante o envio. Depois tente quebrar a decisão.
 
-Trabalhe em dupla, se houver esse espaço. Sozinho ou na transmissão, escreva seu cartão e faça o papel de revisor; você pode trocar um contraexemplo pelo chat, ao sinal do facilitador. Sem computador, acompanhe a demonstração e escreva a regra no papel.
+Trabalhe em dupla, se houver esse espaço. Na transmissão, escreva primeiro o seu cartão; a troca pelo chat tem um protocolo na etapa adversária. Sozinho, faça também o papel de revisor. Sem computador, acompanhe a demonstração e escreva a regra no papel.
 
 ### 1. Escreva seu cartão (5 min)
 
@@ -85,6 +85,8 @@ Escreva um resultado que outra pessoa consiga verificar. "Não fica confuso" ain
 
 Troque os cartões. A dupla revisora propõe um caso e pergunta: o que acontece aqui? Pode ser editar duas vezes, mudar e voltar ao valor original, errar uma letra, receber falha ou tentar enviar outra vez. Não precisa encontrar defeito: uma regra que resiste também é resultado.
 
+**No remoto:** ao sinal, publique **Regra + Custo**. O facilitador escolhe dois cartões e identifica seus autores. Escolha um deles e responda com **nome do cartão + passos que tentam quebrá-lo**. Quem não publicar pode revisar o próprio cartão ou um dos dois escolhidos.
+
 Nosso contraexemplo: ______________________________
 
 A regra resistiu ou mudou? Por quê? ______________________________
@@ -92,6 +94,8 @@ A regra resistiu ou mudou? Por quê? ______________________________
 ### 3. Teste e compare (8 min)
 
 Rode os passos em B e registre o que aconteceu, **antes** de abrir a referência. B já confirma o payload enviado. Ele atende sua regra adicional de apresentação? Se sim, registre que passou e preserve o teste como regressão. Se sua regra exige outro comportamento, registre a diferença e o teste que falha. Não invente um defeito para justificar um patch.
+
+Se após duas tentativas você não capturou a janela de B, use o [ensaio de quatro segundos](ensaio.html) como apoio e anote **reprodução didática observada**. Esse ensaio mostra o comportamento da janela; ele não executa os patches nem substitui testes de falha ou outros contraexemplos.
 
 Quando o facilitador liberar, abra [as implementações de comparação](respostas.html#patches). Rode os mesmos passos. Se sua regra for outra, escreva o esperado da sua versão; implementação é opcional. Não declare que ela passou sem executá-la.
 
@@ -115,7 +119,7 @@ busca.addEventListener('input', async () => {
 });
 ```
 
-A equipe tem Ana, Anderson e Luana. Você digita "an" e depois "ana". A rede responde "an" em 900 ms e "ana" em 200 ms. O que fica na tela no fim?
+A equipe tem Ana, Anderson e Luana. A busca de "an" sai em **0 ms**; a de "ana", **100 ms depois**. A primeira leva **900 ms** para responder; a segunda, **200 ms**. O que fica na tela no fim?
 
 ______________________________
 
@@ -144,6 +148,8 @@ Diga qual parte dessa decisão depende do backend: _____________________________
 **Com IA:** cole seu cartão no fim de `demonstracao/pedido-b.txt`, use conversa nova e espere no máximo 4 minutos. Salve a primeira saída como `meu-convite.html`, registre a ferramenta e rode o mesmo teste. Se a IA alterar a API simulada ou o painel, o resultado não é comparável.
 
 [Respostas das apostas, código e patches explicados](respostas.html), depois da atividade. [Ferramenta de ensaio e visualização](ensaio.html), para acompanhar a demonstração quando o facilitador liberar. A instrumentação do ensaio é separada das saídas originais.
+
+Os links do PDF abrem o kit online. Para usar sem internet, extraia o ZIP e abra `index.html`.
 
 ## Procedência e limites
 

@@ -33,7 +33,7 @@ Se houver atraso, reduza o debate inicial e o tempo de leitura de código. Prese
 ## Apostas: uma cadência para as quatro
 
 1. Mostre a pergunta e explique o formato da resposta.
-2. Peça que cada pessoa guarde a escolha. No chat, todos enviam ao seu sinal para a primeira resposta não conduzir o resto da sala.
+2. Peça que cada pessoa guarde a escolha. No bingo, as nove casas ficam privadas; depois da revelação, peça só o total de acertos. Nas outras apostas, todos enviam ao seu sinal para a primeira resposta não conduzir o resto da sala.
 3. Conte os últimos segundos em voz alta. Diga “Valendo” para receber as respostas, espere uma janela curta de chegada e feche: “Votação encerrada”. Não espere unanimidade nem um placar perfeito.
 4. Revele. Dê dois segundos para a sala reconhecer antes de explicar.
 5. Ouça uma justificativa e conecte ao próximo teste. Não transforme cada aposta em uma palestra.
@@ -42,7 +42,7 @@ Se houver atraso, reduza o debate inicial e o tempo de leitura de código. Prese
 
 Apresente o pedido A inteiro na parte de produto. A base técnica é a mesma, com tokens, API simulada e painel; não diga que A foi criada sem contexto algum.
 
-Na aposta, cada pessoa escolhe exatamente nove das doze casas. Depois da revelação, conta quantas armadilhas marcou. Acertos são nove menos esse número. Não use “sete ou mais” como evidência de previsibilidade nem infira que o treino do modelo explica o resultado. O placar serve à brincadeira.
+Na aposta, cada pessoa escolhe exatamente nove das doze casas e guarda a escolha. Não peça a transcrição das nove no chat. Depois da revelação, conta quantas armadilhas marcou. Acertos são nove menos esse número; peça só esse total ao sinal. Não use “sete ou mais” como evidência de previsibilidade nem infira que o treino do modelo explica o resultado. O placar serve à brincadeira.
 
 Mostre a cartela revelada, os recortes de perfil e botão e o estado de sucesso de A. Abra o select para confirmar Membro e Administrador. Leia o título e o slogan ampliados no slide; um estado só não mostra todas as casas. A frase “Pedi um formulário. Veio um discurso de boas-vindas” cabe depois de a sala ler o título e o slogan. Se não houver reação, siga sem explicar a piada.
 
@@ -68,11 +68,11 @@ Compare com A, que trava os campos sem isso ter sido pedido. Faça a pausa para 
 
 Não mostre as duas soluções como escolhas prontas antes do cartão. Peça uma regra observável, não a palavra “seguro” ou “claro”. A pessoa precisa dizer o que pode editar, o que aparece no recibo e qual custo aceita.
 
-**Cinco minutos: escrever.** Cada dupla preenche o cartão. No remoto sem salas, cada pessoa escreve sozinha e troca um contraexemplo pelo chat ao seu sinal. Quem está sem computador acompanha a projeção e escreve no papel.
+**Cinco minutos: escrever.** Cada dupla preenche o cartão. No remoto sem salas, cada pessoa escreve sozinha antes de ler o chat. Quem está sem computador acompanha a projeção e escreve no papel.
 
-**Cinco minutos: adversário.** Outra dupla tenta quebrar a regra. Proponha apenas se a sala travar: mudar duas vezes, voltar ao valor original, editar antes de uma falha ou tentar novo envio. Uma regra que resiste não precisa ganhar um defeito inventado.
+**Cinco minutos: adversário.** Outra dupla tenta quebrar a regra. No remoto, peça “Publiquem Regra + Custo”, selecione dois cartões e identifique os autores. Depois diga “Escolha um desses cartões e responda com nome do cartão + passos que tentam quebrá-lo”. Quem não publicar pode revisar o próprio cartão ou um dos selecionados. Proponha apenas se a sala travar: mudar duas vezes, voltar ao valor original, editar antes de uma falha ou tentar novo envio. Uma regra que resiste não precisa ganhar um defeito inventado.
 
-**Oito minutos: testar.** Primeiro B, anotando o observado. Se a regra já existe, B passa e o teste vira regressão. Se exige outro comportamento, mostre o resultado esperado e a diferença. Só depois libere `respostas.html#patches` para comparar as implementações. Outra solução pode ficar especificada; não a chame de implementada se não foi executada.
+**Oito minutos: testar.** Primeiro B, anotando o observado. Após duas tentativas sem capturar a janela, libere o ensaio de quatro segundos e peça o registro “reprodução didática observada”. Esse apoio não executa patches nem substitui testes de falha ou outros contraexemplos. Se a regra já existe, B passa e o teste vira regressão. Se exige outro comportamento, mostre o resultado esperado e a diferença. Só depois libere `respostas.html#patches` para comparar as implementações. Outra solução pode ficar especificada; não a chame de implementada se não foi executada.
 
 **Dois minutos: revisar.** Atualizem o cartão e preparem a defesa de trinta segundos. Escolha duas regras diferentes para ouvir. Se a sala produziu trava e recibo, convide “time trava” e “time recibo”; se produziu outra decisão, use o nome escolhido pela pessoa.
 
@@ -82,11 +82,11 @@ Cada lado precisa dizer uma garantia e admitir um custo. O outro lado pode pedir
 
 Mostre o trecho do payload antes do `await` e o recibo depois. O campo pode mudar durante o intervalo. Não chame o problema de duas respostas de convite fora de ordem: o exemplo seguinte da busca tem esse mecanismo, mas este não.
 
-Na comparação, travar implica aguardar para corrigir uma letra; recibo exige representar separadamente o envio e o novo rascunho. Mostre só as linhas necessárias e abra o fonte completo se alguém perguntar. Não leia todo o código projetado.
+Na comparação, travar implica aguardar para corrigir uma letra; recibo exige representar separadamente o envio e o novo rascunho. O complemento do recibo descreve a mudança ocorrida durante a espera e continua verdadeiro quando os campos voltam ao valor original. Mostre só as linhas necessárias e abra o fonte completo se alguém perguntar. Não leia todo o código projetado.
 
 ## Transferência: busca e resposta perdida
 
-Na busca, peça o que fica na tela e a regra, juntos. A lista de `an` chega por último e inclui Anderson. O contador impede essa resposta antiga de substituir a intenção atual. Se citar `AbortController`, diga que o `signal` precisa chegar ao `fetch` e preserve a identidade da requisição conforme a implementação.
+Na busca, explicite os instantes: `an` sai em 0 ms e `ana` em 100 ms. Com latências de 900 ms e 200 ms, chegam em 900 ms e 300 ms. Peça o que fica na tela e a regra, juntos. A lista de `an` chega por último e inclui Anderson. O contador impede essa resposta antiga de substituir a intenção atual. Se citar `AbortController`, diga que o `signal` precisa chegar ao `fetch` e preserve a identidade da requisição conforme a implementação.
 
 No desafio sênior, diferencie o conhecimento do enunciado do conhecimento do navegador. Nós sabemos que o servidor gravou porque o cenário diz isso. O navegador viu apenas falha de rede. Precisa representar o resultado desconhecido e reconciliar. Repetir com segurança depende de contrato de idempotência/deduplicação no servidor, não de gerar outra chave a cada clique.
 

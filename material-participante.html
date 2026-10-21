@@ -17,7 +17,7 @@ pre{white-space:pre-wrap;margin:0;padding:20px 22px;line-height:1.6;font-size:14
 th,td{border-bottom:1px solid var(--line);padding:12px 10px;text-align:left;vertical-align:top}th{background:var(--paper);font-weight:600}
 table.grid td{border:2px solid var(--ink);padding:16px 12px;width:25%;font-weight:600;background:#fff}
 footer{padding:20px 16px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;text-align:center}
-@media print{nav,.copy,footer{display:none}main{padding:0;max-width:none}h1{font-size:26px}h2{font-size:18px;margin-top:20px;break-after:avoid}h3{font-size:14px;margin-top:12px;break-after:avoid}p,li{font-size:10pt;line-height:1.45}p{margin:6px 0}li{margin:3px 0}pre{font-size:8.5pt;line-height:1.4;padding:10px 12px}.code-block{margin:10px 0;break-inside:avoid}table{font-size:9pt}th,td{padding:6px}table.grid td{padding:10px 8px}tr{break-inside:avoid}a{text-decoration:none}@page{size:A4;margin:16mm}}
+@media print{nav,.copy,footer{display:none}main{padding:0;max-width:none}h1{font-size:26px}h2{font-size:18px;margin-top:20px;break-after:avoid}h3{font-size:14px;margin-top:12px;break-after:avoid}p,li{font-size:10pt;line-height:1.45}p{margin:4px 0}li{margin:3px 0}pre{font-size:8.5pt;line-height:1.4;padding:10px 12px}.code-block{margin:10px 0;break-inside:avoid}table{font-size:9pt;break-inside:avoid}th,td{padding:6px}table.grid td{padding:10px 8px}tr{break-inside:avoid}a{text-decoration:none}@page{size:A4;margin:16mm}}
 </style></head><body><nav aria-label="Materiais"><a href="index.html">Início</a><a href="demonstracao/convite-a.html">Saída A</a><a href="demonstracao/convite-b.html">Saída B</a></nav><main><h1 id="por-que-a-ia-repete-o-componente-genérico">Por que a IA repete o
 componente genérico</h1>
 <h2 id="e-o-que-muda-quando-você-especifica">(e o que muda quando você
@@ -36,8 +36,9 @@ extraia o <code>kit-participante.zip</code> e abra
 <code>index.html</code>.</li>
 <li><strong>Não abra a saída A ainda.</strong> A primeira atividade é
 uma aposta.</li>
-<li>Guarde sua resposta antes de ver o resultado. No chat, envie só ao
-sinal do facilitador.</li>
+<li>Guarde sua resposta antes de ver o resultado. No bingo, mantenha as
+nove escolhas privadas e envie só o número de acertos depois da
+revelação. Nas outras apostas, responda ao sinal do facilitador.</li>
 <li>Se algum arquivo não abrir, acompanhe pela tela do facilitador e
 anote no papel. A prática também funciona assim.</li>
 </ol>
@@ -76,8 +77,8 @@ armadilhas: não vieram. Você tem um minuto.</p>
 </tbody>
 </table></div>
 <p>Marquei <strong>9 de 12</strong>. Depois da revelação: caí em ____
-armadilha(s). Acertei <strong>9 menos esse número</strong>: ____ de
-9.</p>
+armadilha(s). Acertei <strong>9 menos esse número</strong>: ____ de 9.
+No chat, envie só esse total de acertos, ao sinal do facilitador.</p>
 <p>Esse é um jogo de reconhecimento. O placar não mede com que
 frequência uma IA repete um padrão. Na revelação, veja o formulário e o
 estado de sucesso: uma imagem só não mostra todas as casas.</p>
@@ -137,8 +138,11 @@ comece a apagar o e-mail. A frase sumiu? ____</p>
 <p>Escolha uma letra antes do teste. Envie <code>ana@example.com</code>
 com Leitor e, <strong>durante a espera</strong>, troque o perfil para
 Editor. Com o foco no e-mail, a sequência é <strong>Enter, Tab e
-E</strong>. A operação do select pode variar no seu navegador. Se não
-der tempo, acompanhe a demonstração. O que aparece?</p>
+E</strong>. A operação do select pode variar no seu navegador. Após duas
+tentativas sem capturar a janela, use o <a href="ensaio.html">ensaio de
+quatro segundos</a> e registre que observou a reprodução didática,
+separada de B original. Quem não conseguir abrir pode acompanhar a
+demonstração. O que aparece?</p>
 <p>A. A confirmação nem aparece · B. Aparece “perfil Editor” · C.
 Aparece “perfil Leitor” com o select em Editor · D. Dá erro</p>
 <p>Minha letra: ____ O que aconteceu: ______________________________</p>
@@ -152,9 +156,9 @@ alterado.</p>
 <p><strong>Não abra os patches ainda.</strong> Primeiro decida o que a
 interface deve fazer quando alguém altera e-mail ou perfil durante o
 envio. Depois tente quebrar a decisão.</p>
-<p>Trabalhe em dupla, se houver esse espaço. Sozinho ou na transmissão,
-escreva seu cartão e faça o papel de revisor; você pode trocar um
-contraexemplo pelo chat, ao sinal do facilitador. Sem computador,
+<p>Trabalhe em dupla, se houver esse espaço. Na transmissão, escreva
+primeiro o seu cartão; a troca pelo chat tem um protocolo na etapa
+adversária. Sozinho, faça também o papel de revisor. Sem computador,
 acompanhe a demonstração e escreva a regra no papel.</p>
 <h3 id="escreva-seu-cartão-5-min">1. Escreva seu cartão (5 min)</h3>
 <div class="code-block"><button class="copy" type="button">Copiar</button><pre class="text"><code>Título:   [a mudança ou a regra que quero preservar]
@@ -174,6 +178,11 @@ min)</h3>
 acontece aqui? Pode ser editar duas vezes, mudar e voltar ao valor
 original, errar uma letra, receber falha ou tentar enviar outra vez. Não
 precisa encontrar defeito: uma regra que resiste também é resultado.</p>
+<p><strong>No remoto:</strong> ao sinal, publique <strong>Regra +
+Custo</strong>. O facilitador escolhe dois cartões e identifica seus
+autores. Escolha um deles e responda com <strong>nome do cartão + passos
+que tentam quebrá-lo</strong>. Quem não publicar pode revisar o próprio
+cartão ou um dos dois escolhidos.</p>
 <p>Nosso contraexemplo: ______________________________</p>
 <p>A regra resistiu ou mudou? Por quê?
 ______________________________</p>
@@ -184,6 +193,11 @@ enviado. Ele atende sua regra adicional de apresentação? Se sim,
 registre que passou e preserve o teste como regressão. Se sua regra
 exige outro comportamento, registre a diferença e o teste que falha. Não
 invente um defeito para justificar um patch.</p>
+<p>Se após duas tentativas você não capturou a janela de B, use o <a
+href="ensaio.html">ensaio de quatro segundos</a> como apoio e anote
+<strong>reprodução didática observada</strong>. Esse ensaio mostra o
+comportamento da janela; ele não executa os patches nem substitui testes
+de falha ou outros contraexemplos.</p>
 <p>Quando o facilitador liberar, abra <a
 href="respostas.html#patches">as implementações de comparação</a>. Rode
 os mesmos passos. Se sua regra for outra, escreva o esperado da sua
@@ -226,14 +240,15 @@ segundos: o que sua regra garante e qual custo você aceita. O outro
 grupo pode pedir um contraexemplo. O cartão já contém o contexto, a
 decisão e a verificação para um PR.</p>
 <h2 id="aposta-4-a-busca">Aposta 4: a busca</h2>
-<div class="code-block"><button class="copy" type="button">Copiar</button><pre class="js"><code>busca.addEventListener(&#39;input&#39;, async () =&gt; {
-  const termo = busca.value;
-  const pessoas = await buscarPessoas(termo);
-  lista.render(pessoas, termo);
-});</code></pre></div>
-<p>A equipe tem Ana, Anderson e Luana. Você digita “an” e depois “ana”.
-A rede responde “an” em 900 ms e “ana” em 200 ms. O que fica na tela no
-fim?</p>
+<div class="sourceCode" id="cb2"><div class="code-block"><button class="copy" type="button">Copiar</button><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>busca<span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">&#39;input&#39;</span><span class="op">,</span> <span class="kw">async</span> () <span class="kw">=&gt;</span> {</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> termo <span class="op">=</span> busca<span class="op">.</span><span class="at">value</span><span class="op">;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> pessoas <span class="op">=</span> <span class="cf">await</span> <span class="fu">buscarPessoas</span>(termo)<span class="op">;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  lista<span class="op">.</span><span class="fu">render</span>(pessoas<span class="op">,</span> termo)<span class="op">;</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code></pre></div></div>
+<p>A equipe tem Ana, Anderson e Luana. A busca de “an” sai em <strong>0
+ms</strong>; a de “ana”, <strong>100 ms depois</strong>. A primeira leva
+<strong>900 ms</strong> para responder; a segunda, <strong>200
+ms</strong>. O que fica na tela no fim?</p>
 <hr />
 <p>Qual regra você usaria aqui? ☐ trava ☐ recibo ☐ descarta a resposta
 velha ☐ outra: ________</p>
@@ -268,6 +283,8 @@ explicados</a>, depois da atividade. <a href="ensaio.html">Ferramenta de
 ensaio e visualização</a>, para acompanhar a demonstração quando o
 facilitador liberar. A instrumentação do ensaio é separada das saídas
 originais.</p>
+<p>Os links do PDF abrem o kit online. Para usar sem internet, extraia o
+ZIP e abra <code>index.html</code>.</p>
 <h2 id="procedência-e-limites">Procedência e limites</h2>
 <p><strong>De onde vêm A e B.</strong> Duas sessões separadas do Codex
 em 19/10/2026, uma geração por condição, mesma base, primeira saída

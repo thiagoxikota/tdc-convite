@@ -9,7 +9,7 @@ Abra os arquivos no navegador. Não precisa instalar nada, subir servidor nem te
 | Arquivo | O que é |
 |---|---|
 | `b-patch-trava.html` | Cópia de B com um patch escrito à mão: e-mail e perfil travam enquanto o convite está a caminho. |
-| `b-patch-recibo.html` | Cópia de B com um patch escrito à mão: os campos ficam livres e a resposta avisa quando eles mudaram depois do envio. |
+| `b-patch-recibo.html` | Cópia de B com um patch escrito à mão: os campos ficam livres e o recibo histórico registra que eles mudaram durante a espera, mesmo se depois voltarem ao valor original. |
 | `referencia.html` | Implementação didática completa, feita para a aula. Trava os campos durante a espera. |
 | `base-inicial.html` | Tokens, API simulada e painel, sem formulário. A mesma base usada para gerar A e B. |
 
@@ -34,17 +34,19 @@ Recarregue antes de cada teste. No teste de falha, não recarregue entre as duas
 2. **Durante a espera**, troque o perfil para Editor ou apague o e-mail.
 3. Leia a tela inteira quando a resposta chegar.
 
+Após duas tentativas sem capturar a janela, use `../ensaio.html` e registre “reprodução didática observada”. Esse apoio de quatro segundos não executa os patches nem substitui testes de falha ou outros contraexemplos.
+
 | Arquivo | Resultado |
 |---|---|
 | `../demonstracao/convite-b.html` | O select diz Editor e a frase confirma o envio como Leitor. O payload está correto; compare a apresentação com a regra que você escreveu. |
 | `b-patch-trava.html` | Não dá para editar durante a espera. Compare com sua regra e com o custo de fazer a pessoa aguardar. |
-| `b-patch-recibo.html` | A frase diz que o convite foi para Ana como Leitor e que os campos mudaram depois. Compare com sua regra e com o custo da mensagem adicional. |
+| `b-patch-recibo.html` | A frase confirma Ana como Leitor e registra que os campos mudaram durante a espera. Ela não afirma que os campos atuais continuam diferentes. Compare com sua regra e com o custo da mensagem adicional. |
 
 Se B já atende à sua regra, registre que passou e guarde o teste como regressão. Se a regra exige outra relação entre recibo e rascunho, registre o comportamento esperado, mostre a diferença em B e só então compare o patch. Outra regra é permitida; escrevê-la não prova que foi implementada.
 
 ## O cartão em vinte minutos
 
-Cinco minutos para regra, custo e resultado observável; cinco para a dupla revisora propor um contraexemplo; oito para testar B e, ao sinal do facilitador, comparar os patches; dois para revisar o cartão e preparar a defesa. Quem está sozinho pode fazer a revisão e trocar um contraexemplo pelo chat.
+Cinco minutos para regra, custo e resultado observável; cinco para a dupla revisora propor um contraexemplo; oito para testar B e, ao sinal do facilitador, comparar os patches; dois para revisar o cartão e preparar a defesa. No remoto, publique Regra + Custo ao sinal; o facilitador seleciona dois cartões e os revisores respondem com nome do cartão + passos. Quem está sozinho pode revisar o próprio cartão ou um dos selecionados.
 
 O cenário de resposta perdida depois de uma escrita é discussão posterior. A simulação não tem servidor e não prova idempotência.
 
