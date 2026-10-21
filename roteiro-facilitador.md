@@ -53,7 +53,7 @@ Faça a ponte: o pedido deixou decisões visuais abertas; vamos procurar uma dec
 
 Peça o palpite de zero a três antes dos testes. Explique o painel uma vez e recarregue entre cenários, exceto entre as duas tentativas de `falha@example.com`.
 
-Mostre os testes de loading e de falha funcionando. O de contexto avalia uma gestão de pessoas que A não recebeu. Evite apresentar isso como descumprimento de A. A pergunta sobre Administrador é decisão de produto e permissão exposta na interface; o select não prova autorização no servidor.
+Mostre os testes de loading e de falha funcionando. O de contexto avalia um encaixe que A não recebeu: ninguém disse onde o componente ia entrar. Evite apresentar isso como descumprimento de A. A pergunta sobre Administrador é decisão de produto e permissão exposta na interface; o select não prova autorização no servidor.
 
 Escolha uma decisão para debate curto. Pergunte a uma pessoa qual padrão adotaria e o que perderia com ele.
 
@@ -61,9 +61,11 @@ Escolha uma decisão para debate curto. Pergunte a uma pessoa qual padrão adota
 
 Depois das decisões de A, mostre o mesmo pedido gerado sem a base de tokens, com os sinais marcados no print: sobretítulo, slogan, frase de efeito, ícone num quadradinho, fonte sem escala e os mesmos ícones de A. Em seguida, mostre que o A do kit tem a mesma receita, só que com a cor do design system. Os números de fonte são valores renderizados na tela inicial, medidos no navegador: oito tamanhos e sete pesos na versão sem tokens; oito tamanhos no A do kit, cinco deles abaixo de quinze pixels. A versão sem tokens é uma geração única de 21/10, dois dias depois de A, e não está no kit. Ela mostra que a receita se repete sem o design system; não é experimento controlado.
 
-De onde vem o genérico é hipótese: o exemplo mostra o efeito e não prova a causa. Feche o bloco com o prompt de UI, a revisão em três perguntas e a lista do que não entra no repositório. Depois volte ao comportamento: B recebeu contexto de produto.
+De onde vem o genérico é hipótese: o exemplo mostra o efeito e não prova a causa. Feche o bloco com o prompt de UI, a revisão em três perguntas e a lista do que não entra no repositório (exemplo em `kit-tdc/nao-entra.md`). Depois volte ao comportamento: B recebeu contexto de produto.
 
 ## B, a regra de produto e a virada
+
+Antes da saída B, mostre o slide com o prompt B: cinco seções, sem ler tudo. Aponte a estrutura (intenção, contexto, decisões já tomadas, critérios de aceite, fora de escopo) e diga que o texto integral, com a base HTML, está em `demonstracao/pedido-b.txt`. Só então abra o B.
 
 Mostre a regra de produto como foi escrita: depois do sucesso, editar limpa a confirmação. Envie Ana, aguarde e comece a editar. B passa. Diga “Especificou, funcionou. Obrigado, boa noite.” Pare por um instante. Só então avance para a aposta sobre editar durante a espera.
 

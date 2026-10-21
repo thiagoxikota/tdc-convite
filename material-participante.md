@@ -37,7 +37,7 @@ Abra `demonstracao/convite-a.html`. O **Painel do laboratório**, embaixo do for
 
 | Teste | Faça | Passa? |
 |---|---------|--|
-| **1.** Contexto | Olhe a página. Ela cabe dentro de uma gestão de pessoas que já existe? | |
+| **1.** Contexto | Olhe a página. Dá pra encaixar numa tela que já existe, sem parecer uma landing page? | |
 | **2.** Loading | Envie `novo@example.com` e, durante o loading de 1,2 s, aperte Enter e clique de novo. Painel: quantas chamadas? | |
 | **3.** Falha | Envie `falha@example.com`. Sem recarregar, envie de novo. | |
 
@@ -162,7 +162,7 @@ Guarde o cartão no refinamento, ticket ou PR. Produto e engenharia podem começ
 
 **Com IA, se quiser implementar depois:** cole seu cartão no fim de `demonstracao/pedido-b.txt`, use conversa nova e espere no máximo 4 minutos. Salve a primeira saída como `meu-convite.html`, registre a ferramenta e rode o mesmo teste. Se a IA alterar a API simulada ou o painel, o resultado não é comparável.
 
-[Respostas das apostas, código e patches explicados](respostas.html), depois da atividade. [Ferramenta de ensaio e visualização](ensaio.html), para acompanhar a demonstração quando o facilitador liberar. A instrumentação do ensaio é separada das saídas originais.
+[Lista do que não entra](kit-tdc/nao-entra.md), exemplo para adaptar ao AGENTS.md do seu time. [Respostas das apostas, código e patches explicados](respostas.html), depois da atividade. [Ferramenta de ensaio e visualização](ensaio.html), para acompanhar a demonstração quando o facilitador liberar. A instrumentação do ensaio é separada das saídas originais.
 
 Os links do PDF abrem o kit online. Para usar sem internet, extraia o ZIP e abra `index.html`.
 
